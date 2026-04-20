@@ -850,86 +850,163 @@ body{font-family:"DM Sans",sans-serif;background:var(--navy);color:var(--white);
   <div style="padding:24px 2rem 0;">
 
     <!-- FORM FM -->
-    <div class="cf show" id="cf-fm">
-      <div style="border-left:3px solid var(--gold);padding-left:15px;margin-bottom:24px;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;">Audit Express FM</div>
-        <p style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;">Diagnostic priorisé de votre site sous 24h.</p>
-      </div>
-      <div class="frow">
-        <div class="field"><label>Nom Prénom</label><input type="text" id="fm-nom" placeholder="Ex : Marie Dupont"></div>
-        <div class="field"><label>Email professionnel</label><input type="email" id="fm-email" placeholder="contact@entreprise.fr"></div>
-      </div>
-      <div class="fsep"></div>
-      <span class="flbl">Votre douleur principale <span style="font-size:10px;color:rgba(255,255,255,.32);font-style:italic;">— Sélectionnez 1 ou 2</span></span>
-      <div class="cg">
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">🌡 Inconfort thermique</div><div class="ch-d">Trop chaud, trop froid — jamais résolu</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">⚡ Surcoûts énergie</div><div class="ch-d">Factures qui augmentent sans explication</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">🔧 Incidents répétés</div><div class="ch-d">Les mêmes pannes, jamais réglées</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">🤝 Pilotage prestataires</div><div class="ch-d">Coordination absente, doublons</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">📋 Obligations réglementaires</div><div class="ch-d">Registres incomplets, contrôles en retard</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">📊 Audit global du site</div><div class="ch-d">Vision complète avant inspection</div></div>
-      </div>
-      <div class="frow">
-        <div class="field"><label>Taille du site</label><select id="fm-taille"><option value="" disabled selected>Sélectionnez...</option><option>Moins de 500 m²</option><option>500 – 1 000 m²</option><option>1 000 – 5 000 m²</option><option>Plus de 5 000 m²</option><option>Multi-sites</option></select></div>
-        <div class="field"><label>Type de bâtiment</label><select id="fm-type"><option value="" disabled selected>Sélectionnez...</option><option>Bureaux / Tertiaire</option><option>Coworking / Flex office</option><option>Cabinet (avocats, santé)</option><option>ERP — Lieu recevant du public</option><option>Bâtiment public / Collectivité</option><option>Autre</option></select></div>
-      </div>
-      <div class="fsep"></div>
-      <span class="flbl">État actuel de votre pilotage FM <span style="font-size:10px;color:rgba(255,255,255,.32);font-style:italic;">( 1 = critique · 5 = maîtrisé )</span></span>
-      <div class="sc-row" id="sfm">
-        <div class="sb" onclick="psc(this,'sfm')">1</div><div class="sb" onclick="psc(this,'sfm')">2</div>
-        <div class="sb" onclick="psc(this,'sfm')">3</div><div class="sb" onclick="psc(this,'sfm')">4</div>
-        <div class="sb" onclick="psc(this,'sfm')">5</div>
-      </div>
-      <div class="sc-lbl"><span>Situation critique</span><span>Maîtrisé</span></div>
-      <div class="fsep"></div>
-      <span class="flbl">Ce que vous souhaitez</span>
-      <div class="cg">
-        <div class="ch" onclick="p1(this,'tfm')"><div class="ch-t">Diagnostic gratuit — 20 min</div><div class="ch-d">Premier échange sans engagement</div></div>
-        <div class="ch" onclick="p1(this,'tfm')"><div class="ch-t">Devis Audit Express FM</div><div class="ch-d">Chiffrage pour un audit complet</div></div>
-      </div>
-      <div class="field"><label>Décrivez votre situation</label><textarea id="fm-msg" placeholder="Qu'est-ce qui ne fonctionne pas ? Depuis combien de temps ? Quel est l'impact sur vos équipes ? Plus c'est concret, plus ma réponse sera utile."></textarea></div>
-      <div class="rgpd"><input type="checkbox" id="rfm"><label for="rfm">J'accepte que mes informations soient utilisées pour traiter ma demande. Aucune prospection. RGPD respecté.</label></div>
-      <button class="btn-submit" onclick="sFM()">Obtenir mon diagnostic — 20 min gratuit</button>
-      <div class="snote">Sans engagement · Laurent vous répond personnellement</div>
-      <div class="ok" id="ok-fm"><h3>C'est envoyé.</h3><p>Laurent a reçu votre demande. Réponse personnalisée sous 24h ouvrées.</p></div>
+   <div class="cf show" id="cf-fm">
+  <form action="https://formsubmit.co/contact@laulogistic.com" method="POST">
+    
+    <input type="hidden" name="_next" value="https://laulogistic-cloud.github.io/Flyer-Laulogistic-/">
+    <input type="hidden" name="_subject" value="NOUVEL AUDIT EXPRESS FM - Laulogistic">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div style="border-left:3px solid var(--gold);padding-left:15px;margin-bottom:24px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;">Audit Express FM</div>
+      <p style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;">Diagnostic priorisé de votre site sous 24h.</p>
     </div>
+
+    <div class="frow">
+      <div class="field">
+        <label>Nom Prénom</label>
+        <input type="text" name="nom" required placeholder="Ex : Marie Dupont">
+      </div>
+      <div class="field">
+        <label>Email professionnel</label>
+        <input type="email" name="email" required placeholder="contact@entreprise.fr">
+      </div>
+    </div>
+
+    <div class="fsep"></div>
+
+    <div class="frow">
+      <div class="field">
+        <label>Taille du site</label>
+        <select name="taille_site">
+          <option value="" disabled selected>Sélectionnez...</option>
+          <option>Moins de 500 m²</option>
+          <option>500 – 1 000 m²</option>
+          <option>1 000 – 5 000 m²</option>
+          <option>Plus de 5 000 m²</option>
+          <option>Multi-sites</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Type de bâtiment</label>
+        <select name="type_batiment">
+          <option value="" disabled selected>Sélectionnez...</option>
+          <option>Bureaux / Tertiaire</option>
+          <option>Coworking / Flex office</option>
+          <option>Cabinet (avocats, santé)</option>
+          <option>ERP — Lieu recevant du public</option>
+          <option>Bâtiment public / Collectivité</option>
+          <option>Autre</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fsep"></div>
+    
+    <div class="field">
+      <label>Décrivez votre situation</label>
+      <textarea name="message" required placeholder="Qu'est-ce qui ne fonctionne pas ? Plus c'est concret, plus ma réponse sera utile."></textarea>
+    </div>
+
+    <div class="rgpd">
+      <input type="checkbox" id="rfm" required>
+      <label for="rfm">J'accepte que mes informations soient utilisées pour traiter ma demande. RGPD respecté.</label>
+    </div>
+
+    <button type="submit" class="btn-submit">Obtenir mon diagnostic — 20 min gratuit</button>
+    
+    <div class="snote">Sans engagement ·</div>
+  </form>
+</div>
 
     <!-- FORM EVENT -->
     <div class="cf" id="cf-event">
-      <div style="border-left:3px solid var(--gold);padding-left:15px;margin-bottom:24px;">
-        <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;">Votre projet événementiel</div>
-        <p style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;">Approche + devis sur mesure sous 24h — pas un modèle standard.</p>
-      </div>
-      <div class="frow">
-        <div class="field"><label>Nom Prénom</label><input type="text" id="ev-nom" placeholder="Ex : Marie Dupont"></div>
-        <div class="field"><label>Email</label><input type="email" id="ev-email" placeholder="contact@organisation.fr"></div>
-      </div>
-      <div class="field"><label>Structure / Organisation</label><input type="text" id="ev-org" placeholder="Association, mairie, entreprise, particulier..."></div>
-      <div class="fsep"></div>
-      <div class="frow">
-        <div class="field"><label>Type d'événement</label><select id="ev-type"><option value="" disabled selected>Sélectionnez...</option><option>Gala / Soirée associative</option><option>Mariage</option><option>Anniversaire / Fête familiale</option><option>Spectacle / Concert</option><option>Festival / Événement culturel</option><option>Cérémonie officielle</option><option>Séminaire / Soirée d'entreprise</option><option>Fête de quartier / Événement public</option><option>Autre</option></select></div>
-        <div class="field"><label>Date prévue</label><input type="text" id="ev-date" placeholder="JJ/MM/AAAA ou période"></div>
-      </div>
-      <div class="frow">
-        <div class="field"><label>Lieu / Ville</label><input type="text" id="ev-lieu" placeholder="Salle, adresse ou ville (Île-de-France de préférence)"></div>
-        <div class="field"><label>Nombre de personnes</label><select id="ev-jauge"><option value="" disabled selected>Sélectionnez...</option><option>Moins de 30</option><option>30 – 80</option><option>80 – 200</option><option>200 – 500</option><option>Plus de 500</option></select></div>
-      </div>
-      <div class="fsep"></div>
-      <span class="flbl">Ce dont vous avez besoin</span>
-      <div class="cg">
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">🎙 Son &amp; Micros</div><div class="ch-d">Prise de parole, animation, diffusion</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">💡 Lumière &amp; Ambiance</div><div class="ch-d">Mise en lumière, atmosphère, scénographie</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">🎯 Pack complet</div><div class="ch-d">Son + Lumière + Coordination</div></div>
-        <div class="ch" onclick="this.classList.toggle('sel')"><div class="ch-t">🚨 Intervention urgente</div><div class="ch-d">Prestataire annulé, délai très court</div></div>
-      </div>
-      <div class="field"><label>Votre événement en quelques mots</label><textarea id="ev-msg" placeholder="Contexte, ambiance souhaitée, contraintes particulières, budget indicatif... Tout détail m'aide à vous répondre précisément."></textarea></div>
-      <div class="rgpd"><input type="checkbox" id="rev"><label for="rev">J'accepte que mes informations soient utilisées pour traiter ma demande de devis. RGPD respecté.</label></div>
-      <button class="btn-submit" onclick="sEV()">Envoyer — Devis sous 24h</button>
-      <div class="snote">Devis personnalisé · Laurent vous répond directement</div>
-      <div class="ok" id="ok-event"><h3>C'est envoyé.</h3><p>Laurent revient vers vous sous 24h avec une proposition adaptée à votre événement.</p></div>
+  <form action="https://formsubmit.co/contact@laulogistic.com" method="POST">
+    
+    <input type="hidden" name="_next" value="https://laulogistic-cloud.github.io/Flyer-Laulogistic-/">
+    <input type="hidden" name="_subject" value="NOUVEL ÉVÉNEMENT - Demande de Devis Laulogistic">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div style="border-left:3px solid var(--gold);padding-left:15px;margin-bottom:24px;">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;">Votre projet événementiel</div>
+      <p style="font-size:14px;color:rgba(255,255,255,.8);line-height:1.6;">Approche + devis sur mesure sous 24h — pas un modèle standard.</p>
     </div>
 
-  </div>
+    <div class="frow">
+      <div class="field">
+        <label>Nom Prénom</label>
+        <input type="text" name="nom" required placeholder="Ex : Marie Dupont">
+      </div>
+      <div class="field">
+        <label>Email</label>
+        <input type="email" name="email" required placeholder="contact@organisation.fr">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Structure / Organisation</label>
+      <input type="text" name="structure" placeholder="Association, mairie, entreprise, particulier...">
+    </div>
+
+    <div class="fsep"></div>
+
+    <div class="frow">
+      <div class="field">
+        <label>Type d'événement</label>
+        <select name="type_evenement">
+          <option value="" disabled selected>Sélectionnez...</option>
+          <option>Gala / Soirée associative</option>
+          <option>Mariage</option>
+          <option>Anniversaire / Fête familiale</option>
+          <option>Spectacle / Concert</option>
+          <option>Festival / Événement culturel</option>
+          <option>Cérémonie officielle</option>
+          <option>Séminaire / Soirée d'entreprise</option>
+          <option>Fête de quartier / Événement public</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Date prévue</label>
+        <input type="text" name="date" placeholder="JJ/MM/AAAA ou période">
+      </div>
+    </div>
+
+    <div class="frow">
+      <div class="field">
+        <label>Lieu / Ville</label>
+        <input type="text" name="lieu" placeholder="Salle, adresse ou ville">
+      </div>
+      <div class="field">
+        <label>Nombre de personnes</label>
+        <select name="jauge">
+          <option value="" disabled selected>Sélectionnez...</option>
+          <option>Moins de 30</option>
+          <option>30 – 80</option>
+          <option>80 – 200</option>
+          <option>200 – 500</option>
+          <option>Plus de 500</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="fsep"></div>
+
+    <div class="field">
+      <label>Votre événement en quelques mots</label>
+      <textarea name="details" required placeholder="Contexte, ambiance souhaitée, contraintes particulières..."></textarea>
+    </div>
+
+    <div class="rgpd">
+      <input type="checkbox" id="rev" required>
+      <label for="rev">J'accepte que mes informations soient utilisées pour traiter ma demande. RGPD respecté.</label>
+    </div>
+
+    <button type="submit" class="btn-submit">Envoyer — Devis sous 24h</button>
+    
+    <div class="snote">Devis personnalisé · Laurent vous répond directement</div>
+  </form>
+</div>
 
   <!-- CONTACT DIRECT -->
   <div style="padding:34px 2rem;display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:720px;">
