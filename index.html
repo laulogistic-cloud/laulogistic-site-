@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laulogistic — FM Solution & Event · France · Suisse · Benelux</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --navy:#0c1428;--navy-mid:#132040;--navy-card:#172448;
+  --gold:#c8a84b;--gold-warm:#d9b96a;--white:#fff;
+  --warm-line:rgba(200,168,75,0.22);
+}
+body{font-family:"DM Sans",sans-serif;background:var(--navy);color:var(--white);overflow-x:hidden;line-height:1.6;}
+
+/* === NAVIGATION === */
+.nav{position:sticky;top:0;z-index:200;background:var(--navy-card);padding:0 2rem;display:flex;justify-content:space-between;align-items:center;height:56px;border-bottom:1px solid var(--warm-line);}
+.nav-logo{font-family:"Cormorant Garamond",serif;font-size:1.4rem;font-weight:700;color:var(--gold);letter-spacing:2px;cursor:pointer;background:none;border:none;}
+.nav-links{display:flex;gap:4px;align-items:center;}
+.nav-btn{background:none;border:none;color:rgba(255,255,255,.55);font-size:13px;letter-spacing:.03em;cursor:pointer;padding:7px 14px;border-radius:2px;font-family:"DM Sans",sans-serif;}
+.nav-btn:hover,.nav-btn.active{color:var(--gold);background:rgba(200,168,75,.1);}
+.nav-ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px 6px;background:none;border:none;flex-shrink:0;}
+.nav-ham span{display:block;width:22px;height:2px;background:var(--gold);border-radius:1px;}
+
+/* === PAGES — CRITIQUE : jamais toucher style.display inline === */
+.page{display:none;}
+.page.active{display:block;}
+
+/* === STRIPE === */
+.stripe{height:3px;background:linear-gradient(90deg,transparent,var(--gold) 35%,var(--gold-warm) 65%,transparent);}
+
+/* === SECTIONS === */
+.sect{padding:60px 2rem;max-width:960px;margin:0 auto;}
+.sect-full{padding:60px 2rem;}
+.sect-mid{background:var(--navy-mid);}
+.sect-card{background:var(--navy-card);}
+.tag{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.tag::after{content:"";flex:0 0 22px;height:1px;background:var(--warm-line);}
+.h1{font-family:"Cormorant Garamond",serif;font-size:34px;font-weight:700;line-height:1.15;margin-bottom:12px;color:var(--white);}
+.h1 em{color:var(--gold-warm);font-style:italic;}
+.h2{font-family:"Cormorant Garamond",serif;font-size:26px;font-weight:700;margin-bottom:16px;color:var(--white);}
+.sub{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;max-width:560px;margin-bottom:28px;}
+.gbar{width:36px;height:2px;background:var(--gold);margin-bottom:24px;}
+
+/* === BOUTONS === */
+.btn-gold{display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:13px 30px;border-radius:2px;cursor:pointer;border:none;font-family:"DM Sans",sans-serif;}
+.btn-ghost{display:inline-block;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.75);font-size:12px;padding:13px 22px;border-radius:2px;margin-left:10px;cursor:pointer;background:none;font-family:"DM Sans",sans-serif;}
+
+/* === ZONES GÉOGRAPHIQUES === */
+.zones{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:760px;margin:32px 0;}
+.zone{background:var(--navy-card);border:1px solid var(--warm-line);padding:28px 22px;border-radius:2px;cursor:pointer;}
+.zone:hover{border-color:var(--gold);}
+.zone-flag{font-size:28px;margin-bottom:10px;}
+.zone-name{font-family:"Cormorant Garamond",serif;font-size:20px;color:var(--gold);font-weight:700;margin-bottom:6px;}
+.zone-sub{font-size:12px;color:rgba(255,255,255,.6);line-height:1.6;}
+.zone-pays{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;}
+.zone-tag{font-size:10px;background:rgba(200,168,75,.1);border:1px solid rgba(200,168,75,.25);color:var(--gold-warm);padding:3px 10px;border-radius:2px;}
+
+/* === GRILLES === */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:720px;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:760px;}
+.card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-left:2px solid var(--gold);padding:18px 20px;border-radius:0 2px 2px 0;}
+.card strong{display:block;font-size:13px;color:var(--white);margin-bottom:4px;}
+.card span{font-size:12px;color:rgba(255,255,255,.7);line-height:1.5;}
+
+/* === TÉMOIGNAGES === */
+.testi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);padding:28px 24px 20px;border-radius:2px;position:relative;}
+.testi::before{content:"\"";font-family:"Cormorant Garamond",serif;font-size:70px;color:rgba(200,168,75,.18);position:absolute;top:6px;left:16px;line-height:1;}
+.testi-q{font-size:14px;line-height:1.8;color:rgba(255,255,255,.88);padding-top:26px;font-style:italic;margin-bottom:14px;}
+.testi-src{font-size:11px;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;}
+.testi-det{font-size:11px;color:rgba(255,255,255,.42);margin-top:3px;}
+
+/* === OFFRES === */
+.offers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:760px;}
+.offer{background:var(--white);border-top:3px solid var(--gold);padding:22px 18px;}
+.offer.feat{background:var(--navy-card);border-top-color:var(--gold-warm);}
+.offer h4{font-family:"Cormorant Garamond",serif;font-size:18px;color:var(--navy);margin-bottom:6px;font-weight:700;}
+.offer.feat h4{color:var(--gold-warm);}
+.offer p{font-size:13px;color:#2a1e0a;line-height:1.65;margin-bottom:12px;}
+.offer.feat p{color:rgba(255,255,255,.78);}
+.offer ul{list-style:none;}
+.offer ul li{font-size:12px;color:#1a1008;padding:5px 0;border-bottom:1px solid rgba(0,0,0,.06);display:flex;gap:8px;align-items:flex-start;line-height:1.4;}
+.offer.feat ul li{color:rgba(255,255,255,.78);border-bottom-color:rgba(255,255,255,.07);}
+.offer ul li::before{content:"";width:4px;height:4px;background:var(--gold);border-radius:50%;margin-top:5px;flex-shrink:0;}
+
+/* === CONTACT === */
+.ct-tabs{display:flex;gap:8px;margin-bottom:28px;}
+.ct-tab{background:none;border:1px solid var(--warm-line);color:rgba(255,255,255,.6);font-size:13px;padding:10px 20px;cursor:pointer;border-radius:2px;font-family:"DM Sans",sans-serif;}
+.ct-tab.active{background:rgba(200,168,75,.12);border-color:var(--gold);color:var(--gold);}
+.ct-form{display:none;}
+.ct-form.show{display:block;}
+.field{margin-bottom:18px;}
+.field label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold-warm);margin-bottom:7px;}
+.field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.05);border:1px solid var(--warm-line);padding:12px 14px;color:var(--white);border-radius:2px;font-family:"DM Sans",sans-serif;font-size:13px;}
+.field input:focus,.field select,.field textarea:focus{border-color:var(--gold);outline:none;}
+.field select{appearance:none;cursor:pointer;}
+.choice-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:8px;margin-top:8px;}
+.choice{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);padding:12px 14px;border-radius:2px;cursor:pointer;font-size:12px;color:rgba(255,255,255,.75);line-height:1.4;}
+.choice.sel{border-color:var(--gold);background:rgba(200,168,75,.1);color:var(--white);}
+.rgpd{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:rgba(255,255,255,.6);margin:16px 0;}
+.rgpd input{width:auto;margin-top:2px;flex-shrink:0;}
+.btn-submit{background:var(--gold);color:var(--navy);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:14px 32px;border:none;cursor:pointer;font-family:"DM Sans",sans-serif;margin-top:8px;}
+.ok-msg{display:none;background:rgba(200,168,75,.12);border:1px solid var(--gold);padding:24px;text-align:center;border-radius:2px;margin-top:20px;}
+.ok-msg.show{display:block;}
+.ok-msg h3{font-family:"Cormorant Garamond",serif;color:var(--gold);margin-bottom:8px;}
+
+/* === FOOTER === */
+.foot{background:var(--navy-card);padding:22px 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;border-top:1px solid var(--warm-line);}
+.foot-links{display:flex;gap:16px;flex-wrap:wrap;}
+.foot-links span{font-size:12px;color:rgba(255,255,255,.38);cursor:pointer;}
+.foot-links span:hover{color:var(--gold);}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.2);}
+
+/* === CTA BAND === */
+.cta{background:var(--gold);padding:48px 2rem;text-align:center;}
+.cta h2{font-family:"Cormorant Garamond",serif;font-size:28px;color:var(--navy);margin-bottom:10px;font-style:italic;font-weight:700;}
+.cta p{font-size:14px;color:rgba(12,20,40,.65);margin-bottom:24px;line-height:1.75;}
+
+/* === STAT GRID === */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:720px;border:1px solid var(--warm-line);}
+.stat{padding:22px 18px;border-right:1px solid var(--warm-line);}
+.stat:last-child{border-right:none;}
+.stat-n{font-family:"Cormorant Garamond",serif;font-size:28px;color:var(--gold);font-weight:700;margin-bottom:4px;}
+.stat-l{font-size:12px;color:rgba(255,255,255,.75);}
+
+/* === MOBILE === */
+.nav-ham{display:none;}
+@media(max-width:680px){
+  .grid2,.grid3,.zones,.offers,.stats{grid-template-columns:1fr!important;}
+  .h1{font-size:26px;}
+  .stat{border-right:none!important;border-bottom:1px solid var(--warm-line);}
+  .stat:last-child{border-bottom:none;}
+  .nav-links{display:none;flex-direction:column;position:absolute;top:56px;left:0;right:0;background:var(--navy-card);border-bottom:1px solid var(--warm-line);padding:6px 0;z-index:300;}
+  .nav-links.open{display:flex;}
+  .nav-btn{font-size:14px;padding:12px 20px;text-align:left;border-bottom:1px solid rgba(255,255,255,.05);}
+  .nav-ham{display:flex;}
+}
+</style>
+</head>
+<body>
+
+<div class="stripe"></div>
+
+<nav class="nav">
+  <button class="nav-logo" onclick="go('home')">◆ LAULOGISTIC</button>
+  <div class="nav-links" id="nav-links">
+    <button class="nav-btn active" id="nb-home" onclick="go('home')">Accueil</button>
+    <button class="nav-btn" id="nb-fm" onclick="go('fm')">FM Solution</button>
+    <button class="nav-btn" id="nb-event" onclick="go('event')">Event</button>
+    <button class="nav-btn" id="nb-contact" onclick="go('contact')">Contact</button>
+  </div>
+  <button class="nav-ham" aria-label="Menu" aria-expanded="false" onclick="toggleNav(this)">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ======== PAGE ACCUEIL ======== -->
+<div id="page-home" class="page active">
+
+  <div class="sect-full sect-mid" style="padding:80px 2rem 60px;">
+    <div style="max-width:960px;margin:0 auto;">
+      <div class="tag">Expert Terrain · France · Suisse · Benelux</div>
+      <h1 class="h1">Votre événement mérite<br><em>zéro panne technique.</em></h1>
+      <div class="gbar"></div>
+      <p class="sub">25 ans d'expérience en régie technique, coordination d'événements et Facility Management. Intervention en France, Suisse et Benelux — disponible même en urgence.</p>
+      <button class="btn-gold" onclick="go('contact')">Parler de votre projet</button>
+      <button class="btn-ghost" onclick="go('event')">Découvrir Event</button>
+    </div>
+  </div>
+
+  <!-- Zones géographiques -->
+  <div class="sect">
+    <div class="tag">Zones d'intervention</div>
+    <h2 class="h2">France · Suisse · Benelux</h2>
+    <p class="sub">Laulogistic intervient sur l'ensemble de ces zones pour les événements et missions FM, avec une base opérationnelle en Île-de-France.</p>
+    <div class="zones">
+      <div class="zone">
+        <div class="zone-flag">🇫🇷</div>
+        <div class="zone-name">France</div>
+        <div class="zone-sub">Île-de-France et régions — mariages, séminaires, cérémonies religieuses, événements d'entreprise.</div>
+        <div class="zone-pays">
+          <span class="zone-tag">Paris</span>
+          <span class="zone-tag">Île-de-France</span>
+          <span class="zone-tag">Régions</span>
+        </div>
+      </div>
+      <div class="zone">
+        <div class="zone-flag">🇨🇭</div>
+        <div class="zone-name">Suisse</div>
+        <div class="zone-sub">Genève, Lausanne, Zurich — événements privés et d'entreprise, coordination bilingue FR/DE.</div>
+        <div class="zone-pays">
+          <span class="zone-tag">Genève</span>
+          <span class="zone-tag">Lausanne</span>
+          <span class="zone-tag">Zurich</span>
+        </div>
+      </div>
+      <div class="zone">
+        <div class="zone-flag">🇧🇪🇱🇺🇳🇱</div>
+        <div class="zone-name">Benelux</div>
+        <div class="zone-sub">Belgique, Luxembourg, Pays-Bas — régie technique et coordination logistique multilingue.</div>
+        <div class="zone-pays">
+          <span class="zone-tag">Bruxelles</span>
+          <span class="zone-tag">Luxembourg</span>
+          <span class="zone-tag">Amsterdam</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="sect-full sect-card">
+    <div class="sect">
+      <div class="tag">Expertise</div>
+      <h2 class="h2">Deux pôles d'activité</h2>
+      <div class="grid2">
+        <div class="card" style="cursor:pointer;" onclick="go('event')">
+          <strong style="font-size:16px;font-family:'Cormorant Garamond',serif;">🎙 Régie & Event</strong>
+          <span>Son, lumière, coordination prestataires, animation. Mariages, cérémonies, séminaires, anniversaires, événements corporate.</span>
+        </div>
+        <div class="card" style="cursor:pointer;" onclick="go('fm')">
+          <strong style="font-size:16px;font-family:'Cormorant Garamond',serif;">🏢 FM Solution</strong>
+          <span>Audit opérationnel, pilotage prestataires, optimisation des coûts d'exploitation. Bâtiments tertiaires et sites multifonctions.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chiffres clés -->
+  <div class="sect">
+    <div class="tag">En chiffres</div>
+    <div class="stats">
+      <div class="stat"><div class="stat-n">25+</div><div class="stat-l">ans d'expérience</div></div>
+      <div class="stat"><div class="stat-n">3</div><div class="stat-l">pays d'intervention</div></div>
+      <div class="stat"><div class="stat-n">24h</div><div class="stat-l">délai de réponse devis</div></div>
+      <div class="stat"><div class="stat-n">100%</div><div class="stat-l">terrain · pas de sous-traitance</div></div>
+    </div>
+  </div>
+
+  <!-- Témoignages -->
+  <div class="sect-full sect-mid">
+    <div class="sect">
+      <div class="tag">Témoignages</div>
+      <div class="grid2">
+        <div class="testi">
+          <p class="testi-q">Laurent est intervenu en urgence le matin de notre mariage après la défaillance de notre sono. Il a sauvé notre journée, avec calme et professionnalisme total.</p>
+          <div class="testi-src">Amélie & Thomas</div>
+          <div class="testi-det">Mariage · Paris 75</div>
+        </div>
+        <div class="testi">
+          <p class="testi-q">Coordination impeccable sur notre séminaire à Genève. Réactif, bilingue, et vraiment opérationnel du premier au dernier invité.</p>
+          <div class="testi-src">DRH · PME Tech</div>
+          <div class="testi-det">Séminaire · Genève</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Un projet en France, Suisse ou Benelux ?</h2>
+    <p>Réponse sous 24h · Intervention possible en urgence</p>
+    <button class="btn-gold" style="background:var(--navy);" onclick="go('contact')">Décrire mon projet</button>
+  </div>
+
+  <div class="foot">
+    <div class="foot-links">
+      <span onclick="go('fm')">FM Solution</span>
+      <span onclick="go('event')">Event</span>
+      <span>contact@laulogistic.com</span>
+    </div>
+    <div class="foot-copy">© 2025 Laulogistic Event · SIRET 525 273 330 00031</div>
+  </div>
+</div>
+
+<!-- ======== PAGE FM SOLUTION ======== -->
+<div id="page-fm" class="page">
+
+  <div class="sect-full sect-mid" style="padding:80px 2rem 60px;">
+    <div style="max-width:960px;margin:0 auto;">
+      <div class="tag">Facility Management · France · Suisse · Benelux</div>
+      <h1 class="h1">Pilotez vos prestataires.<br><em>Réduisez vos coûts cachés.</em></h1>
+      <div class="gbar"></div>
+      <p class="sub">Audit express, coordination terrain, optimisation des contrats FM. 25 ans de pratique opérationnelle au service de vos bâtiments.</p>
+      <button class="btn-gold" onclick="go('contact','fm')">Diagnostic gratuit — 20 min</button>
+    </div>
+  </div>
+
+  <!-- Zones FM -->
+  <div class="sect">
+    <div class="tag">Couverture géographique</div>
+    <h2 class="h2">Intervention en France, Suisse & Benelux</h2>
+    <div class="zones">
+      <div class="zone">
+        <div class="zone-flag">🇫🇷</div>
+        <div class="zone-name">France</div>
+        <div class="zone-sub">Île-de-France et provinces. Audit, AMO, pilotage multi-sites.</div>
+        <div class="zone-pays"><span class="zone-tag">Paris</span><span class="zone-tag">IDF</span><span class="zone-tag">Régions</span></div>
+      </div>
+      <div class="zone">
+        <div class="zone-flag">🇨🇭</div>
+        <div class="zone-name">Suisse</div>
+        <div class="zone-sub">Expertise bilingue FR/DE. Normes Suisses et réglementations locales maîtrisées.</div>
+        <div class="zone-pays"><span class="zone-tag">Genève</span><span class="zone-tag">Lausanne</span><span class="zone-tag">Zurich</span></div>
+      </div>
+      <div class="zone">
+        <div class="zone-flag">🇧🇪</div>
+        <div class="zone-name">Benelux</div>
+        <div class="zone-sub">Belgique, Luxembourg, Pays-Bas. Coordination multilingue et conformité locale.</div>
+        <div class="zone-pays"><span class="zone-tag">Bruxelles</span><span class="zone-tag">Luxembourg</span><span class="zone-tag">Rotterdam</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Problèmes résolus -->
+  <div class="sect-full sect-card">
+    <div class="sect">
+      <div class="tag">Ce que je règle</div>
+      <div class="grid2">
+        <div class="card"><strong>Coûts cachés & surcoûts</strong><span>Contrats mal négociés, doublons prestataires, énergie non optimisée — je les identifie et les corrige.</span></div>
+        <div class="card"><strong>Prestataires non coordonnés</strong><span>Chacun travaille dans son coin, les délais glissent. Je centralise le pilotage.</span></div>
+        <div class="card"><strong>Incidents répétitifs</strong><span>Les mêmes pannes reviennent. J'audite les causes racines et mets en place des plans préventifs.</span></div>
+        <div class="card"><strong>Non-conformité réglementaire</strong><span>Registres incomplets, contrôles en retard. Je remets à niveau selon les normes en vigueur.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Offres -->
+  <div class="sect">
+    <div class="tag">Prestations</div>
+    <div class="offers">
+      <div class="offer">
+        <h4>Diagnostic Express</h4>
+        <p>20 minutes d'échange pour identifier vos premiers leviers d'action. Gratuit et sans engagement.</p>
+        <ul>
+          <li>Analyse rapide de votre situation</li>
+          <li>Identification des irritants principaux</li>
+          <li>Recommandations immédiates</li>
+        </ul>
+      </div>
+      <div class="offer feat">
+        <h4>Audit FM Complet</h4>
+        <p>Analyse approfondie de vos processus, contrats et prestataires. Rapport chiffré avec plan d'action.</p>
+        <ul>
+          <li>Audit technique & contractuel</li>
+          <li>Benchmark prestataires</li>
+          <li>Plan d'optimisation ROI</li>
+          <li>Accompagnement mise en œuvre</li>
+        </ul>
+      </div>
+      <div class="offer">
+        <h4>Pilotage Terrain</h4>
+        <p>Je prends en charge la coordination de vos prestataires FM au quotidien, en votre nom.</p>
+        <ul>
+          <li>Supervision opérationnelle</li>
+          <li>Reporting mensuel</li>
+          <li>Gestion des incidents</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Reprenez le contrôle de vos sites.</h2>
+    <p>Diagnostic gratuit · Réponse sous 24h · Intervention France, Suisse, Benelux</p>
+    <button class="btn-gold" style="background:var(--navy);" onclick="go('contact','fm')">Démarrer le diagnostic</button>
+  </div>
+
+  <div class="foot">
+    <div class="foot-links"><span onclick="go('home')">Accueil</span><span onclick="go('event')">Event</span><span onclick="go('contact')">Contact</span></div>
+    <div class="foot-copy">© 2025 Laulogistic Event</div>
+  </div>
+</div>
+
+<!-- ======== PAGE EVENT ======== -->
+<div id="page-event" class="page">
+
+  <div class="sect-full sect-mid" style="padding:80px 2rem 60px;">
+    <div style="max-width:960px;margin:0 auto;">
+      <div class="tag">Régie & Coordination · France · Suisse · Benelux</div>
+      <h1 class="h1">Le moment compte.<br><em>La technique ne doit pas rater.</em></h1>
+      <div class="gbar"></div>
+      <p class="sub">Son, lumière, logistique, animation — je prends en charge la régie technique et la coordination pour que vous viviez votre événement pleinement.</p>
+      <button class="btn-gold" onclick="go('contact','event')">Parler de votre projet</button>
+    </div>
+  </div>
+
+  <!-- Zones Event -->
+  <div class="sect">
+    <div class="tag">Où j'interviens</div>
+    <div class="zones">
+      <div class="zone">
+        <div class="zone-flag">🇫🇷</div>
+        <div class="zone-name">France</div>
+        <div class="zone-sub">Mariages, séminaires, cérémonies religieuses, anniversaires, événements corporate en Île-de-France et en régions.</div>
+        <div class="zone-pays"><span class="zone-tag">Paris</span><span class="zone-tag">Île-de-France</span><span class="zone-tag">Régions</span></div>
+      </div>
+      <div class="zone">
+        <div class="zone-flag">🇨🇭</div>
+        <div class="zone-name">Suisse</div>
+        <div class="zone-sub">Événements privés et d'entreprise. Coordination bilingue, connaissance des normes locales (SUVA, ERP).</div>
+        <div class="zone-pays"><span class="zone-tag">Genève</span><span class="zone-tag">Lausanne</span><span class="zone-tag">Zurich</span></div>
+      </div>
+      <div class="zone">
+        <div class="zone-flag">🇧🇪🇱🇺🇳🇱</div>
+        <div class="zone-name">Benelux</div>
+        <div class="zone-sub">Régie technique et coordination logistique pour événements en Belgique, Luxembourg et Pays-Bas.</div>
+        <div class="zone-pays"><span class="zone-tag">Bruxelles</span><span class="zone-tag">Luxembourg</span><span class="zone-tag">Amsterdam</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Types d'événements -->
+  <div class="sect-full sect-card">
+    <div class="sect">
+      <div class="tag">Types d'événements</div>
+      <div class="grid3">
+        <div class="card"><strong>Mariages & Cérémonies</strong><span>Régie complète, coordination prestataires, gestion de l'imprévu le jour J.</span></div>
+        <div class="card"><strong>Séminaires & Corporate</strong><span>Son, projection, lumière, logistique et coordination pour vos événements d'entreprise.</span></div>
+        <div class="card"><strong>Cérémonies religieuses</strong><span>Sono, micros, ambiance sonore pour churches, synagogues, mosquées, temples.</span></div>
+        <div class="card"><strong>Anniversaires & Fêtes</strong><span>Animation technique, sono, lumières pour anniversaires et fêtes privées.</span></div>
+        <div class="card"><strong>Urgences & Remplacements</strong><span>Votre prestataire vous fait défaut à J-2 ? J'interviens en remplacement d'urgence.</span></div>
+        <div class="card"><strong>Conformité ERP</strong><span>Sécurité, autorisations, obligations réglementaires pour vos établissements recevant du public.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Témoignages -->
+  <div class="sect">
+    <div class="tag">Ce qu'on dit</div>
+    <div class="grid2">
+      <div class="testi">
+        <p class="testi-q">Notre prestataire son s'est désisté 3 jours avant le mariage. Laurent a tout géré en 24h. Impeccable du début à la fin.</p>
+        <div class="testi-src">Julie R.</div>
+        <div class="testi-det">Mariage · Versailles</div>
+      </div>
+      <div class="testi">
+        <p class="testi-q">Coordination parfaite pour notre congrès à Bruxelles. Ponctuel, discret, efficace. Tout s'est enchaîné sans accroc.</p>
+        <div class="testi-src">Directeur Associations</div>
+        <div class="testi-det">Congrès · Bruxelles</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h2>Votre prochain événement se passe bien.</h2>
+    <p>Devis sous 24h · Disponible en urgence · France, Suisse, Benelux</p>
+    <button class="btn-gold" style="background:var(--navy);" onclick="go('contact','event')">Décrire mon événement</button>
+  </div>
+
+  <div class="foot">
+    <div class="foot-links"><span onclick="go('home')">Accueil</span><span onclick="go('fm')">FM Solution</span><span onclick="go('contact')">Contact</span></div>
+    <div class="foot-copy">© 2025 Laulogistic Event</div>
+  </div>
+</div>
+
+<!-- ======== PAGE CONTACT ======== -->
+<div id="page-contact" class="page">
+
+  <div class="sect-full sect-mid" style="padding:60px 2rem 40px;">
+    <div style="max-width:960px;margin:0 auto;">
+      <div class="tag">Contact</div>
+      <h1 class="h1">Décrivez votre <em>besoin.</em></h1>
+      <p class="sub">Réponse garantie sous 24h. Intervention possible en urgence en France, Suisse et Benelux.</p>
+    </div>
+  </div>
+
+  <div class="sect">
+    <div class="ct-tabs">
+      <button class="ct-tab active" id="sel-fm" onclick="switchForm('fm')">FM Solution — Bâtiment</button>
+      <button class="ct-tab" id="sel-event" onclick="switchForm('event')">Event — Régie & Coordination</button>
+    </div>
+
+    <!-- Formulaire FM -->
+    <div class="ct-form show" id="cf-fm">
+      <div class="grid2" style="margin-bottom:18px;">
+        <div class="field"><label>Votre nom</label><input type="text" id="fm-nom" placeholder="Prénom Nom"></div>
+        <div class="field"><label>Email</label><input type="email" id="fm-email" placeholder="contact@entreprise.com"></div>
+      </div>
+      <div class="field">
+        <label>Zone d'intervention</label>
+        <select id="fm-zone">
+          <option value="">Choisir une zone</option>
+          <option>France — Île-de-France</option>
+          <option>France — Régions</option>
+          <option>Suisse — Genève / Lausanne</option>
+          <option>Suisse — Zurich / autres</option>
+          <option>Belgique</option>
+          <option>Luxembourg</option>
+          <option>Pays-Bas</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Problématiques identifiées</label>
+        <div class="choice-grid">
+          <div class="choice" onclick="this.classList.toggle('sel')">Coûts cachés</div>
+          <div class="choice" onclick="this.classList.toggle('sel')">Prestataires non coordonnés</div>
+          <div class="choice" onclick="this.classList.toggle('sel')">Incidents répétitifs</div>
+          <div class="choice" onclick="this.classList.toggle('sel')">Non-conformité réglementaire</div>
+          <div class="choice" onclick="this.classList.toggle('sel')">Audit global du site</div>
+          <div class="choice" onclick="this.classList.toggle('sel')">Surcoûts énergie</div>
+        </div>
+      </div>
+      <div class="field"><label>Votre message</label><textarea id="fm-msg" rows="4" placeholder="Décrivez votre situation..."></textarea></div>
+      <div class="rgpd"><input type="checkbox" id="rgpd-fm"><label for="rgpd-fm">J'accepte d'être recontacté par Laulogistic Event pour traiter ma demande.</label></div>
+      <button class="btn-submit" onclick="sendFM()">Obtenir mon diagnostic gratuit</button>
+      <div class="ok-msg" id="ok-fm"><h3>C'est envoyé !</h3><p>Laurent revient vers vous sous 24h avec un premier retour adapté à votre situation.</p></div>
+    </div>
+
+    <!-- Formulaire Event -->
+    <div class="ct-form" id="cf-event">
+      <div class="grid2" style="margin-bottom:18px;">
+        <div class="field"><label>Votre nom</label><input type="text" id="ev-nom" placeholder="Prénom Nom"></div>
+        <div class="field"><label>Email</label><input type="email" id="ev-email" placeholder="votre@email.com"></div>
+      </div>
+      <div class="field">
+        <label>Zone d'intervention</label>
+        <select id="ev-zone">
+          <option value="">Choisir une zone</option>
+          <option>France — Île-de-France</option>
+          <option>France — Régions</option>
+          <option>Suisse — Genève / Lausanne</option>
+          <option>Suisse — Zurich / autres</option>
+          <option>Belgique</option>
+          <option>Luxembourg</option>
+          <option>Pays-Bas</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Type d'événement</label>
+        <select id="ev-type">
+          <option value="">Sélectionner</option>
+          <option>Mariage</option>
+          <option>Cérémonie religieuse</option>
+          <option>Séminaire d'entreprise</option>
+          <option>Anniversaire / Fête privée</option>
+          <option>Congrès / Conférence</option>
+          <option>Urgence / Remplacement</option>
+          <option>Autre</option>
+        </select>
+      </div>
+      <div class="grid2" style="margin-bottom:0;">
+        <div class="field"><label>Date de l'événement</label><input type="date" id="ev-date"></div>
+        <div class="field"><label>Lieu / Ville</label><input type="text" id="ev-lieu" placeholder="ex : Versailles, Genève..."></div>
+      </div>
+      <div class="field"><label>Votre message</label><textarea id="ev-msg" rows="4" placeholder="Décrivez votre événement, vos besoins techniques..."></textarea></div>
+      <div class="rgpd"><input type="checkbox" id="rgpd-ev"><label for="rgpd-ev">J'accepte d'être recontacté par Laulogistic Event pour traiter ma demande.</label></div>
+      <button class="btn-submit" onclick="sendEvent()">Envoyer — Devis sous 24h</button>
+      <div class="ok-msg" id="ok-event"><h3>C'est envoyé !</h3><p>Laurent revient vers vous sous 24h avec une proposition adaptée à votre événement.</p></div>
+    </div>
+
+    <!-- Coordonnées -->
+    <div style="margin-top:40px;padding-top:32px;border-top:1px solid var(--warm-line);display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:560px;">
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-warm);margin-bottom:10px;">Email</div>
+        <div style="font-size:14px;">contact@laulogistic.com</div>
+      </div>
+      <div>
+        <div style="font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-warm);margin-bottom:10px;">Base</div>
+        <div style="font-size:14px;">Fontenay-sous-Bois (94)<br><span style="color:rgba(255,255,255,.5);font-size:12px;">Interventions France · Suisse · Benelux</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <div class="foot-links"><span onclick="go('home')">Accueil</span><span onclick="go('fm')">FM Solution</span><span onclick="go('event')">Event</span></div>
+    <div class="foot-copy">© 2025 Laulogistic Event · SIRET 525 273 330 00031</div>
+  </div>
+</div>
+
+<!-- ======== JAVASCRIPT ======== -->
+<script>
+// Navigation : UNIQUEMENT classList, jamais style.display
+function go(id, form) {
+  document.querySelectorAll('.page').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  ['home','fm','event','contact'].forEach(function(k) {
+    document.getElementById('nb-'+k).classList.remove('active');
+  });
+  document.getElementById('page-'+id).classList.add('active');
+  document.getElementById('nb-'+id).classList.add('active');
+  window.scrollTo(0,0);
+  if (id === 'contact' && form) switchForm(form);
+  // Fermer hamburger
+  document.getElementById('nav-links').classList.remove('open');
+  var ham = document.querySelector('.nav-ham');
+  if (ham) ham.setAttribute('aria-expanded','false');
+}
+
+function switchForm(type) {
+  document.querySelectorAll('.ct-form').forEach(function(f) { f.classList.remove('show'); });
+  document.getElementById('cf-'+type).classList.add('show');
+  document.getElementById('sel-fm').classList.remove('active');
+  document.getElementById('sel-event').classList.remove('active');
+  document.getElementById('sel-'+type).classList.add('active');
+}
+
+function toggleNav(btn) {
+  var links = document.getElementById('nav-links');
+  var open = links.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+function sendFM() {
+  var nom = document.getElementById('fm-nom').value.trim();
+  var email = document.getElementById('fm-email').value.trim();
+  var rgpd = document.getElementById('rgpd-fm').checked;
+  if (!nom || !email) { alert('Merci de renseigner votre nom et email.'); return; }
+  if (!rgpd) { alert('Merci d\'accepter les conditions pour continuer.'); return; }
+  var choix = [];
+  document.querySelectorAll('#cf-fm .choice.sel').forEach(function(el) { choix.push(el.textContent.trim()); });
+  var data = new FormData();
+  data.append('_subject', 'Demande FM — Laulogistic');
+  data.append('Nom', nom);
+  data.append('Email', email);
+  data.append('Zone', document.getElementById('fm-zone').value);
+  data.append('Problematiques', choix.join(' | ') || 'Non renseigné');
+  data.append('Message', document.getElementById('fm-msg').value);
+  var btn = document.querySelector('#cf-fm .btn-submit');
+  btn.textContent = 'Envoi...'; btn.disabled = true;
+  fetch('https://formspree.io/f/xpqklqnw', { method:'POST', body:data, headers:{'Accept':'application/json'} })
+    .then(function(r) {
+      if (r.ok) { document.getElementById('ok-fm').classList.add('show'); btn.style.opacity='0.4'; }
+      else { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+    }).catch(function() { btn.textContent='Erreur réseau'; btn.disabled=false; });
+}
+
+function sendEvent() {
+  var nom = document.getElementById('ev-nom').value.trim();
+  var email = document.getElementById('ev-email').value.trim();
+  var rgpd = document.getElementById('rgpd-ev').checked;
+  if (!nom || !email) { alert('Merci de renseigner votre nom et email.'); return; }
+  if (!rgpd) { alert('Merci d\'accepter les conditions pour continuer.'); return; }
+  var data = new FormData();
+  data.append('_subject', 'Demande Event — Laulogistic');
+  data.append('Nom', nom);
+  data.append('Email', email);
+  data.append('Zone', document.getElementById('ev-zone').value);
+  data.append('Type_evenement', document.getElementById('ev-type').value);
+  data.append('Date', document.getElementById('ev-date').value);
+  data.append('Lieu', document.getElementById('ev-lieu').value);
+  data.append('Message', document.getElementById('ev-msg').value);
+  var btn = document.querySelector('#cf-event .btn-submit');
+  btn.textContent = 'Envoi...'; btn.disabled = true;
+  fetch('https://formspree.io/f/xpqklqnw', { method:'POST', body:data, headers:{'Accept':'application/json'} })
+    .then(function(r) {
+      if (r.ok) { document.getElementById('ok-event').classList.add('show'); btn.style.opacity='0.4'; }
+      else { btn.textContent='Erreur — réessayez'; btn.disabled=false; }
+    }).catch(function() { btn.textContent='Erreur réseau'; btn.disabled=false; });
+}
+</script>
+</body>
+</html>
