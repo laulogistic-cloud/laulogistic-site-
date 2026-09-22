@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Laulogistic – Expert indépendant en Facility & Property Management. Audit de la réalité opérationnelle, pilotage de prestataires et protection de la valeur d'actif.">
-    <title>Laulogistic | Expert FM & Property Management</title>
+    <meta name="description" content="Laulogistic – Expert indépendant en Facility & Property Management. Interventions en France, Suisse et Belgique. Audit de la réalité opérationnelle et protection de la valeur d'actif.">
+    <title>Laulogistic | Expert FM & Property Management Europe</title>
 
     <!-- Premium Typography: Geist (Sans) & Cormorant Garamond (Serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +41,20 @@
         }
     </script>
 
+    <!-- Schema.org for European Visibility -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Laulogistic",
+      "description": "Consultant indépendant Facility Management et Property Management",
+      "url": "https://www.laulogistic.com",
+      "email": "contact@laulogistic.com",
+      "areaServed": ["France", "Suisse", "Belgique"],
+      "serviceType": ["Facility Management", "Property Management", "Audit FM", "Pilotage prestataires"]
+    }
+    </script>
+
     <style>
         body {
             background-color: #050a18;
@@ -49,7 +63,6 @@
             overflow-x: hidden;
         }
 
-        /* Grain Overlay for high-end organic feel */
         .grain-overlay {
             position: fixed;
             inset: 0;
@@ -59,7 +72,6 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
         }
 
-        /* Reveal Animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
@@ -72,7 +84,6 @@
             filter: blur(0);
         }
 
-        /* Double Bezel Architecture */
         .double-bezel {
             @apply p-1.5 rounded-[2rem] border border-white/10 bg-white/5 transition-all duration-500;
         }
@@ -86,12 +97,10 @@
             @apply bg-navy-light;
         }
 
-        /* Button-in-Button */
         .btn-premium {
             @apply relative inline-flex items-center justify-center px-6 py-3 rounded-full font-medium text-[11px] uppercase tracking-[0.15em] transition-all duration-500 overflow-hidden group;
         }
 
-        /* Page transitions */
         .pg { display: none; }
         .pg.on { display: block; animation: fadeIn 0.8s ease-out; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -132,7 +141,7 @@
                 <div class="max-w-5xl mx-auto text-center relative z-10 reveal">
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-gold-primary/30 bg-gold-primary/5 text-gold-primary text-[10px] uppercase tracking-[0.2em] mb-8">
                         <span class="w-1 h-1 bg-gold-primary rounded-full animate-pulse"></span>
-                        L'expertise terrain au service de l'actif
+                        Expert indépendant France, Suisse & Belgique
                     </div>
                     <h1 class="font-serif text-5xl md:text-8xl font-bold text-white leading-[1.1] mb-8">
                         Le FM n'est pas un coût.<br><span class="italic text-gold-primary">C'est une stratégie</span> <br>de protection de valeur.
@@ -157,7 +166,6 @@
                 </div>
             </section>
 
-            <!-- The 4 Realities (Core Positioning) -->
             <section class="py-40 px-6 max-w-7xl mx-auto">
                 <div class="text-center mb-24 reveal">
                     <span class="text-gold-primary text-[10px] uppercase tracking-[0.3em] mb-4 block">Le Manifeste Laulogistic</span>
@@ -232,7 +240,6 @@
                     </div>
                 </div>
 
-                <!-- Case Studies ( la preuve) -->
                 <div class="mt-40 reveal">
                     <h2 class="font-serif text-4xl text-center text-white mb-16">Preuves de valeur</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -272,7 +279,6 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
-                    <!-- Progression Step 1 -->
                     <div class="double-bezel">
                         <div class="double-bezel-core">
                             <div class="text-gold-primary text-xs font-bold mb-4">NIVEAU 1 : DÉCOUVRIR</div>
@@ -281,7 +287,6 @@
                             <div class="text-[10px] text-white/30 uppercase">Livrable : Carte du périmètre</div>
                         </div>
                     </div>
-                    <!-- Progression Step 2 -->
                     <div class="double-bezel">
                         <div class="double-bezel-core">
                             <div class="text-gold-primary text-xs font-bold mb-4">NIVEAU 2 : STRUCTURER</div>
@@ -290,7 +295,6 @@
                             <div class="text-[10px] text-white/30 uppercase">Livrable : Calendrier de pilotage</div>
                         </div>
                     </div>
-                    <!-- Progression Step 3 -->
                     <div class="double-bezel">
                         <div class="double-bezel-core">
                             <div class="text-gold-primary text-xs font-bold mb-4">NIVEAU 3 : PILOTER</div>
@@ -341,7 +345,7 @@
                                 <div class="w-10 h-10 rounded-full bg-gold-primary/10 flex items-center justify-center text-gold-primary">📍</div>
                                 <div>
                                     <div class="text-[10px] text-white/40 uppercase tracking-widest">Localisation</div>
-                                    <div class="text-white font-medium">Île-de-France · France entière</div>
+                                    <div class="text-white font-medium">Basé en Île-de-France · Interventions Europe (FR, CH, BE)</div>
                                 </div>
                             </div>
                         </div>
@@ -421,7 +425,6 @@
             }
         }
 
-        // Intersection Observer for reveal animations
         const observerOptions = { threshold: 0.1 };
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
