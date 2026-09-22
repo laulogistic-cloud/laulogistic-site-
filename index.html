@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Laurent Moïse – Pilote d'environnements opérationnels complexes. Audit FM, Reprise d'actifs tertiaires, Mise en conformité HSE/SSI, Coordination technique événementielle. 25+ ans d'expérience terrain.">
-<meta name="keywords" content="consultant facility management, property management, audit FM, reprise d'actifs, mise en conformité SSI, pilotage prestataires, coordination technique événementielle, OCDE">
+<meta name="description" content="Laurent Moïse – Pilote d'environnements opérationnels complexes. Consulting, Audit FM, Transmission de compétences et Formation technique. 25+ ans d'expérience terrain.">
+<meta name="keywords" content="consulting opérationnel, formation facility management, montée en compétences FM, audit FM, reprise d'actifs, formation technique bâtiment, transmission savoir-faire">
 <meta name="author" content="Laurent Moïse – Laulogistic">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Laulogistic – Pilote d'Environnements Opérationnels Complexes | Laurent Moïse">
-<meta property="og:description" content="Transformer la complexité technique en stabilité opérationnelle. Audit, Structuration et Pilotage d'actifs tertiaires et institutionnels.">
+<meta property="og:description" content="L'expertise terrain pour stabiliser vos actifs et former vos équipes quand l'humain et la donnée manquent.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.laulogistic.com">
 <meta property="og:locale" content="fr_FR">
@@ -23,24 +23,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Laulogistic",
-  "description": "Consultant indépendant spécialisé dans le pilotage d'environnements opérationnels complexes (FM, Property Management, Événementiel)",
-  "url": "https://www.laulogistic.com",
-  "email": "contact@laulogistic.com",
-  "founder": {
-    "@type": "Person",
-    "name": "Laurent Moïse",
-    "jobTitle": "Pilote d'Environnements Opérationnels"
-  },
-  "areaServed": ["Île-de-France", "France", "Suisse", "Belgique"],
-  "serviceType": ["Audit FM", "Reprise d'actifs tertiaires", "Mise en conformité SSI/HSE", "Coordination Technique Événementielle"]
-}
-</script>
 
 <style>
 /* ─── RESET & BASE ─── */
@@ -130,9 +112,9 @@ body {
   color: var(--white);
 }
 .lead {
-  font-size: 16px; font-weight: 300;
+  font-size: 18px; font-weight: 300;
   line-height: 1.85; color: var(--text-dim);
-  max-width: 60ch;
+  max-width: 65ch;
 }
 .rule { width: 60px; height: 3px; background: var(--gold); margin: 24px 0; }
 
@@ -188,7 +170,27 @@ body {
   line-height: 1.8; max-width: 65ch; margin: 0 auto 48px;
 }
 
-/* ─── PROBLEMS SECTION ─── */
+/* ─── STORY SECTION ─── */
+.story-sec {
+  background: var(--navy-mid);
+  padding: 100px var(--pad);
+}
+.story-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.story-block { margin-bottom: 48px; }
+.story-block h3 { 
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 28px; color: var(--white); 
+  margin-bottom: 16px; 
+}
+.story-text { 
+  font-size: 16px; color: var(--text); 
+  line-height: 1.8; 
+}
+
+/* ─── PROBLEM GRID ─── */
 .prob-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
 .prob-card {
   background: var(--navy-card); border: 1px solid var(--line);
@@ -200,21 +202,6 @@ body {
 .prob-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 12px; }
 .prob-pain { font-size: 13px; color: rgba(255,255,255,.5); margin-bottom: 20px; font-style: italic; }
 .prob-sol { font-size: 14px; color: var(--text); line-height: 1.7; }
-
-/* ─── PROOF SECTION ─── */
-.proof-band { 
-  background: var(--navy-mid); 
-  border-left: 4px solid var(--gold); 
-  padding: 40px; 
-  margin: 48px 0; 
-  display: flex; 
-  gap: 32px; 
-  align-items: center;
-}
-.proof-text h4 { color: var(--gold); text-transform: uppercase; font-size: 11px; letter-spacing: .1em; margin-bottom: 8px; }
-.proof-text p { font-size: 15px; line-height: 1.6; color: var(--white); }
-.proof-stat { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; color: var(--gold); line-height: 1; }
-.proof-stat span { display: block; font-size: 12px; color: var(--text-dim); font-family: 'DM Sans'; text-transform: uppercase; letter-spacing: .1em; margin-top: 4px; }
 
 /* ─── METHOD SECTION ─── */
 .method-container { 
@@ -244,6 +231,21 @@ body {
 .step-title { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 8px; }
 .step-desc { font-size: 12px; color: #5a4a1a; line-height: 1.6; }
 
+/* ─── PROOF BAND ─── */
+.proof-band { 
+  background: var(--navy-mid); 
+  border-left: 4px solid var(--gold); 
+  padding: 40px; 
+  margin: 48px 0; 
+  display: flex; 
+  gap: 32px; 
+  align-items: center;
+}
+.proof-text h4 { color: var(--gold); text-transform: uppercase; font-size: 11px; letter-spacing: .1em; margin-bottom: 8px; }
+.proof-text p { font-size: 15px; line-height: 1.6; color: var(--white); }
+.proof-stat { font-family: 'Cormorant Garamond', serif; font-size: 42px; font-weight: 700; color: var(--gold); line-height: 1; }
+.proof-stat span { display: block; font-size: 12px; color: var(--text-dim); font-family: 'DM Sans'; text-transform: uppercase; letter-spacing: .1em; margin-top: 4px; }
+
 /* ─── FOOTER ─── */
 .foot {
   background: var(--navy); border-top: 1px solid var(--line);
@@ -259,10 +261,9 @@ body {
 .foot-links span:hover, .foot-links a:hover { color: var(--gold-warm); }
 .foot-legal { font-size: 11px; color: rgba(255,255,255,.28); }
 
-/* ─── PAGE FM & PM ─── */
+/* ─── PAGE SPEC ─── */
 .hero-spec { background: var(--navy); padding: 80px var(--pad); text-align: center; }
 .hero-spec-inner { max-width: var(--max); margin: 0 auto; }
-
 .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 48px; }
 .spec-card { 
   background: var(--navy-card); border: 1px solid var(--line); 
@@ -272,6 +273,19 @@ body {
 .spec-card ul { list-style: none; }
 .spec-card li { font-size: 14px; color: var(--text-dim); margin-bottom: 12px; display: flex; gap: 10px; }
 .spec-card li::before { content: "→"; color: var(--gold); }
+
+/* ─── PAGE TRAINING ─── */
+.train-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+.train-card { 
+  background: var(--navy-card); border: 1px solid var(--line); 
+  padding: 32px; border-radius: 2px; transition: transform .3s;
+}
+.train-card:hover { transform: translateY(-5px); border-color: var(--gold); }
+.train-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); margin-bottom: 12px; }
+.train-card p { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: 20px; }
+.train-list { list-style: none; }
+.train-list li { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; display: flex; gap: 8px; }
+.train-list li::before { content: "•"; color: var(--gold); }
 
 /* ─── CONTACT PAGE ─── */
 .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -286,8 +300,31 @@ body {
   border: none; font-weight: 600; text-transform: uppercase; cursor: pointer;
 }
 
+/* ─── QUESTIONNAIRE ─── */
+.q-container {
+  max-width: 700px; margin: 0 auto;
+  background: var(--navy-card); border: 1px solid var(--line);
+  padding: 40px; border-radius: 2px;
+}
+.q-step { display: none; }
+.q-step.on { display: block; }
+.q-progress { 
+  display: flex; gap: 8px; margin-bottom: 32px; 
+  justify-content: center; 
+}
+.q-dot { 
+  width: 8px; height: 8px; background: var(--line); 
+  border-radius: 50%; transition: background .3s; 
+}
+.q-dot.on { background: var(--gold); }
+.q-title { 
+  font-family: 'Cormorant Garamond', serif; 
+  font-size: 24px; color: var(--white); 
+  margin-bottom: 24px; text-align: center; 
+}
+
 @media (max-width: 992px) {
-  .prob-grid, .method-steps, .spec-grid, .contact-container { grid-template-columns: 1fr; }
+  .prob-grid, .method-steps, .spec-grid, .contact-container, .train-grid { grid-template-columns: 1fr; }
   .step { border-right: none; border-bottom: 1px solid rgba(184,144,42,.2); }
 }
 </style>
@@ -300,26 +337,56 @@ body {
     Laulogistic
   </a>
   <div class="nav-links">
-    <button class="nb on" id="nb-home" onclick="go('home')">Approche</button>
+    <button class="nb on" id="nb-home" onclick="go('home')">L'Approche</button>
     <button class="nb" id="nb-fm" onclick="go('fm')">Facility Management</button>
     <button class="nb" id="nb-pm" onclick="go('pm')">Property Management</button>
+    <button class="nb" id="nb-train" onclick="go('train')">Progression</button>
     <button class="nb" id="nb-contact" onclick="go('contact')">Contact</button>
   </div>
 </nav>
 
 <!-- ═══════════════════════════════════════════════
-     PAGE ACCUEIL (L'APPROCHE)
+     PAGE ACCUEIL
 ═══════════════════════════════════════════════ -->
 <div id="pg-home" class="pg on" role="main">
 
   <section class="hero-home">
     <div class="hero-inner">
-      <div class="hero-badge">Expertise Terrain & Pilotage Stratégique</div>
+      <div class="hero-badge">Consulting Opérationnel Stratégique</div>
       <h1 class="h1 hero-title">Pilote d'environnements<br><em>opérationnels complexes.</em></h1>
-      <p class="hero-sub">Je transforme vos contraintes techniques et vos risques d'exploitation en stabilité opérationnelle et en valorisation d'actifs.</p>
+      <p class="hero-sub">Je stabilise vos actifs et sécurise vos exploitations là où l'historique a disparu et où les ressources humaines manquent.</p>
       <div class="cta-btns" style="display:flex; gap:16px; justify-content:center;">
         <button class="btn-primary" onclick="go('contact')">Demander un diagnostic flash</button>
-        <button class="btn-ghost" onclick="go('fm')">Découvrir la méthode</button>
+        <button class="btn-ghost" onclick="go('story')">L'Histoire de Laulogistic</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="story-sec" id="story">
+    <div class="story-inner">
+      <span class="eyebrow" style="text-align:center; display:block;">Le Pourquoi</span>
+      <h2 class="h2" style="text-align:center; margin-bottom:48px;">L'histoire d'une nécessité opérationnelle</h2>
+      
+      <div class="story-block">
+        <h3 style="color:var(--gold);">Le constat du terrain</h3>
+        <p class="story-text">
+          Après 25 ans à naviguer entre la rigueur des sites institutionnels et l'urgence des productions live, j'ai observé une faille systématique dans la gestion technique : <strong style="color:var(--white);">la perte de la mémoire opérationnelle.</strong><br><br>
+          Aujourd'hui, un SSIAP ou un gestionnaire technique arrive souvent sur un site où l'historique a disparu, où les dossiers techniques sont obsolètes et où le manque de personnel qualifié transforme la maintenance en une gestion de crise permanente.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h3 style="color:var(--gold);">L'orientation vers le Consulting Opérationnel</h3>
+        <p class="story-text">
+          C'est pour répondre à ce vide que j'ai fondé Laulogistic. Le consulting opérationnel n'est pas un conseil théorique. C'est une intervention chirurgicale : je ne viens pas pour dire "ce qu'il faudrait faire", mais pour <strong style="color:var(--white);">reconstruire la structure</strong> qui permet de faire.
+        </p>
+      </div>
+
+      <div class="story-block">
+        <h3 style="color:var(--gold);">La Valeur Ajoutée aujourd'hui</h3>
+        <p class="story-text">
+          Dans un contexte de pénurie de talents et de complexité réglementaire croissante, mon rôle est d'être le <strong style="color:var(--white);">point d'ancrage technique</strong>. J'apporte la capacité de diagnostiquer l'existant, de pallier l'absence d'historique par l'audit terrain, et de piloter des prestataires sans être dépendant de leurs propres rapports.
+        </p>
       </div>
     </div>
   </section>
@@ -327,26 +394,26 @@ body {
   <section class="sec">
     <span class="eyebrow">L'enjeu</span>
     <h2 class="h2">Vous ne gérez pas des bâtiments,<br>vous gérez des risques.</h2>
-    <p class="lead">L'exploitation tertiaire souffre souvent d'un angle mort : l'écart entre ce qui est facturé par les prestataires et ce qui est réellement exécuté sur le terrain.</p>
+    <p class="lead">L'exploitation tertiaire souffre d'un angle mort : l'écart entre ce qui est facturé par les prestataires et ce qui est réellement exécuté sur le terrain.</p>
     
     <div class="prob-grid">
       <div class="prob-card">
         <div class="prob-icon">🔍</div>
         <div class="prob-title">La Boîte Noire</div>
-        <div class="prob-pain">"Je paie mes contrats de maintenance, mais je ne sais pas si mon site est réellement sécurisé."</div>
-        <div class="prob-sol">Je confronte vos engagements contractuels à la réalité terrain pour identifier les ruptures de service et optimiser vos OPEX.</div>
+        <div class="prob-pain">"Je paie mes contrats, mais je ne sais pas si mon site est réellement sécurisé."</div>
+        <div class="prob-sol">Je confronte vos engagements contractuels à la réalité terrain pour identifier les ruptures de service.</div>
       </div>
       <div class="prob-card">
         <div class="prob-icon">⚠️</div>
-        <div class="prob-title">Le Risque de Reprise</div>
-        <div class="prob-pain">"Je reprends un actif complexe sans historique et je découvre des réserves HSE critiques."</div>
-        <div class="prob-sol">Audit d'antériorité et levée systématique des réserves SSI/HSE pour sécuriser juridiquement et opérationnellement votre actif.</div>
+        <div class="prob-title">Le Vide Historique</div>
+        <div class="prob-pain">"Je reprends un actif complexe sans historique et je découvre des réserves critiques."</div>
+        <div class="prob-sol">Audit d'antériorité et levée systématique des réserves SSI/HSE pour sécuriser l'actif.</div>
       </div>
       <div class="prob-card">
         <div class="prob-icon">⚡</div>
         <div class="prob-title">L'Improvisation Live</div>
-        <div class="prob-pain">"Le direct ne pardonne aucune erreur technique, et mon rider ne correspond pas à la salle."</div>
-        <div class="prob-sol">Advancing méticuleux et fiabilisation des flux (Dante/Art-Net) pour garantir zéro interruption de show.</div>
+        <div class="prob-pain">"Le direct ne pardonne aucune erreur, et mon rider ne correspond pas à la salle."</div>
+        <div class="prob-sol">Advancing méticuleux et fiabilisation des flux pour garantir zéro interruption.</div>
       </div>
     </div>
   </section>
@@ -393,13 +460,13 @@ body {
       <div class="proof-stat">100%<span>Réserves levées</span></div>
       <div class="proof-text">
         <h4>Preuve Opérationnelle</h4>
-        <p>Sur la reprise d'un ensemble tertiaire complexe à Paris 8e (TELMMA / AEW), j'ai assuré la levée intégrale des réserves HSE et SSI critiques, sécurisant ainsi l'actif pour les investisseurs institutionnels.</p>
+        <p>Sur la reprise d'un ensemble tertiaire complexe à Paris 8e pour des investisseurs institutionnels, j'ai assuré la levée intégrale des réserves HSE et SSI critiques, sécurisant l'actif et sa valorisation.</p>
       </div>
     </div>
     
     <div style="text-align:center; margin-top:64px;">
       <h2 class="h2">Une crédibilité institutionnelle.</h2>
-      <p class="lead" style="margin: 24px auto;">Référencé consultant <strong>OCDE Lot 3 (Operational Support)</strong>. Intervention sur sites sensibles sous protocole diplomatique international.</p>
+      <p class="lead" style="margin: 24px auto;">Référencé consultant pour une organisation internationale majeure (Operational Support). Intervention sur sites sensibles sous protocole diplomatique.</p>
       <button class="btn-primary" onclick="go('contact')">Sécuriser mon exploitation</button>
     </div>
   </section>
@@ -430,18 +497,18 @@ body {
   <section class="sec">
     <div class="spec-grid">
       <div class="spec-card">
-        <h3>Audit & Diagnostic</h3>
-        <ul>
-          <li>Audit technique TCE et conformité réglementaire.</li>
+        <h3 style="color:var(--gold);">Audit & Diagnostic</h3>
+        <ul style="margin-top:16px;">
+          <li style="color:var(--white); font-weight:500;">Audit technique TCE et conformité réglementaire.</li>
           <li>Confrontation contrats vs exécution réelle.</li>
           <li>Analyse des coûts d'exploitation (OPEX).</li>
           <li>Plan d'action priorisé par niveau de risque.</li>
         </ul>
       </div>
       <div class="spec-card">
-        <h3>Pilotage & Performance</h3>
-        <ul>
-          <li>Coordination des prestataires multiservices.</li>
+        <h3 style="color:var(--gold);">Pilotage & Performance</h3>
+        <ul style="margin-top:16px;">
+          <li style="color:var(--white); font-weight:500;">Coordination des prestataires multiservices.</li>
           <li>Mise en place de SLA et KPI de performance.</li>
           <li>Optimisation des processus d'intervention.</li>
           <li>Suivi budgétaire et réduction des coûts.</li>
@@ -479,18 +546,18 @@ body {
   <section class="sec">
     <div class="spec-grid">
       <div class="spec-card">
-        <h3>Gestion d'Actifs Tertiaires</h3>
-        <ul>
-          <li>Reprise de gestion d'ASL et d'ensembles complexes.</li>
+        <h3 style="color:var(--gold);">Gestion d'Actifs Tertiaires</h3>
+        <ul style="margin-top:16px;">
+          <li style="color:var(--white); font-weight:500;">Reprise de gestion d'ASL et d'ensembles complexes.</li>
           <li>Coordination AMO COSSI et arbitrage technique.</li>
           <li>Mise en conformité SSI / HSE / Sécurité Incendie.</li>
           <li>Reporting technique détaillé pour investisseurs.</li>
         </ul>
       </div>
       <div class="spec-card">
-        <h3>Valorisation du Patrimoine</h3>
-        <ul>
-          <li>Pilotage de travaux de maintenance lourde.</li>
+        <h3 style="color:var(--gold);">Valorisation du Patrimoine</h3>
+        <ul style="margin-top:16px;">
+          <li style="color:var(--white); font-weight:500;">Pilotage de travaux de maintenance lourde.</li>
           <li>Optimisation du cycle de vie des équipements.</li>
           <li>Coordination des interventions multi-sites.</li>
           <li>Sécurisation des passations de portefeuille.</li>
@@ -514,49 +581,180 @@ body {
 </div>
 
 <!-- ═══════════════════════════════════════════════
+     PAGE PROGRESSION (FORMATION)
+═══════════════════════════════════════════════ -->
+<div id="pg-train" class="pg" role="main">
+  <section class="hero-spec">
+    <div class="hero-spec-inner">
+      <span class="eyebrow">Transmission & Savoir-faire</span>
+      <h1 class="h1">Accélérer votre progression</h1>
+      <p class="lead" style="margin: 20px auto;">Parce que la technique ne s'apprend pas dans les livres, mais dans la résolution de problèmes réels.</p>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div style="text-align:center; margin-bottom:64px;">
+      <h2 class="h2">L'expertise terrain transmise</h2>
+      <p class="lead" style="margin: 0 auto;">J'accompagne les professionnels, les équipes techniques et les futurs gestionnaires pour combler l'écart entre la théorie réglementaire et la réalité du terrain.</p>
+    </div>
+
+    <div class="train-grid">
+      <div class="train-card">
+        <h3>Fondamentaux FM</h3>
+        <p>Maîtriser la chaîne de valeur du Facility Management et le pilotage des services généraux.</p>
+        <ul class="train-list">
+          <li>Pilotage de la maintenance</li>
+          <li>Gestion des SLA et KPI</li>
+          <li>Coordination multiservices</li>
+          <li>Optimisation OPEX</li>
+        </ul>
+      </div>
+      <div class="train-card">
+        <h3>Technique & Conformité</h3>
+        <p>Sécuriser ses installations et savoir dialoguer avec les bureaux de contrôle.</p>
+        <ul class="train-list">
+          <li>Interprétation des rapports SSI/HSE</li>
+          <li>Gestion des registres de sécurité</li>
+          <li>Habilitations et normes NF C 18-510</li>
+          <li>Audit terrain et levée de réserves</li>
+        </ul>
+      </div>
+      <div class="train-card">
+        <h3>Property Management</h3>
+        <p>Apprendre à valoriser un actif par une gestion technique rigoureuse.</p>
+        <ul class="train-list">
+          <li>Gestion d'actifs multisites</li>
+          <li>Reporting investisseurs / Propriétaires</li>
+          <li>Coordination AMO COSSI</li>
+          <li>Plan pluriannuel de travaux (PPT)</li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:64px;">
+      <button class="btn-primary" onclick="go('contact')">Planifier un accompagnement</button>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="foot-links">
+      <span onclick="go('home')">Accueil</span>
+      <span onclick="go('fm')">Facility Management</span>
+      <span onclick="go('pm')">Property Management</span>
+      <span onclick="go('train')" class="on">Progression</span>
+      <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
+    </div>
+    <div class="foot-legal">© 2026 Laulogistic</div>
+  </footer>
+</div>
+
+<!-- ═══════════════════════════════════════════════
      PAGE CONTACT
 ═══════════════════════════════════════════════ -->
 <div id="pg-contact" class="pg" role="main">
   <section class="hero-spec">
     <div class="hero-spec-inner">
-      <span class="eyebrow">Diagnostic Gratuit</span>
-      <h1 class="h1">Parlons de votre situation.</h1>
-      <p class="lead" style="margin: 20px auto;">Un échange de 20 minutes pour identifier vos risques d'exploitation et vos leviers d'optimisation.</p>
+      <span class="eyebrow">Diagnostic & Périmètre</span>
+      <h1 class="h1">Définissons votre besoin.</h1>
+      <p class="lead" style="margin: 20px auto;">Pour optimiser notre premier échange, aidez-moi à comprendre le périmètre de votre exploitation.</p>
     </div>
   </section>
 
   <section class="sec">
     <div class="contact-container">
       <div>
-        <form id="contact-form" onsubmit="event.preventDefault(); submitForm('general');">
-          <div class="field">
-            <label for="nom">Prénom & Nom</label>
-            <input type="text" id="nom" name="nom" placeholder="Laurent Dupont" required>
+        <!-- STEPPED QUESTIONNAIRE -->
+        <div class="q-container" id="q-container">
+          <div class="q-progress">
+            <div class="q-dot on"></div>
+            <div class="q-dot"></div>
+            <div class="q-dot"></div>
+            <div class="q-dot"></div>
           </div>
-          <div class="field">
-            <label for="email">Email Professionnel</label>
-            <input type="email" id="email" name="email" placeholder="vous@entreprise.com" required>
+
+          <!-- Step 1: Identité -->
+          <div class="q-step on" id="qs-1">
+            <h3 class="q-title">Qui êtes-vous ?</h3>
+            <div class="field">
+              <label for="q-nom">Prénom & Nom</label>
+              <input type="text" id="q-nom" placeholder="Laurent Dupont">
+            </div>
+            <div class="field">
+              <label for="q-email">Email Professionnel</label>
+              <input type="email" id="q-email" placeholder="vous@entreprise.com">
+            </div>
+            <div class="field">
+              <label for="q-org">Organisation / Site</label>
+              <input type="text" id="q-org" placeholder="Nom de l'entreprise ou du site">
+            </div>
+            <button class="btn-primary" style="width:100%;" onclick="nextStep(2)">Suivant</button>
           </div>
-          <div class="field">
-            <label for="besoin">Besoin Principal</label>
-            <select id="besoin" name="besoin">
-              <option value="audit">Audit FM / Conformité</option>
-              <option value="reprise">Reprise d'Actif / Passation</option>
-              <option value="pilotage">Pilotage Prestataires</option>
-              <option value="event">Coordination Événementielle</option>
-              <option value="autre">Autre demande</option>
-            </select>
+
+          <!-- Step 2: Périmètre Technique -->
+          <div class="q-step" id="qs-2">
+            <h3 class="q-title">Le périmètre technique</h3>
+            <div class="field">
+              <label for="q-surface">Surface approximative (m²)</label>
+              <input type="text" id="q-surface" placeholder="ex: 5000m², 19000m², multisite...">
+            </div>
+            <div class="field">
+              <label for="q-biens">Nombre de biens / bâtiments</label>
+              <input type="text" id="q-biens" placeholder="ex: 1 bâtiment, 5 actifs...">
+            </div>
+            <div class="field">
+              <label for="q-type">Type d'actif</label>
+              <select id="q-type">
+                <option value="bureaux">Bureaux / Tertiaire</option>
+                <option value="logistique">Logistique / Industriel</option>
+                <option value="institutionnel">Institutionnel / Diplomatique</option>
+                <option value="mixte">Mixte</option>
+              </select>
+            </div>
+            <button class="btn-primary" style="width:100%;" onclick="nextStep(3)">Suivant</button>
           </div>
-          <div class="field">
-            <label for="msg">Votre situation actuelle</label>
-            <textarea id="msg" name="msg" rows="5" placeholder="Décrivez brièvement vos enjeux ou vos points de blocage..."></textarea>
+
+          <!-- Step 3: La Douleur (Pain Point) -->
+          <div class="q-step" id="qs-3">
+            <h3 class="q-title">L'enjeu prioritaire</h3>
+            <div class="field">
+              <label for="q-pain">Quelle est votre urgence principale ?</label>
+              <select id="q-pain">
+                <option value="historique">Absence d'historique technique / Perte de donnée</option>
+                <option value="personnel">Manque de personnel qualifié / Turn-over</option>
+                <option value="conformite">Réserves HSE / SSI critiques à lever</option>
+                <option value="prestataires">Doute sur l'exécution réelle des contrats</option>
+                <option value="reprise">Reprise d'actif / Passation complexe</option>
+                <option value="formation">Besoin de montée en compétences d'équipe</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="q-msg">Précisions (optionnel)</label>
+              <textarea id="q-msg" rows="3" placeholder="Décrivez brièvement le point de blocage..."></textarea>
+            </div>
+            <button class="btn-primary" style="width:100%;" onclick="nextStep(4)">Dernière étape</button>
           </div>
-          <button class="btn-submit" type="submit">Envoyer la demande</button>
-        </form>
-        <div id="ok-msg" style="display:none; margin-top:20px; color:var(--gold); font-weight:500;">
-          Message reçu. Je reviens vers vous sous 24h.
+
+          <!-- Step 4: Validation -->
+          <div class="q-step" id="qs-4">
+            <h3 class="q-title">Finalisation</h3>
+            <p style="font-size:14px; text-align:center; margin-bottom:24px; color:var(--text-dim);">
+              Vos informations me permettent de préparer un diagnostic préliminaire avant notre appel.
+            </p>
+            <div class="field" style="display:flex; align-items:center; gap:12px; margin-bottom:32px;">
+              <input type="checkbox" id="q-rgpd" style="width:auto;">
+              <label for="q-rgpd" style="margin-bottom:0; text-transform:none; font-size:12px;">
+                J'accepte que Laulogistic utilise ces données pour préparer mon diagnostic.
+              </label>
+            </div>
+            <button class="btn-submit" type="button" onclick="submitQuestionnaire()">Envoyer mon périmètre</button>
+          </div>
+
+          <div id="q-ok" style="display:none; text-align:center; padding:20px 0;">
+            <h3 style="color:var(--gold); font-family:'Cormorant Garamond'; font-size:24px;">Dossier reçu.</h3>
+            <p style="font-size:14px; color:var(--text);">J'analyse vos données. Je reviens vers vous sous 24h pour fixer notre échange.</p>
+          </div>
         </div>
       </div>
+
       <div>
         <div style="background:var(--navy-card); padding:32px; border:1px solid var(--line);">
           <h3 class="h3" style="margin-bottom:20px;">Contact Direct</h3>
@@ -567,9 +765,9 @@ body {
             📍 Fontenay-sous-Bois, Île-de-France<br>Interventions France, Suisse, Belgique.
           </p>
           <div class="rule"></div>
-          <p style="font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:.1em;">Partenariat Institutionnel</p>
+          <p style="font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:.1em;">Référence Institutionnelle</p>
           <p style="font-size:13px; color:var(--text-dim); line-height:1.6;">
-            Référencé consultant <strong>OCDE Lot 3 (Operational Support)</strong> via Bespoke Consulting. Expert en environnements sensibles et protocolaires.
+            Référencé consultant pour une organisation internationale majeure (Operational Support). Expert en environnements sensibles et protocolaires.
           </p>
         </div>
       </div>
@@ -579,8 +777,9 @@ body {
   <footer class="foot">
     <div class="foot-links">
       <span onclick="go('home')">Accueil</span>
-      <span onclick="go('fm')">FM Solution</span>
+      <span onclick="go('fm')">Facility Management</span>
       <span onclick="go('pm')">Property Management</span>
+      <span onclick="go('train')">Progression</span>
       <span onclick="go('contact')" class="on">Contact</span>
     </div>
     <div class="foot-legal">© 2026 Laulogistic</div>
@@ -588,7 +787,7 @@ body {
 </div>
 
 <script>
-const PAGES = ['home','fm','pm','contact'];
+const PAGES = ['home','fm','pm','train','contact'];
 
 function go(page) {
   PAGES.forEach(p => {
@@ -603,17 +802,46 @@ function go(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-function submitForm(type) {
-  const btn = document.querySelector('.btn-submit');
-  const ok = document.getElementById('ok-msg');
-  btn.disabled = true;
-  btn.textContent = 'Envoi...';
+// QUESTIONNAIRE LOGIC
+function nextStep(step) {
+  document.querySelectorAll('.q-step').forEach(s => s.classList.remove('on'));
+  document.getElementById('qs-' + step).classList.add('on');
   
-  // Simulation d'envoi (à remplacer par FormSubmit comme précédemment)
+  const dots = document.querySelectorAll('.q-dot');
+  dots.forEach((dot, idx) => {
+    dot.classList.toggle('on', idx < step);
+  });
+}
+
+function submitQuestionnaire() {
+  const rgpd = document.getElementById('q-rgpd');
+  if(!rgpd.checked) {
+    alert("Merci d'accepter la politique de confidentialité.");
+    return;
+  }
+
+  const btn = document.querySelector('.btn-submit');
+  btn.disabled = true;
+  btn.textContent = 'Analyse en cours...';
+
+  const data = {
+    nom: document.getElementById('q-nom').value,
+    email: document.getElementById('q-email').value,
+    org: document.getElementById('q-org').value,
+    surface: document.getElementById('q-surface').value,
+    biens: document.getElementById('q-biens').value,
+    type: document.getElementById('q-type').value,
+    pain: document.getElementById('q-pain').value,
+    msg: document.getElementById('q-msg').value
+  };
+
+  console.log("Données périmètre collectées :", data);
+
   setTimeout(() => {
-    document.getElementById('contact-form').style.display = 'none';
-    ok.style.display = 'block';
-  }, 1000);
+    document.querySelectorAll('.q-step').forEach(s => s.style.display = 'none');
+    document.querySelector('.q-progress').style.display = 'none';
+    document.getElementById('q-ok').style.display = 'block';
+  }, 1500);
 }
 </script>
 </body>
