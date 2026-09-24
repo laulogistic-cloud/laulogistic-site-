@@ -82,7 +82,7 @@ body {
   font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
   padding: 8px 14px; cursor: pointer; transition: color .2s;
 }
-.nb:hover, .nb.on { color: var(--gold-warm); }
+.nb:hover { color: var(--gold-warm); }
 .nb.on { color: var(--white); }
 
 /* ─── PAGES ─── */
@@ -341,6 +341,7 @@ body {
     <button class="nb" id="nb-fm" onclick="go('fm')">Facility Management</button>
     <button class="nb" id="nb-pm" onclick="go('pm')">Property Management</button>
     <button class="nb" id="nb-train" onclick="go('train')">Progression</button>
+    <a class="nb" href="ressources/index.html" style="text-decoration:none">Fiches outils</a>
     <button class="nb" id="nb-contact" onclick="go('contact')">Contact</button>
   </div>
 </nav>
@@ -357,7 +358,7 @@ body {
       <p class="hero-sub">Je stabilise vos actifs et sécurise vos exploitations là où l'historique a disparu et où les ressources humaines manquent.</p>
       <div class="cta-btns" style="display:flex; gap:16px; justify-content:center;">
         <button class="btn-primary" onclick="go('contact')">Demander un diagnostic flash</button>
-        <button class="btn-ghost" onclick="go('story')">L'Histoire de Laulogistic</button>
+        <button class="btn-ghost" onclick="scrollToStory()">L'Histoire de Laulogistic</button>
       </div>
     </div>
   </section>
@@ -476,6 +477,7 @@ body {
       <span onclick="go('home')">Approche</span>
       <span onclick="go('fm')">Facility Management</span>
       <span onclick="go('pm')">Property Management</span>
+      <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
     </div>
     <div class="foot-legal">© 2026 Laulogistic · www.laulogistic.com</div>
@@ -525,6 +527,7 @@ body {
       <span onclick="go('home')">Accueil</span>
       <span onclick="go('fm')" class="on">FM Solution</span>
       <span onclick="go('pm')">Property Management</span>
+      <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
     </div>
     <div class="foot-legal">© 2026 Laulogistic</div>
@@ -574,6 +577,7 @@ body {
       <span onclick="go('home')">Accueil</span>
       <span onclick="go('fm')">FM Solution</span>
       <span onclick="go('pm')" class="on">Property Management</span>
+      <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
     </div>
     <div class="foot-legal">© 2026 Laulogistic</div>
@@ -641,6 +645,7 @@ body {
       <span onclick="go('fm')">Facility Management</span>
       <span onclick="go('pm')">Property Management</span>
       <span onclick="go('train')" class="on">Progression</span>
+      <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
     </div>
     <div class="foot-legal">© 2026 Laulogistic</div>
@@ -800,6 +805,16 @@ function go(page) {
   const navBtn = document.getElementById('nb-' + page);
   if (navBtn) navBtn.classList.add('on');
   window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function scrollToStory() {
+  go('home');
+  setTimeout(() => {
+    const storyElement = document.getElementById('story');
+    if (storyElement) {
+      storyElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 100);
 }
 
 // QUESTIONNAIRE LOGIC
