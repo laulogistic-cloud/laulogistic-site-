@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Pas de contenu privé sur ce site : tout est public et destiné à être indexé.
+
+Sitemap: https://www.laulogistic.com/sitemap.xml

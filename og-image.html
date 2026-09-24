@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8">
+<title>og-image</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{width:1200px;height:630px;overflow:hidden}
+  body{
+    background:#0C1428;
+    font-family:'DM Sans',Helvetica,Arial,sans-serif;
+    color:rgba(255,255,255,.84);
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:0 90px;
+  }
+  /* trame dorée discrète */
+  .glow{position:absolute;top:-260px;right:-180px;width:760px;height:760px;border-radius:50%;
+        background:radial-gradient(circle,rgba(200,168,75,.16) 0%,rgba(200,168,75,0) 68%)}
+  .rule-top{position:absolute;top:0;left:0;width:100%;height:6px;background:#C8A84B}
+  .brand{display:flex;align-items:center;gap:16px;margin-bottom:34px}
+  .diamond{width:26px;height:26px;background:#C8A84B;transform:rotate(45deg)}
+  .brand span{font-size:20px;letter-spacing:.34em;text-transform:uppercase;color:#fff;font-weight:500}
+  h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:700;font-size:76px;line-height:1.06;
+     color:#fff;letter-spacing:-.01em;max-width:960px}
+  h1 em{font-style:normal;color:#D4B86A}
+  .sub{margin-top:30px;font-size:23px;font-weight:300;color:rgba(255,255,255,.62);max-width:880px;line-height:1.45}
+  .foot{position:absolute;left:90px;right:90px;bottom:56px;display:flex;justify-content:space-between;
+        align-items:center;border-top:1px solid rgba(200,168,75,.28);padding-top:22px}
+  .foot b{font-size:17px;color:#D4B86A;font-weight:400;letter-spacing:.06em}
+  .foot span{font-size:15px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+</style></head>
+<body>
+  <div class="rule-top"></div>
+  <div class="glow"></div>
+  <div class="brand"><div class="diamond"></div><span>Laulogistic</span></div>
+  <h1>Pilote d'environnements<br>opérationnels <em>complexes.</em></h1>
+  <p class="sub">Audit FM &amp; Property · Conformité SSI / HSE · Reprise d'actifs<br>Échéancier réglementaire · 11 fiches outils en accès libre</p>
+  <div class="foot">
+    <b>www.laulogistic.com</b>
+    <span>France · Suisse · Belgique</span>
+  </div>
+</body></html>
