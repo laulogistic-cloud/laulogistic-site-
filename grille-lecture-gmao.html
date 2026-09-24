@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lire une GMAO en 20 minutes — Laulogistic</title>
+<meta name="description" content="Savoir si l'outil sert à piloter ou seulement à facturer.">
+<meta property="og:image" content="https://www.laulogistic.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Laulogistic — Pilote d'environnements opérationnels complexes">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.laulogistic.com/og-image.png">
+<link rel="canonical" href="https://www.laulogistic.com/ressources/grille-lecture-gmao.html">
+<meta property="og:title" content="Lire une GMAO en 20 minutes">
+<meta property="og:description" content="Savoir si l'outil sert à piloter ou seulement à facturer.">
+<meta name="robots" content="index, follow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0C1428;--card:#141F38;--gold:#C8A84B;--goldw:#D4B86A;--text:rgba(255,255,255,.84);--dim:rgba(255,255,255,.55);--line:rgba(200,168,75,.22)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;padding:28px 20px 60px}
+.wrap{max-width:820px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:26px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.top b{color:#fff;font-weight:500}
+.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.4vw,44px);font-weight:700;color:#fff;line-height:1.12;margin:10px 0 14px}
+.promesse{font-size:17px;font-weight:300;color:var(--dim);max-width:62ch}
+.meta{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0 8px;padding:16px;background:var(--card);border-left:3px solid var(--gold)}
+.meta div span{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.meta div p{font-size:14px;color:var(--text)}
+h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--line)}
+ul{list-style:none}
+li{position:relative;padding:5px 0 5px 26px;font-size:15px}
+li::before{content:'';position:absolute;left:0;top:11px;width:12px;height:12px;border:1.5px solid var(--gold);border-radius:2px}
+.a-retenir{margin:26px 0 0;padding:16px;background:var(--card);border-left:3px solid var(--gold);font-size:14px}
+.a-retenir span{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
+.cta{margin-top:30px;padding:22px;background:var(--card);border:1px solid var(--line)}
+.cta h3{font-family:'Cormorant Garamond',serif;font-size:20px;color:#fff;margin-bottom:10px}
+.cta p{font-size:14px;color:var(--text)}
+.cta a{color:var(--goldw)}
+.cta .btn{display:inline-block;margin-top:14px;padding:11px 20px;background:var(--gold);color:var(--navy);text-decoration:none;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500}
+.foot{margin-top:34px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--dim);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.foot a{color:var(--goldw);text-decoration:none}
+@media print{
+  body{background:#fff;color:#111;padding:0}
+  .top{color:#666}.top b{color:#111}
+  h1,h2,.cta h3{color:#0C1428}
+  .promesse,.foot{color:#444}
+  .eyebrow,li::before,.meta div span,.a-retenir span{color:#8a6d1f}
+  li::before{border-color:#8a6d1f}
+  .meta,.a-retenir{background:#f6f4ef;border-left:3px solid #8a6d1f}
+  .cta{background:#fff;border:1px solid #ddd}
+  .noprint{display:none}
+  a{color:#0C1428}
+}
+.pn{display:flex;gap:12px;margin-top:34px;padding-top:16px;border-top:1px solid var(--line)}
+.pn a{flex:1;padding:14px;background:var(--card);border:1px solid var(--line);text-decoration:none;color:var(--text);font-size:12px}
+.pn a span{display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+.pn a b{color:#fff;font-weight:500}
+.pn a:hover{border-color:var(--gold)}
+.pn .n{text-align:right}
+@media print{.pn{display:none}}
+@media print{
+  @page{margin:11mm}
+  body{padding:0;font-size:10.5px;line-height:1.34}
+  .wrap{max-width:100%}
+  .top{padding-bottom:6px;margin-bottom:10px;font-size:9px}
+  h1{font-size:24px;margin:5px 0 7px;line-height:1.08}
+  .promesse{font-size:11.5px;max-width:100%}
+  .meta{grid-template-columns:1fr 1fr;gap:8px;margin:11px 0 4px;padding:9px 11px}
+  .meta div span{font-size:8.5px;margin-bottom:2px}
+  .meta div p{font-size:10.5px;line-height:1.3;color:#333}
+  .eyebrow,.meta div span,.a-retenir span{color:#7d6015}
+  li::before{border-color:#7d6015}
+  h2{font-size:15px;margin:12px 0 5px;padding-bottom:3px}
+  li{font-size:10.5px;padding:1.5px 0 1.5px 19px;line-height:1.34}
+  li::before{top:7px;width:9px;height:9px;border-width:1.2px}
+  .a-retenir{margin-top:11px;padding:9px 11px;font-size:10.5px;color:#333}
+  .a-retenir span{font-size:8.5px;margin-bottom:3px}
+  .cta{margin-top:12px;padding:11px 13px}
+  .cta h3{font-size:14px;margin-bottom:5px}
+  .cta p{font-size:10.5px;color:#333}
+  .cta a,.cta a b{color:#0C1428}
+  .cta .btn{margin-top:8px;padding:6px 12px;font-size:9px;border:1px solid #0C1428}
+  .foot{margin-top:12px;padding-top:7px;font-size:9px}
+  .foot a{color:#0C1428}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://www.laulogistic.com/ressources/grille-lecture-gmao.html#fiche",
+  "headline": "Lire une GMAO en 20 minutes",
+  "description": "Savoir si l'outil sert à piloter ou seulement à facturer.",
+  "url": "https://www.laulogistic.com/ressources/grille-lecture-gmao.html",
+  "inLanguage": "fr-FR",
+  "datePublished": "2026-09-24",
+  "dateModified": "2026-09-24",
+  "author": {
+    "@id": "https://www.laulogistic.com/#laurent-moise"
+  },
+  "publisher": {
+    "@id": "https://www.laulogistic.com/#organisation"
+  },
+  "isPartOf": {
+    "@id": "https://www.laulogistic.com/ressources/#collection"
+  },
+  "about": "Lire une GMAO en 20 minutes"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Laulogistic",
+      "item": "https://www.laulogistic.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Fiches outils",
+      "item": "https://www.laulogistic.com/ressources/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Lire une GMAO en 20 minutes",
+      "item": "https://www.laulogistic.com/ressources/grille-lecture-gmao.html"
+    }
+  ]
+}
+</script>
+</head><body><div class="wrap">
+<div class="top"><span><b>LAULOGISTIC</b> — Pilote d'environnements opérationnels</span>
+<span>Document de méthode · mot-clé <b>GMAO</b></span></div>
+<span class="eyebrow">Fiche outil · 1 page</span>
+<h1>Lire une GMAO en 20 minutes</h1>
+<p class="promesse">Savoir si l'outil sert à piloter ou seulement à facturer.</p>
+<div class="meta">
+<div><span>Pour qui</span><p>Direction immobilière, chef de projet GMAO, responsable d'exploitation</p></div>
+<div><span>Preuve à produire</span><p>Un export daté + un contrôle terrain écrit qui le confirme ou l'infirme.</p></div>
+</div>
+<h2>Les 5 chiffres qui parlent</h2>
+<ul>
+<li>Demandes ouvertes et closes sur la période</li>
+<li>Délai moyen de prise en charge et de clôture</li>
+<li>Part des interventions sans compte rendu</li>
+<li>Préventif réellement exécuté vs planifié</li>
+<li>Équipements sans historique depuis 12 mois</li>
+</ul>
+<h2>Ce qui se cache derrière</h2>
+<ul>
+<li>Un délai de clôture ne dit rien si les demandes sont closes sans intervention</li>
+<li>Un préventif à 100 % dans l'outil peut être vide sur le terrain</li>
+<li>Les doublons de saisie révèlent une organisation, pas un bug</li>
+</ul>
+<h2>Le contrôle terrain</h2>
+<ul>
+<li>Prendre 5 interventions au hasard et aller voir ce qu'il en reste</li>
+<li>Comparer le stock de pièces saisi et le stock réel</li>
+</ul>
+<div class="a-retenir"><span>À retenir</span>Ce document est un outil de méthode : il ne remplace pas un constat sur site. Ce qui dépend de votre patrimoine est à renseigner, et une ligne sans preuve est traitée comme non traitée.</div>
+<div class="cta"><h3>Ce document est le début, pas la réponse.</h3>
+<p>Le diagnostic flash confronte ces lignes à votre site réel : ce qui est ouvert, qui le porte, ce que cela coûte si rien ne change. Un premier échange, sans engagement, et vous repartez avec vos écarts écrits.</p>
+<a class="btn" href="https://www.laulogistic.com/#contact">Demander un diagnostic flash</a></div>
+<div class="cta noprint"><h3>Le recevoir en PDF</h3><p>Utilisez « Imprimer » puis « Enregistrer au format PDF » : la mise en page est prévue pour une impression A4 propre. Pour les prochains outils, écrivez à <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a> ou envoyez le mot-clé <b>GMAO</b> en message privé LinkedIn.</p><p><a href="./index.html">Voir les 11 fiches outils</a> · <a href="https://www.laulogistic.com">Retour au site</a></p></div>
+<div class="pn noprint">
+<a href="./grille-priorisation-actions.html"><span>← Fiche précédente</span><b>PRIORITES</b></a>
+<a class="n" href="./liste-controle-gtb.html"><span>Fiche suivante →</span><b>GTB</b></a>
+</div>
+<div class="foot">
+<span>Laulogistic — Laurent Moïse · <a href="https://www.laulogistic.com">www.laulogistic.com</a> · <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a></span>
+<span>Aucune donnée client · aucune échéance inventée</span>
+</div></div></body></html>
