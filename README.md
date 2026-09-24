@@ -15,14 +15,14 @@ Le site n'est pas une simple présentation de services, mais un entonnoir de ven
 ### Fichiers
 - `index.html` : page principale, Single Page Application (HTML + CSS + JS) : navigation, sections FM / Property / Transmission / Contact et questionnaire de qualification.
 - `confidentialite.html` : politique de confidentialité (RGPD, cookies, sous-traitant Formspree).
-- `ressources/fiches-outils.html` : bibliothèque des 11 fiches outils + formulaire de demande du PDF.
-- `ressources/*.html` : les 11 fiches outils, une page autonome chacune (navigation « fiche précédente / suivante » incluse). Chaque fiche est calibrée pour tenir sur **une seule page A4** à l'impression, avec un jeu de styles d'impression dédié (contrastes vérifiés au seuil WCAG AA).
+- `fiches-outils.html` : bibliothèque des 11 fiches outils + formulaire de demande du PDF.
+- `grille-*.html`, `liste-controle-gtb.html`… : les 11 fiches outils, une page autonome chacune (navigation « fiche précédente / suivante » incluse). Chaque fiche est calibrée pour tenir sur **une seule page A4** à l'impression, avec un jeu de styles d'impression dédié (contrastes vérifiés au seuil WCAG AA).
 - `og-image.html` + `og-image.png` : source et image de partage 1200×630 (LinkedIn, WhatsApp, X).
 - `robots.txt`, `sitemap.xml` : indexation.
 
-> **Important :** le déploiement doit inclure **tout le dossier**, y compris `ressources/`. Un envoi du seul `index.html` produit un lien « Fiches outils » qui renvoie une page vide (404 GitHub Pages).
+> **Site entièrement à plat :** les 19 fichiers sont tous au même niveau, **sans aucun sous-dossier**. C'est délibéré : l'interface web de GitHub ignore silencieusement les dossiers glissés dans la zone d'envoi, ce qui faisait perdre les 12 pages de la bibliothèque (liens « Fiches outils » → 404). Ici, un simple glisser-déposer des 19 fichiers suffit et rien ne peut être égaré.
 
-> **Un seul `index.html` :** la bibliothèque des fiches outils s'appelle désormais `ressources/fiches-outils.html` (elle s'appelait `ressources/index.html`). Il n'existe donc plus qu'un unique fichier nommé `index.html` — celui de la racine — ce qui évite toute confusion à l'envoi vers GitHub.
+> **URLs publiques :** `www.laulogistic.com/fiches-outils.html` pour la bibliothèque, `www.laulogistic.com/grille-….html` pour chaque fiche. Il n'existe qu'un seul fichier nommé `index.html` (l'accueil).
 
 ### Stack Technique
 - **Design :** Mobile-first, Responsive.
@@ -35,11 +35,11 @@ Le site n'est pas une simple présentation de services, mais un entonnoir de ven
 
 ### 1. Mise en ligne
 Le site est autonome. Pour le mettre en ligne :
-1. Téléverser le contenu du dossier `deploy/` vers votre hébergeur (via FTP ou Git).
+1. Téléverser **les 19 fichiers** du dossier `deploy/` vers votre hébergeur. Sur GitHub : *Add file → Upload files*, puis glisser-déposer les 19 fichiers d'un seul coup (aucun dossier à créer, aucun risque d'aplatissement).
 2. S'assurer que le fichier `index.html` est à la racine du domaine (`www.laulogistic.com`).
 
 ### 2. Formulaires (Formspree)
-Les deux formulaires du site (questionnaire de contact sur `index.html`, demande des fiches PDF sur `ressources/fiches-outils.html`) envoient leurs données à **Formspree**, qui les transmet directement par e-mail.
+Les deux formulaires du site (questionnaire de contact sur `index.html`, demande des fiches PDF sur `fiches-outils.html`) envoient leurs données à **Formspree**, qui les transmet directement par e-mail.
 - **Endpoint configuré :** `https://formspree.io/f/xpqklqnw` (formulaire à gérer sur [formspree.io](https://formspree.io)).
 - **Réception :** les messages arrivent sur l'adresse e-mail associée à ce formulaire Formspree, avec l'objet « Diagnostic flash — <nom> » (ou « Demande fiches outils PDF »).
 - **Répondre au prospect :** le champ `email` est transmis à Formspree, un simple « Répondre » dans votre boîte répond donc directement au visiteur.
