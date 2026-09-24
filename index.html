@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230C1428'/%3E%3Crect%20x='24'%20y='24'%20width='16'%20height='16'%20fill='%23C8A84B'%20transform='rotate(45%2032%2032)'/%3E%3C/svg%3E">
 <meta name="description" content="Laurent Moïse – Pilote d'environnements opérationnels complexes. Consulting, Audit FM, Transmission de compétences et Formation technique. 25+ ans d'expérience terrain.">
 <meta name="keywords" content="consulting opérationnel, formation facility management, montée en compétences FM, audit FM, reprise d'actifs, formation technique bâtiment, transmission savoir-faire">
 <meta name="author" content="Laurent Moïse – Laulogistic">
@@ -10,13 +11,17 @@
 <meta property="og:title" content="Laulogistic – Pilote d'Environnements Opérationnels Complexes | Laurent Moïse">
 <meta property="og:description" content="L'expertise terrain pour stabiliser vos actifs et former vos équipes quand l'humain et la donnée manquent.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.laulogistic.com">
+<meta property="og:url" content="https://www.laulogistic.com/">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:image" content="https://www.laulogistic.com/og-image.jpg">
+<meta property="og:image" content="https://www.laulogistic.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Laulogistic — Pilote d'environnements opérationnels complexes">
 <meta property="og:site_name" content="Laulogistic">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.laulogistic.com/og-image.png">
 <meta name="theme-color" content="#0C1428">
-<link rel="canonical" href="https://www.laulogistic.com">
+<link rel="canonical" href="https://www.laulogistic.com/">
 <title>Laulogistic – Pilote d'Environnements Opérationnels Complexes | Laurent Moïse</title>
 
 <!-- Google Fonts -->
@@ -82,7 +87,7 @@ body {
   font-size: 12px; letter-spacing: .1em; text-transform: uppercase;
   padding: 8px 14px; cursor: pointer; transition: color .2s;
 }
-.nb:hover { color: var(--gold-warm); }
+.nb:hover, .nb.on { color: var(--gold-warm); }
 .nb.on { color: var(--white); }
 
 /* ─── PAGES ─── */
@@ -259,6 +264,7 @@ body {
   cursor: pointer; text-decoration: none; transition: color .2s;
 }
 .foot-links span:hover, .foot-links a:hover { color: var(--gold-warm); }
+.foot-links .on { color: var(--gold-warm); }
 .foot-legal { font-size: 11px; color: rgba(255,255,255,.28); }
 
 /* ─── PAGE SPEC ─── */
@@ -283,9 +289,31 @@ body {
 .train-card:hover { transform: translateY(-5px); border-color: var(--gold); }
 .train-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--gold); margin-bottom: 12px; }
 .train-card p { font-size: 14px; color: var(--text); line-height: 1.6; margin-bottom: 20px; }
+.train-meta { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.train-card .livrable { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 4px; color: var(--gold-warm); font-size: 12.5px; }
+.train-card .livrable::before { content: "◆"; color: var(--gold); margin-right: 8px; }
 .train-list { list-style: none; }
 .train-list li { font-size: 12px; color: var(--text-dim); margin-bottom: 8px; display: flex; gap: 8px; }
 .train-list li::before { content: "•"; color: var(--gold); }
+
+/* ─── RESSOURCES RÉGLEMENTAIRES ─── */
+.res-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 48px; }
+.res-card {
+  background: var(--navy-card); border: 1px solid var(--line);
+  padding: 28px; border-radius: 2px; display: flex; flex-direction: column;
+}
+.res-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--white); margin-bottom: 14px; }
+.res-card ul { list-style: none; }
+.res-card li { font-size: 13px; color: var(--text-dim); margin-bottom: 11px; display: flex; gap: 9px; }
+.res-card li::before { content: "→"; color: var(--gold); }
+.res-card a { color: var(--gold-warm); text-decoration: none; }
+.res-card a:hover { text-decoration: underline; }
+.res-src { font-size: 11px; color: rgba(255,255,255,.38); display: block; margin-top: 2px; }
+.know-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px 32px; margin-top: 12px; }
+.know-grid div { font-size: 13.5px; color: var(--text); line-height: 1.55; padding-left: 16px; position: relative; }
+.know-grid div::before { content: ''; position: absolute; left: 0; top: 8px; width: 7px; height: 7px; background: var(--gold); transform: rotate(45deg); }
+.know-grid b { color: var(--white); }
+@media (max-width: 900px) { .res-grid, .know-grid { grid-template-columns: 1fr; } }
 
 /* ─── CONTACT PAGE ─── */
 .contact-container { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
@@ -323,16 +351,183 @@ body {
   margin-bottom: 24px; text-align: center; 
 }
 
+.h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; color: var(--white);
+}
+.nav-burger {
+  display: none; background: none; border: none;
+  color: var(--white); font-size: 22px; line-height: 1;
+  cursor: pointer; padding: 8px 4px;
+}
+@media (max-width: 900px) {
+  .nav-burger { display: block; }
+  .nav-links {
+    display: none; position: absolute; top: 60px; left: 0; right: 0;
+    flex-direction: column; padding: 8px 0 16px;
+    background: var(--navy);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-links.open { display: flex; }
+  .nb { padding: 14px var(--pad); text-align: left; }
+}
+
 @media (max-width: 992px) {
   .prob-grid, .method-steps, .spec-grid, .contact-container, .train-grid { grid-template-columns: 1fr; }
   .step { border-right: none; border-bottom: 1px solid rgba(184,144,42,.2); }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://www.laulogistic.com/#organisation",
+  "name": "Laulogistic",
+  "url": "https://www.laulogistic.com/",
+  "description": "Laurent Moïse – Pilote d'environnements opérationnels complexes. Consulting, Audit FM, Transmission de compétences et Formation technique. 25+ ans d'expérience terrain.",
+  "email": "contact@laulogistic.com",
+  "founder": {
+    "@id": "https://www.laulogistic.com/#laurent-moise"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Fontenay-sous-Bois",
+    "addressRegion": "Île-de-France",
+    "addressCountry": "FR"
+  },
+  "areaServed": [
+    {
+      "@type": "Country",
+      "name": "France"
+    },
+    {
+      "@type": "Country",
+      "name": "Suisse"
+    },
+    {
+      "@type": "Country",
+      "name": "Belgique"
+    }
+  ],
+  "sameAs": [
+    "https://fr.linkedin.com/in/laulogistic"
+  ],
+  "knowsAbout": [
+    "Facility Management",
+    "Property Management",
+    "Audit technique du bâtiment",
+    "Maintenance préventive et curative",
+    "Sécurité incendie et registre de sécurité",
+    "GMAO",
+    "GTB / GTC",
+    "Conformité réglementaire des bâtiments",
+    "Reprise d’actifs et levée de réserves",
+    "Passation de site"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Prestations Laulogistic",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Audit & Diagnostic technique (TCE) et conformité réglementaire"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Confrontation contrats de maintenance / exécution réelle sur site"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Analyse des coûts d’exploitation (OPEX) et plan d’action priorisé"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Pilotage de prestataires multiservices, SLA et KPI de performance"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Gestion d’actifs tertiaires et reprise de gestion d’ASL"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mise en conformité SSI / HSE / Sécurité Incendie"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Reporting technique pour investisseurs et valorisation du patrimoine"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Formation et transmission de savoir-faire FM / Property"
+        }
+      }
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://www.laulogistic.com/#laurent-moise",
+  "name": "Laurent Moïse",
+  "jobTitle": "Consultant Facility & Property Management",
+  "url": "https://www.laulogistic.com/",
+  "worksFor": {
+    "@id": "https://www.laulogistic.com/#organisation"
+  },
+  "sameAs": [
+    "https://fr.linkedin.com/in/laulogistic"
+  ],
+  "knowsAbout": [
+    "Facility Management",
+    "Property Management",
+    "Exploitation d’actifs tertiaires complexes",
+    "Sécurité incendie et environnements sensibles"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.laulogistic.com/#site",
+  "url": "https://www.laulogistic.com/",
+  "name": "Laulogistic — Pilote d’environnements opérationnels complexes",
+  "inLanguage": "fr-FR",
+  "publisher": {
+    "@id": "https://www.laulogistic.com/#organisation"
+  }
+}
+</script>
 </head>
 <body>
 
 <nav class="nav">
-  <a href="#" class="nav-logo" onclick="go('home')">
+  <a href="#" class="nav-logo" onclick="go('home');return false">
     <div class="logo-diamond"></div>
     Laulogistic
   </a>
@@ -341,9 +536,11 @@ body {
     <button class="nb" id="nb-fm" onclick="go('fm')">Facility Management</button>
     <button class="nb" id="nb-pm" onclick="go('pm')">Property Management</button>
     <button class="nb" id="nb-train" onclick="go('train')">Progression</button>
-    <a class="nb" href="ressources/index.html" style="text-decoration:none">Fiches outils</a>
+    <a class="nb" href="ressources/index.html" style="text-decoration:none" onclick="closeNav()">Fiches outils</a>
     <button class="nb" id="nb-contact" onclick="go('contact')">Contact</button>
+    <a class="nb" href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener" style="text-decoration:none" onclick="closeNav()">LinkedIn</a>
   </div>
+  <button class="nav-burger" id="nav-burger" aria-label="Ouvrir le menu" aria-expanded="false" onclick="toggleNav()">☰</button>
 </nav>
 
 <!-- ═══════════════════════════════════════════════
@@ -356,9 +553,9 @@ body {
       <div class="hero-badge">Consulting Opérationnel Stratégique</div>
       <h1 class="h1 hero-title">Pilote d'environnements<br><em>opérationnels complexes.</em></h1>
       <p class="hero-sub">Je stabilise vos actifs et sécurise vos exploitations là où l'historique a disparu et où les ressources humaines manquent.</p>
-      <div class="cta-btns" style="display:flex; gap:16px; justify-content:center;">
+      <div class="cta-btns" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <button class="btn-primary" onclick="go('contact')">Demander un diagnostic flash</button>
-        <button class="btn-ghost" onclick="scrollToStory()">L'Histoire de Laulogistic</button>
+        <button class="btn-ghost" onclick="go('story')">L'Histoire de Laulogistic</button>
       </div>
     </div>
   </section>
@@ -472,13 +669,37 @@ body {
     </div>
   </section>
 
+  <section class="sec">
+    <span class="eyebrow">Résultats</span>
+    <h2 class="h2">Ce que la méthode produit, chiffré.</h2>
+    <p class="lead" style="margin-top:18px;">Trois missions, trois écarts traités. Chiffres arrondis, périmètres anonymisés : les références détaillées sont présentées en premier échange, dans le respect des confidentialités.</p>
+    <div class="prob-grid">
+      <div class="prob-card">
+        <div class="proof-stat" style="font-size:38px;">38 k€<span>par an récupérés</span></div>
+        <div class="prob-title" style="margin-top:18px;">Prestations facturées, non exécutées</div>
+        <div class="prob-sol">Confrontation contrat / terrain sur un ensemble tertiaire : 11 prestations fantômes identifiées, clause de revue annuelle instaurée, écart résorbé en 6 mois.</div>
+      </div>
+      <div class="prob-card">
+        <div class="proof-stat" style="font-size:38px;">17<span>sites en 6 semaines</span></div>
+        <div class="prob-title" style="margin-top:18px;">Revue patrimoniale multi-sites</div>
+        <div class="prob-sol">État daté par équipement avec source, plan quinquennal chiffré voté par le comité : la dépense alignée sur la durée réelle du bail.</div>
+      </div>
+      <div class="prob-card">
+        <div class="proof-stat" style="font-size:38px;">0<span>interruption de service</span></div>
+        <div class="prob-title" style="margin-top:18px;">Passation après départ du gestionnaire</div>
+        <div class="prob-sol">Historique reconstruit, frise réglementaire et PV de passation signés en 2 mois : le successeur reprend un site lisible, pas une boîte noire.</div>
+      </div>
+    </div>
+  </section>
+
   <footer class="foot">
     <div class="foot-links">
-      <span onclick="go('home')">Approche</span>
-      <span onclick="go('fm')">Facility Management</span>
-      <span onclick="go('pm')">Property Management</span>
+      <span data-page="home" onclick="go('home')">Approche</span>
+      <span data-page="fm" onclick="go('fm')">Facility Management</span>
+      <span data-page="pm" onclick="go('pm')">Property Management</span>
       <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
+      <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
     <div class="foot-legal">© 2026 Laulogistic · www.laulogistic.com</div>
   </footer>
@@ -524,13 +745,14 @@ body {
 
   <footer class="foot">
     <div class="foot-links">
-      <span onclick="go('home')">Accueil</span>
+      <span data-page="home" onclick="go('home')">Accueil</span>
       <span onclick="go('fm')" class="on">FM Solution</span>
-      <span onclick="go('pm')">Property Management</span>
+      <span data-page="pm" onclick="go('pm')">Property Management</span>
       <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
+      <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic</div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -574,13 +796,14 @@ body {
 
   <footer class="foot">
     <div class="foot-links">
-      <span onclick="go('home')">Accueil</span>
-      <span onclick="go('fm')">FM Solution</span>
+      <span data-page="home" onclick="go('home')">Accueil</span>
+      <span data-page="fm" onclick="go('fm')">FM Solution</span>
       <span onclick="go('pm')" class="on">Property Management</span>
       <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
+      <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic</div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -605,32 +828,38 @@ body {
     <div class="train-grid">
       <div class="train-card">
         <h3>Fondamentaux FM</h3>
+        <p class="train-meta">2 jours · présentiel ou distanciel · intra-entreprise</p>
         <p>Maîtriser la chaîne de valeur du Facility Management et le pilotage des services généraux.</p>
         <ul class="train-list">
           <li>Pilotage de la maintenance</li>
           <li>Gestion des SLA et KPI</li>
           <li>Coordination multiservices</li>
           <li>Optimisation OPEX</li>
+          <li class="livrable">Livrable : votre tableau de bord préventif, prêt à l'emploi</li>
         </ul>
       </div>
       <div class="train-card">
         <h3>Technique & Conformité</h3>
+        <p class="train-meta">1 jour · présentiel · intra-entreprise</p>
         <p>Sécuriser ses installations et savoir dialoguer avec les bureaux de contrôle.</p>
         <ul class="train-list">
           <li>Interprétation des rapports SSI/HSE</li>
           <li>Gestion des registres de sécurité</li>
           <li>Habilitations et normes NF C 18-510</li>
           <li>Audit terrain et levée de réserves</li>
+          <li class="livrable">Livrable : votre registre de sécurité audité et priorisé</li>
         </ul>
       </div>
       <div class="train-card">
         <h3>Property Management</h3>
+        <p class="train-meta">2 jours · présentiel ou distanciel · intra-entreprise</p>
         <p>Apprendre à valoriser un actif par une gestion technique rigoureuse.</p>
         <ul class="train-list">
           <li>Gestion d'actifs multisites</li>
           <li>Reporting investisseurs / Propriétaires</li>
           <li>Coordination AMO COSSI</li>
           <li>Plan pluriannuel de travaux (PPT)</li>
+          <li class="livrable">Livrable : votre PPT présentable au comité</li>
         </ul>
       </div>
     </div>
@@ -639,16 +868,127 @@ body {
     </div>
   </section>
 
+  <section class="sec">
+    <span class="eyebrow">Ressources officielles</span>
+    <h2 class="h2">La base réglementaire, en accès direct.</h2>
+    <p class="lead" style="margin-top:18px;">Les textes consolidés, consultables et téléchargeables gratuitement sur les sites officiels : Légifrance, ministères, INRS. Pas de synthèse approximative : on va à la source, et on vérifie toujours la version en vigueur à la date du contrôle.</p>
+
+    <div class="res-grid">
+      <div class="res-card">
+        <h3>Textes &amp; codes du quotidien</h3>
+        <ul>
+          <li><span><a href="https://www.legifrance.gouv.fr/" target="_blank" rel="noopener">Légifrance — le service public de la diffusion du droit</a><span class="res-src">Tous les codes et textes consolidés, PDF imprimables</span></span></li>
+          <li><span><a href="https://www.legifrance.gouv.fr/codes/texte_lc/LEGITEXT000006072050/" target="_blank" rel="noopener">Code du travail — version consolidée</a><span class="res-src">Hygiène, sécurité : parties IV et V (art. R.4xxx)</span></span></li>
+          <li><span><a href="https://code.travail.gouv.fr/" target="_blank" rel="noopener">Code du travail numérique — Ministère du Travail</a><span class="res-src">Lecture guidée des articles + éclairages officiels</span></span></li>
+          <li><span><a href="https://entreprendre.service-public.gouv.fr/" target="_blank" rel="noopener">Service-public.fr — fiches pratiques entreprises</a><span class="res-src">Obligations par situation, formulaires officiels</span></span></li>
+        </ul>
+      </div>
+      <div class="res-card">
+        <h3>Incendie &amp; ERP</h3>
+        <ul>
+          <li><span><a href="https://www.securite-civile.interieur.gouv.fr/documentation/reglementation-incendie/reglementation-incendie-etablissements-recevant-du-public-erp.html" target="_blank" rel="noopener">Réglementation incendie ERP — Sécurité civile (Intérieur)</a><span class="res-src">Arrêté du 25 juin 1980 et listes des organismes agréés</span></span></li>
+          <li><span><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F31684" target="_blank" rel="noopener">Sécurité incendie d'un ERP — la fiche officielle</a><span class="res-src">Registre de sécurité, commissions, périodicités</span></span></li>
+          <li><span><a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000448223" target="_blank" rel="noopener">Arrêté du 2 mai 2005 — missions SSIAP</a><span class="res-src">Effectifs, missions, recyclage secourisme tous les 2 ans</span></span></li>
+        </ul>
+      </div>
+      <div class="res-card">
+        <h3>Équipements &amp; énergie</h3>
+        <ul>
+          <li><span><a href="https://travail-emploi.gouv.fr/questions-reponses-verifications-des-installations-electriques" target="_blank" rel="noopener">Vérifications des installations électriques — Q/R officiel</a><span class="res-src">Qui vérifie quoi, quand, par quel organisme</span></span></li>
+          <li><span><a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000401336" target="_blank" rel="noopener">Arrêté du 10 octobre 2000 — périodicité des vérifications électriques</a><span class="res-src">Périodicité et étendue des contrôles</span></span></li>
+          <li><span><a href="https://www.legifrance.gouv.fr/codes/section_lc/LEGITEXT000006074096/LEGISCTA000043818721/" target="_blank" rel="noopener">Ascenseurs — sécurité et entretien (CCH art. R.134)</a><span class="res-src">Obligations d'entretien, contrôle technique tous les 5 ans</span></span></li>
+          <li><span><a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000254219" target="_blank" rel="noopener">Arrêté du 18 novembre 2004 — entretien des ascenseurs</a><span class="res-src">Contenu obligatoire du contrat d'entretien</span></span></li>
+          <li><span><a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000021795143" target="_blank" rel="noopener">Arrêté du 1er février 2010 — surveillance des légionelles (ECS)</a><span class="res-src">Seuils, fréquences d'analyse, températures</span></span></li>
+          <li><span><a href="https://entreprendre.service-public.gouv.fr/vosdroits/F38065" target="_blank" rel="noopener">Décret tertiaire — réduction des consommations (&gt;1 000 m²)</a><span class="res-src">Trajectoires, déclaration annuelle OPERAT</span></span></li>
+        </ul>
+      </div>
+      <div class="res-card">
+        <h3>Santé-sécurité &amp; entreprises extérieures</h3>
+        <ul>
+          <li><span><a href="https://www.inrs.fr/risques/chutes-hauteur/reglementation-travail-hauteur.html" target="_blank" rel="noopener">Travail en hauteur — INRS</a><span class="res-src">Protections collectives avant individuelles</span></span></li>
+          <li><span><a href="https://code.travail.gouv.fr/code-du-travail/r4323-63" target="_blank" rel="noopener">Art. R.4323-63 — échelles et escabeaux comme poste de travail</a><span class="res-src">Le texte exact, l'exception et ses conditions</span></span></li>
+          <li><span><a href="https://www.legifrance.gouv.fr/jorf/id/JORFTEXT000000722815" target="_blank" rel="noopener">Décret 92-158 — opérations simultanées / entreprises extérieures</a><span class="res-src">Plan de prévention, coordination, protocole de sécurité</span></span></li>
+          <li><span><a href="https://www.inrs.fr/risques/entreprises-exterieures/mesures-prevention-prealables-intervention.html" target="_blank" rel="noopener">Entreprises extérieures — INRS</a><span class="res-src">La démarche de prévention avant l'intervention</span></span></li>
+          <li><span><a href="https://sante.gouv.fr/soins-et-maladies/maladies/maladies-et-infections-respiratoires/article/prevention-de-la-legionellose-les-obligations-par-type-d-installation-et-d" target="_blank" rel="noopener">Légionellose — obligations par type d'installation (Santé)</a><span class="res-src">Tours aéroréfrigérantes, ECS, réseaux</span></span></li>
+        </ul>
+      </div>
+      <div class="res-card" style="grid-column: 1 / -1;">
+        <h3>Les 11 fiches outils — la méthode, en une page</h3>
+        <p style="font-size:13.5px; color:var(--text-dim); margin-bottom:16px;">Chaque fiche traite un problème réel d'exploitation : ce qu'on regarde, ce qu'on demande, la preuve à produire. Elles sont publiques et sans inscription — <a href="ressources/index.html">voir la bibliothèque complète</a>, ou demandez le <b style="color:var(--gold-warm);">PDF</b> des 11 fiches.</p>
+        <ul>
+          <li><span><a href="ressources/grille-preventif-curatif.html">Préventif ou curatif : la grille qui tranche</a><span class="res-src">Savoir, ligne par ligne, ce qui est planifié et ce qui n'est que réparé après la panne</span></span></li>
+          <li><span><a href="ressources/grille-audit-consultation.html">Préparer un audit : la consultation des pièces</a><span class="res-src">Arriver à l'audit avec les documents déjà listés, pour que la journée serve au terrain</span></span></li>
+          <li><span><a href="ressources/grille-verification-contrat-terrain.html">Ce qui est facturé et ce qui est fait : la confrontation</a><span class="res-src">Sortir de la boîte noire : comparer l'engagement du contrat à ce qui se passe vraiment</span></span></li>
+          <li><span><a href="ressources/grille-revue-patrimoniale.html">Revue patrimoniale : ce qui engage l'actif à 10 ans</a><span class="res-src">Voir les équipements qui mourront avant le bail et ce que cela coûtera au propriétaire</span></span></li>
+          <li><span><a href="ressources/grille-reconciliation-charges.html">Réconcilier les charges : la méthode en une page</a><span class="res-src">Comprendre où passent les charges d'exploitation et ce qui est refacturable</span></span></li>
+          <li><span><a href="ressources/methode-analyse-causes-racines.html">Analyse des causes racines : arrêter de retraiter la même panne</a><span class="res-src">Remonter à la cause qui produit la panne, au lieu de la réparer une troisième fois</span></span></li>
+          <li><span><a href="ressources/grille-priorisation-actions.html">Prioriser : risque d'abord, confort ensuite</a><span class="res-src">Trancher entre vingt actions ouvertes sans décider au ressenti</span></span></li>
+          <li><span><a href="ressources/grille-lecture-gmao.html">Lire une GMAO en 20 minutes</a><span class="res-src">Savoir si l'outil sert à piloter ou seulement à facturer</span></span></li>
+          <li><span><a href="ressources/liste-controle-gtb.html">GTB / GTC : la liste de contrôle avant de croire à l'économie</a><span class="res-src">Vérifier que le pilotage automatique fait bien ce qu'on lui a demandé</span></span></li>
+          <li><span><a href="ressources/frise-reglementaire-fm.html">Frise réglementaire : la méthode, pas des dates inventées</a><span class="res-src">Construire votre échéancier réglementaire à partir des textes qui vous concernent</span></span></li>
+          <li><span><a href="ressources/checklist-passation-site.html">Passation de site : ne rien perdre en partant</a><span class="res-src">Rendre le site reprenable par un successeur qui n'a pas connu l'historique</span></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="proof-band" style="display:block; margin-top:48px;">
+      <h4>Ce qu'il faut savoir — les périodicités qui reviennent tout le temps</h4>
+      <div class="know-grid">
+        <div><b>Extincteurs</b> : maintenance annuelle ; <b>exercices d'évacuation</b> semestriels en ERP (1res à 4es catégories).</div>
+        <div><b>Électricité</b> : vérifications périodiques obligatoires, périodicité fixée par l'arrêté du 10 octobre 2000 (le plus souvent annuelle).</div>
+        <div><b>Ascenseurs</b> : entretien continu obligatoire + contrôle technique tous les 5 ans (art. R.125-2-4 CCH).</div>
+        <div><b>Eau chaude sanitaire</b> : surveillance des légionelles dès que l'installation produit, stocke ou distribue de l'ECS (arrêté du 1er février 2010).</div>
+        <div><b>Décret tertiaire</b> : déclaration annuelle des consommations sur OPERAT avant le 30 septembre pour les bâtiments ≥ 1 000 m².</div>
+        <div><b>Secourisme</b> : recyclage tous les 24 mois (SST comme personnels SSIAP).</div>
+        <div><b>Entreprises extérieures</b> : plan de prévention avant toute intervention — la coordination se prouve, elle ne se présume pas.</div>
+        <div><b>Règle d'or</b> : une échéance sans source écrite n'existe pas. Toujours citer le texte en vigueur, jamais de mémoire.</div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;">
+      <span class="eyebrow">S'organiser</span>
+      <h2 class="h2" style="font-size:clamp(22px,3vw,30px);">De la documentation au pilotage, en quatre gestes.</h2>
+      <div class="prob-grid" style="margin-top:32px;">
+        <div class="prob-card">
+          <div class="prob-icon">🗓</div>
+          <div class="prob-title">1. Construire la frise du site</div>
+          <div class="prob-sol">Un échéancier par site, chaque ligne reliée à son texte et à sa preuve. La méthode en une page : <a href="ressources/frise-reglementaire-fm.html" style="color:var(--gold-warm)">fiche Frise réglementaire</a>.</div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">📎</div>
+          <div class="prob-title">2. Relier chaque échéance à une preuve</div>
+          <div class="prob-sol">Rapport, PV, facture : ce qui n'est pas prouvé est traité comme non fait. Voir <a href="ressources/grille-verification-contrat-terrain.html" style="color:var(--gold-warm)">la grille Contrat vs terrain</a>.</div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">📊</div>
+          <div class="prob-title">3. Piloter avec la GMAO, pas subir</div>
+          <div class="prob-sol">Vingt minutes pour savoir si l'outil reflète le terrain : <a href="ressources/grille-lecture-gmao.html" style="color:var(--gold-warm)">Lire une GMAO en 20 minutes</a>.</div>
+        </div>
+        <div class="prob-card">
+          <div class="prob-icon">🤝</div>
+          <div class="prob-title">4. Sécuriser la transmission</div>
+          <div class="prob-sol">L'échéancier doit survivre au départ de son auteur : <a href="ressources/checklist-passation-site.html" style="color:var(--gold-warm)">la checklist de passation</a>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:64px;">
+      <p class="lead" style="margin:0 auto 28px;">Un site, une frise, des preuves datées : c'est exactement ce que je construis en mission. Vous voulez y voir clair sur votre propre périmètre ?</p>
+      <button class="btn-primary" onclick="go('contact')">Demander un diagnostic flash</button>
+    </div>
+  </section>
+
   <footer class="foot">
     <div class="foot-links">
-      <span onclick="go('home')">Accueil</span>
-      <span onclick="go('fm')">Facility Management</span>
-      <span onclick="go('pm')">Property Management</span>
+      <span data-page="home" onclick="go('home')">Accueil</span>
+      <span data-page="fm" onclick="go('fm')">Facility Management</span>
+      <span data-page="pm" onclick="go('pm')">Property Management</span>
       <span onclick="go('train')" class="on">Progression</span>
       <a href="ressources/index.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
+      <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic</div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -747,7 +1087,7 @@ body {
             <div class="field" style="display:flex; align-items:center; gap:12px; margin-bottom:32px;">
               <input type="checkbox" id="q-rgpd" style="width:auto;">
               <label for="q-rgpd" style="margin-bottom:0; text-transform:none; font-size:12px;">
-                J'accepte que Laulogistic utilise ces données pour préparer mon diagnostic.
+                J'accepte que Laulogistic utilise ces données pour préparer mon diagnostic. <a href="confidentialite.html" target="_blank" rel="noopener" style="color:var(--gold-warm)">Politique de confidentialité</a>
               </label>
             </div>
             <button class="btn-submit" type="button" onclick="submitQuestionnaire()">Envoyer mon périmètre</button>
@@ -756,6 +1096,11 @@ body {
           <div id="q-ok" style="display:none; text-align:center; padding:20px 0;">
             <h3 style="color:var(--gold); font-family:'Cormorant Garamond'; font-size:24px;">Dossier reçu.</h3>
             <p style="font-size:14px; color:var(--text);">J'analyse vos données. Je reviens vers vous sous 24h pour fixer notre échange.</p>
+          </div>
+
+          <div id="q-fallback" style="display:none; text-align:center; padding:20px 0;">
+            <h3 style="color:var(--gold); font-family:'Cormorant Garamond', serif; font-size:24px;">Votre messagerie s'est ouverte.</h3>
+            <p style="font-size:14px; color:var(--text);">L'envoi direct n'a pas abouti : un e-mail pré-rempli vers contact@laulogistic.com vient d'être préparé — il ne reste qu'à l'envoyer.</p>
           </div>
         </div>
       </div>
@@ -781,40 +1126,53 @@ body {
 
   <footer class="foot">
     <div class="foot-links">
-      <span onclick="go('home')">Accueil</span>
-      <span onclick="go('fm')">Facility Management</span>
-      <span onclick="go('pm')">Property Management</span>
-      <span onclick="go('train')">Progression</span>
-      <span onclick="go('contact')" class="on">Contact</span>
+      <span data-page="home" onclick="go('home')">Accueil</span>
+      <span data-page="fm" onclick="go('fm')">Facility Management</span>
+      <span data-page="pm" onclick="go('pm')">Property Management</span>
+      <span data-page="train" onclick="go('train')">Progression</span>
+      <span data-page="contact" onclick="go('contact')" class="on">Contact</span>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic</div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
 <script>
 const PAGES = ['home','fm','pm','train','contact'];
 
-function go(page) {
-  PAGES.forEach(p => {
-    const el = document.getElementById('pg-' + p);
-    if (el) el.classList.remove('on');
-    const nb = document.getElementById('nb-' + p);
-    if (nb) nb.classList.remove('on');
-  });
-  document.getElementById('pg-' + page).classList.add('on');
-  const navBtn = document.getElementById('nb-' + page);
-  if (navBtn) navBtn.classList.add('on');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+function toggleNav() {
+  const links = document.querySelector('.nav-links');
+  const burger = document.getElementById('nav-burger');
+  if (!links) return;
+  const open = links.classList.toggle('open');
+  if (burger) burger.setAttribute('aria-expanded', open ? 'true' : 'false');
 }
 
-function scrollToStory() {
-  go('home');
-  setTimeout(() => {
-    const storyElement = document.getElementById('story');
-    if (storyElement) {
-      storyElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, 100);
+function closeNav() {
+  const links = document.querySelector('.nav-links');
+  const burger = document.getElementById('nav-burger');
+  if (links) links.classList.remove('open');
+  if (burger) burger.setAttribute('aria-expanded', 'false');
+}
+
+function go(page) {
+  if (page === 'story') {
+    if (!document.getElementById('pg-home').classList.contains('on')) go('home');
+    const story = document.getElementById('story');
+    if (story) story.scrollIntoView({ behavior: 'smooth' });
+    return;
+  }
+  PAGES.forEach(p => {
+    const pg = document.getElementById('pg-' + p);
+    if (pg) pg.classList.toggle('on', p === page);
+    const nb = document.getElementById('nb-' + p);
+    if (nb) nb.classList.toggle('on', p === page);
+  });
+  document.querySelectorAll('.foot-links [data-page]').forEach(el => {
+    el.classList.toggle('on', el.dataset.page === page);
+  });
+  closeNav();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (history.replaceState) history.replaceState(null, '', '#' + page);
 }
 
 // QUESTIONNAIRE LOGIC
@@ -828,10 +1186,47 @@ function nextStep(step) {
   });
 }
 
+const PAIN_LABELS = {
+  historique: "Absence d'historique technique / Perte de donnée",
+  personnel: "Manque de personnel qualifié / Turn-over",
+  conformite: "Réserves HSE / SSI critiques à lever",
+  prestataires: "Doute sur l'exécution réelle des contrats",
+  reprise: "Reprise d'actif / Passation complexe",
+  formation: "Besoin de montée en compétences d'équipe"
+};
+const TYPE_LABELS = {
+  bureaux: 'Bureaux / Tertiaire',
+  logistique: 'Logistique / Industriel',
+  institutionnel: 'Institutionnel / Diplomatique',
+  mixte: 'Mixte'
+};
+const FORM_ENDPOINT = 'https://formspree.io/f/xpqklqnw';
+
 function submitQuestionnaire() {
   const rgpd = document.getElementById('q-rgpd');
-  if(!rgpd.checked) {
-    alert("Merci d'accepter la politique de confidentialité.");
+  if (!rgpd.checked) {
+    alert("Merci d'accepter l'utilisation de vos données pour préparer le diagnostic.");
+    return;
+  }
+
+  const getValue = id => (document.getElementById(id) ? document.getElementById(id).value.trim() : '');
+
+  const missing = [
+    ['q-nom', 'votre nom'],
+    ['q-email', 'votre email professionnel'],
+    ['q-org', 'votre organisation / site']
+  ].find(([id]) => !getValue(id));
+  if (missing) {
+    alert('Merci de renseigner ' + missing[1] + '.');
+    const el = document.getElementById(missing[0]);
+    if (el) el.focus();
+    return;
+  }
+
+  const email = getValue('q-email');
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    alert("L'adresse email ne semble pas valide.");
+    document.getElementById('q-email').focus();
     return;
   }
 
@@ -840,24 +1235,59 @@ function submitQuestionnaire() {
   btn.textContent = 'Analyse en cours...';
 
   const data = {
-    nom: document.getElementById('q-nom').value,
-    email: document.getElementById('q-email').value,
-    org: document.getElementById('q-org').value,
-    surface: document.getElementById('q-surface').value,
-    biens: document.getElementById('q-biens').value,
-    type: document.getElementById('q-type').value,
-    pain: document.getElementById('q-pain').value,
-    msg: document.getElementById('q-msg').value
+    Nom: getValue('q-nom'),
+    Email: email,
+    Organisation: getValue('q-org'),
+    Surface: getValue('q-surface') || 'Non renseignée',
+    'Nombre de biens': getValue('q-biens') || 'Non renseigné',
+    "Type d'actif": TYPE_LABELS[getValue('q-type')] || getValue('q-type'),
+    'Enjeu prioritaire': PAIN_LABELS[getValue('q-pain')] || getValue('q-pain'),
+    Précisions: getValue('q-msg') || '—'
   };
 
-  console.log("Données périmètre collectées :", data);
-
-  setTimeout(() => {
+  const showPanel = id => {
     document.querySelectorAll('.q-step').forEach(s => s.style.display = 'none');
-    document.querySelector('.q-progress').style.display = 'none';
-    document.getElementById('q-ok').style.display = 'block';
-  }, 1500);
+    const progress = document.querySelector('.q-progress');
+    if (progress) progress.style.display = 'none';
+    ['q-ok', 'q-fallback'].forEach(p => {
+      const el = document.getElementById(p);
+      if (el) el.style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
+  };
+
+  const mailtoFallback = () => {
+    const body = Object.entries(data).map(([k, v]) => k + ' : ' + v).join('\n');
+    window.location.href = 'mailto:contact@laulogistic.com'
+      + '?subject=' + encodeURIComponent('Diagnostic flash — ' + data.Nom)
+      + '&body=' + encodeURIComponent(body);
+    showPanel('q-fallback');
+  };
+
+  fetch(FORM_ENDPOINT, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({
+      _subject: 'Diagnostic flash — ' + data.Nom,
+      _language: 'fr',
+      email: data.Email,
+      Source: 'laulogistic.com — questionnaire',
+      ...data
+    })
+  })
+    .then(res => { if (!res.ok) throw new Error('HTTP ' + res.status); showPanel('q-ok'); })
+    .catch(() => mailtoFallback())
+    .finally(() => {
+      btn.disabled = false;
+      btn.textContent = 'Envoyer mon périmètre';
+    });
 }
+
+// Ouvre directement la page demandée via l'URL (ex: laulogistic.com/#contact)
+(function initFromHash() {
+  const hash = (location.hash || '').replace('#', '');
+  if (PAGES.includes(hash)) go(hash);
+})();
 </script>
 </body>
 </html>
