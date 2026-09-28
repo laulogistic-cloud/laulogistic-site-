@@ -4,12 +4,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230C1428'/%3E%3Crect%20x='24'%20y='24'%20width='16'%20height='16'%20fill='%23C8A84B'%20transform='rotate(45%2032%2032)'/%3E%3C/svg%3E">
-<meta name="description" content="Laurent Moïse – Pilote d'environnements opérationnels complexes. Consulting, Audit FM, Transmission de compétences et Formation technique. 25+ ans d'expérience terrain.">
-<meta name="keywords" content="consulting opérationnel, formation facility management, montée en compétences FM, audit FM, reprise d'actifs, formation technique bâtiment, transmission savoir-faire">
+<meta name="description" content="Laurent Moïse (Laulogistic) — Consultant indépendant FM/PM. Audit & Conformité FM/HSE · Reprise de contrôle en urgence · Pilotage multisite. Interventions en régie possibles, déjà pourvoyeur de missions. TJM à partir de 500€.">
+<meta name="keywords" content="consultant FM, consultant property management, urgence opérationnelle, diagnostic facilité, pilotage multisite, facility management audit, gestion technique bâtiment">
 <meta name="author" content="Laurent Moïse – Laulogistic">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Laulogistic – Pilote d'Environnements Opérationnels Complexes | Laurent Moïse">
-<meta property="og:description" content="L'expertise terrain pour stabiliser vos actifs et former vos équipes quand l'humain et la donnée manquent.">
+<meta property="og:description" content="Situation chaotique ? Exploitation sans pilotage ? Équipes débordées ? Je stabilise vos opérations quand ça doit marcher VITE."}
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.laulogistic.com/">
 <meta property="og:locale" content="fr_FR">
@@ -424,6 +424,7 @@ body {
     "Reprise d’actifs et levée de réserves",
     "Passation de site"
   ],
+  "slogan": "Reprendre le contrôle en urgence.",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
     "name": "Prestations Laulogistic",
@@ -481,6 +482,13 @@ body {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
+          "name": "Audit Flash 48-72h : diagnostic d'urgence HSE/SSI/maintenance, 5 actions prioritaires (sur devis)"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
           "name": "Formation et transmission de savoir-faire FM / Property"
         }
       }
@@ -507,7 +515,18 @@ body {
     "Property Management",
     "Exploitation d’actifs tertiaires complexes",
     "Sécurité incendie et environnements sensibles"
-  ]
+  ],
+  "makesOffer": {
+    "@type": "Offer",
+    "category": "Urgence opérationnelle",
+    "name": "Intervention en urgence sur exploitation tertiaire",
+    "description": "Audit Flash 48-72h sur devis : diagnostic HSE/SSI/maintenance et 5 actions prioritaires.",
+    "areaServed": "FR",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "description": "Sur devis — TJM à partir de 500€ selon périmètre"
+    }
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -535,6 +554,9 @@ body {
     <button class="nb on" id="nb-home" onclick="go('home')">L'Approche</button>
     <button class="nb" id="nb-fm" onclick="go('fm')">Facility Management</button>
     <button class="nb" id="nb-pm" onclick="go('pm')">Property Management</button>
+    <a class="nb" href="offre-laulogistic.html" style="text-decoration:none" onclick="closeNav()">L'offre</a>
+    <a class="nb" href="audit-conformite-fm-hse.html" style="text-decoration:none" onclick="closeNav()">Audit FM/HSE</a>
+    <a class="nb" href="lexique.html" style="text-decoration:none" onclick="closeNav()">Lexique</a>
     <button class="nb" id="nb-train" onclick="go('train')">Progression</button>
     <a class="nb" href="fiches-outils.html" style="text-decoration:none" onclick="closeNav()">Fiches outils</a>
     <button class="nb" id="nb-contact" onclick="go('contact')">Contact</button>
@@ -550,12 +572,63 @@ body {
 
   <section class="hero-home">
     <div class="hero-inner">
-      <div class="hero-badge">Consulting Opérationnel Stratégique</div>
-      <h1 class="h1 hero-title">Pilote d'environnements<br><em>opérationnels complexes.</em></h1>
-      <p class="hero-sub">Je stabilise vos actifs et sécurise vos exploitations là où l'historique a disparu et où les ressources humaines manquent.</p>
+      <h1 class="h1 hero-title">Pilote d'environnements opérationnels complexes.<br><em>Je reprends le contrôle en urgence.</em></h1>
+      <p class="hero-sub">Situation chaotique&nbsp;? Exploitation sans pilotage&nbsp;? Équipes débordées&nbsp;? → <strong style="color:var(--white);">Laurent Moïse</strong> stabilise vos opérations quand ça doit marcher VITE.</p>
       <div class="cta-btns" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
         <button class="btn-primary" onclick="go('contact')">Demander un diagnostic flash</button>
         <button class="btn-ghost" onclick="go('story')">L'Histoire de Laulogistic</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODES D'INTERVENTION (mix 2026-09-25 : 3 modèles urgence/stabilisation/passation, délais visibles, prix sur devis) -->
+  <section class="sec-wide" style="background: var(--navy-light); padding: 60px var(--pad);">
+    <div style="max-width: var(--max); margin: 0 auto;">
+      <span class="eyebrow">Mes Modes d'Intervention</span>
+      <h2 class="h2" style="margin-bottom: 48px;">Selon Votre Urgence</h2>
+
+      <div class="prob-grid" style="margin-top: 0;">
+        <!-- AUDIT FLASH -->
+        <div class="prob-card">
+          <span style="font-size: 18px; color: var(--gold-warm); margin-bottom: 16px; font-weight: 600;">🔎 AUDIT FLASH</span>
+          <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 16px; line-height: 1.6;">
+            Diagnostic urgence en 48-72h.
+          </p>
+          <ul style="font-size: 13px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">
+            <li>✓ Inventaire système critique</li>
+            <li>✓ Diagnostic HSE/SSI/maintenance</li>
+            <li>✓ 5 actions prioritaires</li>
+          </ul>
+          <p style="font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; margin-top: auto;">3 jours | sur devis</p>
+        </div>
+
+        <!-- PILOTAGE STABILISATION -->
+        <div class="prob-card">
+          <span style="font-size: 18px; color: var(--gold-warm); margin-bottom: 16px; font-weight: 600;">⚙ PILOTAGE 7-15J</span>
+          <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 16px; line-height: 1.6;">
+            Stabiliser + mettre en ordre.
+          </p>
+          <ul style="font-size: 13px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">
+            <li>✓ Restructuration processus</li>
+            <li>✓ Reportings + KPIs</li>
+            <li>✓ Coordination équipes</li>
+          </ul>
+          <p style="font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; margin-top: auto;">7-15 jours | sur devis</p>
+        </div>
+
+        <!-- PASSATION/TRANSITION -->
+        <div class="prob-card">
+          <span style="font-size: 18px; color: var(--gold-warm); margin-bottom: 16px; font-weight: 600;">🔄 PASSATION ÉQUIPE</span>
+          <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 16px; line-height: 1.6;">
+            Transférer savoir-faire terrain.
+          </p>
+          <ul style="font-size: 13px; color: var(--text); line-height: 1.8; margin-bottom: 20px;">
+            <li>✓ Formation courte GMAO</li>
+            <li>✓ Documentation complète</li>
+            <li>✓ Support transition</li>
+          </ul>
+          <p style="font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: .1em; margin-top: auto;">5-10 jours | sur devis</p>
+        </div>
       </div>
     </div>
   </section>
@@ -692,16 +765,47 @@ body {
     </div>
   </section>
 
+  <!-- TARIFICATION TRANSPARENTE (ajout 2026-09-25 : transparence totale, pas de surprise client) -->
+  <section class="sec-wide" style="background: var(--navy-card); padding: 60px var(--pad); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
+    <div style="max-width: var(--max); margin: 0 auto;">
+      <span class="eyebrow">Tarification Transparente</span>
+      <h2 class="h2" style="margin-bottom: 32px;">Devis sur mesure — TJM à partir de 500€</h2>
+      <p style="color:var(--text-dim);max-width:720px;margin:0 auto 8px;">Interventions en régie possibles — Laulogistic est déjà pourvoyeur de missions et d'intérim auprès d'autres structures de FM.</p>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+        <div>
+          <h3 style="color: var(--gold-warm); font-size: 16px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .1em;">Modalités</h3>
+          <ul style="font-size: 14px; color: var(--text); line-height: 2; list-style: none; padding: 0;">
+            <li>✓ TJM à partir de 500€ (minimum 3 jours)</li>
+            <li>✓ Chaque mission fait l'objet d'un devis préalable</li>
+            <li>✓ Rapport diagnostic inclus</li>
+            <li>✓ Facturation à l'issue de la mission</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color: var(--gold-warm); font-size: 16px; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .1em;">Conditions</h3>
+          <ul style="font-size: 14px; color: var(--text); line-height: 2; list-style: none; padding: 0;">
+            <li>✓ Réactivité 48h garantie</li>
+            <li>✓ Expertise hybride : FM, technique et conformité</li>
+            <li>✓ Contrat courte mission</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <footer class="foot">
     <div class="foot-links">
       <span data-page="home" onclick="go('home')">Approche</span>
       <span data-page="fm" onclick="go('fm')">Facility Management</span>
       <span data-page="pm" onclick="go('pm')">Property Management</span>
+      <a href="offre-laulogistic.html">L'offre</a>
+      <a href="lexique.html">Lexique</a>
       <a href="fiches-outils.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
       <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic · www.laulogistic.com</div>
+    <div class="foot-legal">© 2026 Laulogistic · Laurent Moïse · <a href="mentions-legales.html" style="color:inherit;text-decoration:none">Mentions légales</a> · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -718,6 +822,18 @@ body {
   </section>
 
   <section class="sec">
+    <div style="background: var(--navy-card); border-left: 4px solid var(--gold); padding: 32px; margin-bottom: 48px; border-radius: 2px;">
+      <h3 style="color: var(--gold-warm); font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 12px;">
+        ⚠️ Situation critique en FM ?
+      </h3>
+      <p style="color: var(--text); font-size: 14px; line-height: 1.6;">
+        SSI en perte de contrôle • Maintenance sans traces • Équipes débordées • Conformité lacunaire ?
+      </p>
+      <p style="color: var(--text-dim); font-size: 13px; margin-top: 12px;">
+        → Audit diagnostic en 48-72h : 5 actions prioritaires + recommandations hiérarchisées — sur devis
+      </p>
+      <button class="btn-primary" style="margin-top: 16px;" onclick="go('contact')">Demander audit flash</button>
+    </div>
     <div class="spec-grid">
       <div class="spec-card">
         <h3 style="color:var(--gold);">Audit & Diagnostic</h3>
@@ -748,11 +864,13 @@ body {
       <span data-page="home" onclick="go('home')">Accueil</span>
       <span onclick="go('fm')" class="on">FM Solution</span>
       <span data-page="pm" onclick="go('pm')">Property Management</span>
+      <a href="offre-laulogistic.html">L'offre</a>
+      <a href="lexique.html">Lexique</a>
       <a href="fiches-outils.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
       <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="mentions-legales.html" style="color:inherit;text-decoration:none">Mentions légales</a> · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -769,6 +887,18 @@ body {
   </section>
 
   <section class="sec">
+    <div style="background: var(--navy-card); border-left: 4px solid var(--gold); padding: 32px; margin-bottom: 48px; border-radius: 2px;">
+      <h3 style="color: var(--gold-warm); font-family: 'Cormorant Garamond', serif; font-size: 22px; margin-bottom: 12px;">
+        ⚠️ Reprendre contrôle multisite ?
+      </h3>
+      <p style="color: var(--text); font-size: 14px; line-height: 1.6;">
+        Pilotage fragmenté • Coûts non maîtrisés • Reporting inexistant • Chefs de site isolés ?
+      </p>
+      <p style="color: var(--text-dim); font-size: 13px; margin-top: 12px;">
+        → Stabilisation 7-15 jours = restructuration + reportings + coordination
+      </p>
+      <button class="btn-primary" style="margin-top: 16px;" onclick="go('contact')">Demander mission stabilisation</button>
+    </div>
     <div class="spec-grid">
       <div class="spec-card">
         <h3 style="color:var(--gold);">Gestion d'Actifs Tertiaires</h3>
@@ -799,11 +929,13 @@ body {
       <span data-page="home" onclick="go('home')">Accueil</span>
       <span data-page="fm" onclick="go('fm')">FM Solution</span>
       <span onclick="go('pm')" class="on">Property Management</span>
+      <a href="offre-laulogistic.html">L'offre</a>
+      <a href="lexique.html">Lexique</a>
       <a href="fiches-outils.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
       <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="mentions-legales.html" style="color:inherit;text-decoration:none">Mentions légales</a> · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -984,11 +1116,13 @@ body {
       <span data-page="fm" onclick="go('fm')">Facility Management</span>
       <span data-page="pm" onclick="go('pm')">Property Management</span>
       <span onclick="go('train')" class="on">Progression</span>
+      <a href="offre-laulogistic.html">L'offre</a>
+      <a href="lexique.html">Lexique</a>
       <a href="fiches-outils.html">Fiches outils (11)</a>
       <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>
       <a href="https://fr.linkedin.com/in/laulogistic" target="_blank" rel="noopener">LinkedIn</a>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="mentions-legales.html" style="color:inherit;text-decoration:none">Mentions légales</a> · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -999,8 +1133,8 @@ body {
   <section class="hero-spec">
     <div class="hero-spec-inner">
       <span class="eyebrow">Diagnostic & Périmètre</span>
-      <h1 class="h1">Définissons votre besoin.</h1>
-      <p class="lead" style="margin: 20px auto;">Pour optimiser notre premier échange, aidez-moi à comprendre le périmètre de votre exploitation.</p>
+      <h1 class="h1">Vous avez une urgence opérationnelle&nbsp;?</h1>
+      <p class="lead" style="margin: 20px auto;">Décrivez-moi votre situation. Je vous rappelle sous 24h ouvrées avec une première recommandation.</p>
     </div>
   </section>
 
@@ -1014,10 +1148,31 @@ body {
             <div class="q-dot"></div>
             <div class="q-dot"></div>
             <div class="q-dot"></div>
+            <div class="q-dot"></div>
           </div>
 
-          <!-- Step 1: Identité -->
+          <!-- Step 1: Urgence (ajout 2026-09-25 : qualification immédiate du lead) -->
           <div class="q-step on" id="qs-1">
+            <h3 class="q-title">Quel est votre degré d'urgence ?</h3>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 8px;">
+              <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                <input type="radio" name="urgence" value="critique" style="width: 16px; height: 16px;">
+                <span style="color: var(--text);">🟠 CRITIQUE — Situation incontrôlée, besoin immédiat (cette semaine)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                <input type="radio" name="urgence" value="haute" style="width: 16px; height: 16px;">
+                <span style="color: var(--text);">🟡 HAUTE — Problème significatif, besoin sous 2-3 semaines</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 12px; cursor: pointer;">
+                <input type="radio" name="urgence" value="normale" style="width: 16px; height: 16px;">
+                <span style="color: var(--text);">🟢 NORMALE — Diagnostic + restructuration progressive</span>
+              </label>
+            </div>
+            <button class="btn-primary" style="margin-top: 24px;" onclick="validerUrgence()">Suivant</button>
+          </div>
+
+          <!-- Step 2: Identité -->
+          <div class="q-step" id="qs-2">
             <h3 class="q-title">Qui êtes-vous ?</h3>
             <div class="field">
               <label for="q-nom">Prénom & Nom</label>
@@ -1031,11 +1186,11 @@ body {
               <label for="q-org">Organisation / Site</label>
               <input type="text" id="q-org" placeholder="Nom de l'entreprise ou du site">
             </div>
-            <button class="btn-primary" style="width:100%;" onclick="nextStep(2)">Suivant</button>
+            <button class="btn-primary" style="width:100%;" onclick="nextStep(3)">Suivant</button>
           </div>
 
-          <!-- Step 2: Périmètre Technique -->
-          <div class="q-step" id="qs-2">
+          <!-- Step 3: Périmètre Technique -->
+          <div class="q-step" id="qs-3">
             <h3 class="q-title">Le périmètre technique</h3>
             <div class="field">
               <label for="q-surface">Surface approximative (m²)</label>
@@ -1054,15 +1209,16 @@ body {
                 <option value="mixte">Mixte</option>
               </select>
             </div>
-            <button class="btn-primary" style="width:100%;" onclick="nextStep(3)">Suivant</button>
+            <button class="btn-primary" style="width:100%;" onclick="nextStep(4)">Suivant</button>
           </div>
 
-          <!-- Step 3: La Douleur (Pain Point) -->
-          <div class="q-step" id="qs-3">
+          <!-- Step 4: La Douleur (Pain Point) -->
+          <div class="q-step" id="qs-4">
             <h3 class="q-title">L'enjeu prioritaire</h3>
             <div class="field">
               <label for="q-pain">Quelle est votre urgence principale ?</label>
               <select id="q-pain">
+                <option value="">Sélectionner un enjeu</option>
                 <option value="historique">Absence d'historique technique / Perte de donnée</option>
                 <option value="personnel">Manque de personnel qualifié / Turn-over</option>
                 <option value="conformite">Réserves HSE / SSI critiques à lever</option>
@@ -1075,14 +1231,24 @@ body {
               <label for="q-msg">Précisions (optionnel)</label>
               <textarea id="q-msg" rows="3" placeholder="Décrivez brièvement le point de blocage..."></textarea>
             </div>
-            <button class="btn-primary" style="width:100%;" onclick="nextStep(4)">Dernière étape</button>
+            <button class="btn-primary" style="width:100%;" onclick="nextStep(5)">Dernière étape</button>
           </div>
 
-          <!-- Step 4: Validation -->
-          <div class="q-step" id="qs-4">
+          <!-- Step 5: Validation -->
+          <div class="q-step" id="qs-5">
             <h3 class="q-title">Finalisation</h3>
-            <p style="font-size:14px; text-align:center; margin-bottom:24px; color:var(--text-dim);">
-              Vos informations me permettent de préparer un diagnostic préliminaire avant notre appel.
+            <p style="font-size:14px; text-align:center; margin-bottom:16px; color:var(--text-dim);">
+              Avant l'envoi, voici ce qui se passe ensuite :
+            </p>
+            <div style="font-size:13px; line-height:1.8; color:var(--text); background:var(--gold-pale); border:1px solid var(--line); padding:18px 20px; margin-bottom:20px; border-radius:2px;">
+              <strong style="color:var(--gold-warm);">Votre diagnostic préliminaire, étape par étape</strong><br>
+              <span style="color:var(--text-dim);">1.</span> J'analyse votre situation : périmètre, enjeu et degré d'urgence.<br>
+              <span style="color:var(--text-dim);">2.</span> Je prépare une première lecture — risques dominants, points de contrôle, ordre d'action probable.<br>
+              <span style="color:var(--text-dim);">3.</span> Je vous rappelle <strong style="color:var(--white);">sous 24h ouvrées</strong> avec cette recommandation, sans engagement.<br>
+              <span style="color:var(--text-dim);">4.</span> Si un diagnostic sur site est pertinent : périmètre, durée et <strong style="color:var(--white);">devis détaillé</strong> — chaque mission est chiffrée sur devis préalable.
+            </div>
+            <p style="font-size:12px; text-align:center; margin-bottom:24px; color:var(--text-dim);">
+              Une donnée vous manque ? Envoyez quand même : le rappel sous 24h sert précisément à compléter.
             </p>
             <div class="field" style="display:flex; align-items:center; gap:12px; margin-bottom:32px;">
               <input type="checkbox" id="q-rgpd" style="width:auto;">
@@ -1090,17 +1256,18 @@ body {
                 J'accepte que Laulogistic utilise ces données pour préparer mon diagnostic. <a href="confidentialite.html" target="_blank" rel="noopener" style="color:var(--gold-warm)">Politique de confidentialité</a>
               </label>
             </div>
-            <button class="btn-submit" type="button" onclick="submitQuestionnaire()">Envoyer mon périmètre</button>
+            <button class="btn-submit" type="button" onclick="submitQuestionnaire()">Envoyer ma situation</button>
           </div>
 
           <div id="q-ok" style="display:none; text-align:center; padding:20px 0;">
-            <h3 style="color:var(--gold); font-family:'Cormorant Garamond'; font-size:24px;">Dossier reçu.</h3>
-            <p style="font-size:14px; color:var(--text);">J'analyse vos données. Je reviens vers vous sous 24h pour fixer notre échange.</p>
+            <h3 style="color:var(--gold); font-family:'Cormorant Garamond', serif; font-size:24px;">Votre situation est entre de bonnes mains.</h3>
+            <p style="font-size:14px; color:var(--text); max-width:460px; margin:16px auto 0;">Laurent Moïse analyse votre périmètre, votre enjeu et votre degré d'urgence. Vous recevez un premier retour — recommandation ou questions de cadrage — <strong style="color:var(--white);">sous 24h ouvrées</strong>, avant de convenir ensemble d'un échange.</p>
+            <p style="font-size:12px; color:var(--text-dim); margin-top:20px;">Urgence critique ? Mentionnez-le dans votre réponse : le rappel est priorisé.</p>
           </div>
 
           <div id="q-fallback" style="display:none; text-align:center; padding:20px 0;">
             <h3 style="color:var(--gold); font-family:'Cormorant Garamond', serif; font-size:24px;">Votre messagerie s'est ouverte.</h3>
-            <p style="font-size:14px; color:var(--text);">L'envoi direct n'a pas abouti : un e-mail pré-rempli vers contact@laulogistic.com vient d'être préparé — il ne reste qu'à l'envoyer.</p>
+            <p style="font-size:14px; color:var(--text);">L'envoi direct n'a pas abouti : un e-mail pré-rempli vers contact@laulogistic.com vient d'être préparé — il ne reste qu'à l'envoyer. Votre situation sera traitée selon le même circuit : analyse, premier retour sous 24h ouvrées.</p>
           </div>
         </div>
       </div>
@@ -1132,7 +1299,7 @@ body {
       <span data-page="train" onclick="go('train')">Progression</span>
       <span data-page="contact" onclick="go('contact')" class="on">Contact</span>
     </div>
-    <div class="foot-legal">© 2026 Laulogistic · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
+    <div class="foot-legal">© 2026 Laulogistic · <a href="mentions-legales.html" style="color:inherit;text-decoration:none">Mentions légales</a> · <a href="confidentialite.html" style="color:inherit;text-decoration:none">Confidentialité</a></div>
   </footer>
 </div>
 
@@ -1186,6 +1353,21 @@ function nextStep(step) {
   });
 }
 
+const URGENCY_LABELS = {
+  critique: 'CRITIQUE — Situation incontrôlée, besoin immédiat (cette semaine)',
+  haute: 'HAUTE — Problème significatif, besoin sous 2-3 semaines',
+  normale: 'NORMALE — Diagnostic + restructuration progressive'
+};
+
+function validerUrgence() {
+  const choix = document.querySelector('input[name="urgence"]:checked');
+  if (!choix) {
+    alert('Merci de sélectionner votre degré d\'urgence.');
+    return;
+  }
+  nextStep(2);
+}
+
 const PAIN_LABELS = {
   historique: "Absence d'historique technique / Perte de donnée",
   personnel: "Manque de personnel qualifié / Turn-over",
@@ -1210,6 +1392,7 @@ function submitQuestionnaire() {
   }
 
   const getValue = id => (document.getElementById(id) ? document.getElementById(id).value.trim() : '');
+  const getRadioValue = name => (document.querySelector('input[name="' + name + '"]:checked') ? document.querySelector('input[name="' + name + '"]:checked').value : '');
 
   const missing = [
     ['q-nom', 'votre nom'],
@@ -1234,14 +1417,27 @@ function submitQuestionnaire() {
   btn.disabled = true;
   btn.textContent = 'Analyse en cours...';
 
+  const routeByPain = {
+    historique: 'passation',
+    personnel: 'stabilisation',
+    conformite: 'audit_flash',
+    prestataires: 'stabilisation',
+    reprise: 'passation',
+    formation: 'formation'
+  };
+  const route = routeByPain[getValue('q-pain')]
+    || (getRadioValue('urgence') === 'critique' ? 'audit_flash' : 'fm_property');
   const data = {
     Nom: getValue('q-nom'),
     Email: email,
     Organisation: getValue('q-org'),
+    'Degré d\'urgence': URGENCY_LABELS[getRadioValue('urgence')] || getRadioValue('urgence') || 'Non renseigné',
     Surface: getValue('q-surface') || 'Non renseignée',
     'Nombre de biens': getValue('q-biens') || 'Non renseigné',
     "Type d'actif": TYPE_LABELS[getValue('q-type')] || getValue('q-type'),
-    'Enjeu prioritaire': PAIN_LABELS[getValue('q-pain')] || getValue('q-pain'),
+    'Enjeu prioritaire': PAIN_LABELS[getValue('q-pain')] || getValue('q-pain') || 'Non renseigné',
+    'Circuit': 'Laulogistic — FM/Property',
+    'Route': route,
     Précisions: getValue('q-msg') || '—'
   };
 
@@ -1259,7 +1455,7 @@ function submitQuestionnaire() {
   const mailtoFallback = () => {
     const body = Object.entries(data).map(([k, v]) => k + ' : ' + v).join('\n');
     window.location.href = 'mailto:contact@laulogistic.com'
-      + '?subject=' + encodeURIComponent('Diagnostic flash — ' + data.Nom)
+      + '?subject=' + encodeURIComponent('Demande ' + data.Route + ' — ' + data.Nom)
       + '&body=' + encodeURIComponent(body);
     showPanel('q-fallback');
   };
@@ -1268,7 +1464,7 @@ function submitQuestionnaire() {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
     body: JSON.stringify({
-      _subject: 'Diagnostic flash — ' + data.Nom,
+      _subject: 'Demande ' + data.Route + ' — ' + data.Nom,
       _language: 'fr',
       email: data.Email,
       Source: 'laulogistic.com — questionnaire',
@@ -1279,7 +1475,7 @@ function submitQuestionnaire() {
     .catch(() => mailtoFallback())
     .finally(() => {
       btn.disabled = false;
-      btn.textContent = 'Envoyer mon périmètre';
+      btn.textContent = 'Envoyer ma situation';
     });
 }
 
