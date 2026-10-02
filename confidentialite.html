@@ -1,8 +1,35 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<!-- Mode Consentement v2 : défauts posés AVANT tout envoi (ordre critique), choix mémorisé localement -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var fmChoix = 'denied';
+  try {
+    var fmDeja = localStorage.getItem('fm_consent_v2');
+    if (fmDeja === 'granted' || fmDeja === 'denied') { fmChoix = fmDeja; }
+  } catch (e) {}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': fmChoix,
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1VK90JVF1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z1VK90JVF1');
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Politique de confidentialité — Laulogistic</title>
-<meta name="description" content="Quelles données Laulogistic collecte, pourquoi, combien de temps, et comment exercer vos droits. Aucun cookie de suivi sur ce site.">
+<meta name="description" content="Quelles données Laulogistic collecte, pourquoi, combien de temps, et comment exercer vos droits. Mesure d'audience activée seulement après votre accord.">
 <meta property="og:image" content="https://www.laulogistic.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -79,7 +106,7 @@ th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold
 <div class="top"><span><b>LAULOGISTIC</b> — Confidentialité</span><span><a href="./index.html">Retour au site</a></span></div>
 <span class="eyebrow">Données personnelles</span>
 <h1>Politique de confidentialité</h1>
-<p class="promesse">Ce site collecte le minimum : ce que vous écrivez dans les deux formulaires, et rien d'autre. Pas de cookie de mesure d'audience, pas de publicité, pas de revente de données.</p>
+<p class="promesse">Ce site collecte le minimum : ce que vous écrivez dans les deux formulaires, et — après votre seul accord — une mesure d'audience via Google Analytics 4. Pas de publicité, pas de revente de données.</p>
 
 <h2>Qui est responsable</h2>
 <p><strong>Laulogistic</strong> — Laurent Moïse. Contact pour toute question ou demande liée à vos données : <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>.</p>
@@ -123,13 +150,63 @@ th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold
 <p>Si la réponse ne vous satisfait pas, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">cnil.fr — plaintes</a>.</p>
 
 <h2>Cookies et mesure d'audience</h2>
-<p>Ce site ne dépose <strong>aucun cookie</strong> et n'utilise aucun outil de suivi, de profilage ou de publicité. Seules les polices de caractères sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google au moment de l'affichage de la page.</p>
+<p>À votre arrivée, une bannière vous demande si vous acceptez la mesure d'audience. Tant que vous n'avez pas choisi, <strong>aucun cookie de mesure n'est déposé</strong> : la mesure d'audience (Google Analytics 4) ne fonctionne qu'après un clic sur « J'accepte ».</p>
+<p>Si vous acceptez, Google Analytics 4 dépose des cookies de mesure (<em>_ga</em>, <em>_ga_*</em>, 13 mois au maximum) pour compter les visites et les pages consultées, sans profilage et sans publicité. Ces données sont traitées par Google Ireland Ltd, qui peut les transférer hors de l'Union européenne dans le cadre de ses clauses contractuelles types.</p>
+<p>Si vous refusez, aucune mesure n'est réalisée. Votre choix est mémorisé dans votre navigateur (stockage local, clé <em>fm_consent_v2</em>) pour ne pas vous reposer la question à chaque page. Vous pouvez le modifier à tout moment : <a href="#" onclick="if (window.fmConsentOuvrir) { fmConsentOuvrir(); } return false;">modifier mon choix</a>.</p>
+<p>Les polices de caractères restent chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google au moment de l'affichage de la page.</p>
 
-<div class="a-retenir"><span>À retenir</span>Un seul usage : vous répondre. Une seule adresse pour tout demander ou tout supprimer : contact@laulogistic.com. Aucun cookie, aucun revendeur, aucune publicité.</div>
+<div class="a-retenir"><span>À retenir</span>Un seul usage : vous répondre. Une seule adresse pour tout demander ou tout supprimer : contact@laulogistic.com. Aucune publicité, aucun revendeur, et une mesure d'audience qui ne démarre qu'avec votre accord.</div>
 
 <div class="cta noprint"><h3>Une question sur vos données ?</h3><p>Écrivez directement à <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a> : la demande est traitée par la même personne qui répond aux missions, sans formulaire intermédiaire.</p><a class="btn" href="./index.html">Retour au site</a></div>
 
-<p class="maj">Dernière mise à jour : 24 septembre 2026.</p>
+<p class="maj">Dernière mise à jour : 2 octobre 2026.</p>
 
 <div class="foot"><span>Laulogistic · <a href="https://www.laulogistic.com">www.laulogistic.com</a> · <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a></span><span><a href="./index.html">Accueil</a> · <a href="./fiches-outils.html">Fiches outils</a> · <a href="./mentions-legales.html">Mentions légales</a> · <a href="./lexique.html">Lexique</a></span></div>
-</div></body></html>
+</div>
+<!-- Bannière de consentement — mesure d'audience GA4 -->
+<style>
+#fm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0C1428;color:#F2EDE4;border-top:1px solid rgba(200,168,75,.45);box-shadow:0 -6px 24px rgba(0,0,0,.4);font-family:'DM Sans',sans-serif}
+#fm-consent .fm-consent-inner{max-width:1020px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+#fm-consent p{margin:0;font-size:14px;line-height:1.55;flex:1 1 420px;color:rgba(242,237,228,.9)}
+#fm-consent a{color:#C8A84B;text-decoration:underline}
+#fm-consent .fm-consent-actions{display:flex;gap:10px;flex-shrink:0}
+#fm-consent button{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;cursor:pointer;border-radius:2px}
+#fm-consent-accepter{background:#C8A84B;color:#0C1428;border:1px solid #C8A84B;font-weight:500}
+#fm-consent-accepter:hover{background:#D4B86A;border-color:#D4B86A}
+#fm-consent-refuser{background:transparent;color:#F2EDE4;border:1px solid rgba(200,168,75,.6)}
+#fm-consent-refuser:hover{border-color:#C8A84B}
+@media (max-width:560px){#fm-consent .fm-consent-actions{width:100%}#fm-consent button{flex:1}}
+@media print{#fm-consent{display:none!important}}
+</style>
+<div id="fm-consent" role="region" aria-label="Consentement pour la mesure d'audience" hidden>
+  <div class="fm-consent-inner">
+    <p>Ce site mesure son audience avec Google Analytics&nbsp;4, uniquement après votre accord. Aucune donnée avant votre choix, aucune publicité, aucune revente de données. <a href="confidentialite.html">Politique de confidentialité</a></p>
+    <div class="fm-consent-actions">
+      <button type="button" id="fm-consent-accepter">J'accepte</button>
+      <button type="button" id="fm-consent-refuser">Je refuse</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var CLE = 'fm_consent_v2';
+  var boite = document.getElementById('fm-consent');
+  function enregistrer(valeur) {
+    try { localStorage.setItem(CLE, valeur); } catch (e) {}
+    gtag('consent', 'update', {
+      'analytics_storage': valeur,
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    boite.hidden = true;
+  }
+  window.fmConsentOuvrir = function () { boite.hidden = false; };
+  document.getElementById('fm-consent-accepter').addEventListener('click', function () { enregistrer('granted'); });
+  document.getElementById('fm-consent-refuser').addEventListener('click', function () { enregistrer('denied'); });
+  var deja = null;
+  try { deja = localStorage.getItem(CLE); } catch (e) {}
+  if (!deja) { boite.hidden = false; }
+})();
+</script>
+</body></html>

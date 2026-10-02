@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="UTF-8">
+<!-- Mode Consentement v2 : défauts posés AVANT tout envoi (ordre critique), choix mémorisé localement -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var fmChoix = 'denied';
+  try {
+    var fmDeja = localStorage.getItem('fm_consent_v2');
+    if (fmDeja === 'granted' || fmDeja === 'denied') { fmChoix = fmDeja; }
+  } catch (e) {}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': fmChoix,
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1VK90JVF1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z1VK90JVF1');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lexique FM, Property et technique du bâtiment — Laulogistic</title>
-<meta name="description" content="72 sigles du Facility Management, du Property et de la technique du bâtiment, définis en une phrase : GTB, GTC, CVC, GMAO, SSI, BAES, DOE, AMOA, TJM.">
+<meta name="description" content="83 sigles du Facility Management, du Property et de la technique du bâtiment, définis en une phrase : GTB, GTC, CVC, GMAO, SSI, BAES, DOE, AMOA, TJM.">
 <meta property="og:title" content="Lexique FM & Property — Laulogistic">
-<meta property="og:description" content="Un mot qui veut dire deux choses est une erreur qui finit dans un livrable. Voici les 72 sigles du métier, définis et sans ambiguïté.">
+<meta property="og:description" content="Un mot qui veut dire deux choses est une erreur qui finit dans un livrable. Voici les 83 sigles du métier, définis et sans ambiguïté.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://www.laulogistic.com/lexique.html">
 <meta property="og:image" content="https://www.laulogistic.com/og-image.png">
@@ -52,7 +79,7 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
 
 <div class="top">
   <a href="index.html">← Laulogistic</a>
-  <span>Lexique v1.1.0</span>
+  <span>Lexique v1.2.1</span>
 </div>
 
 <p class="eyebrow">Facility Management · Property · Technique du bâtiment</p>
@@ -94,8 +121,8 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
     </article>
     <article class="card" id="sigle-003">
       <h3><abbr title="Assistance a maitrise d'ouvrage">AMOA</abbr><span>Assistance a maitrise d'ouvrage</span></h3>
-      <p>Assister le maitre d'ouvrage : analyser les devis, comparer, eclairer la decision, controler la qualite. Le decideur reste le client.</p>
-      <p class="machine"><b>En pratique —</b> Ouvre le volet AMOA : comparaison d'offres, ecarts, questions a poser. Ne choisit jamais le fournisseur. C'est le cadre d'intervention de Laulogistic : le perimetre de travail commence la ou la decision du MOA a besoin d'etre eclairee et s'arrete la ou la decision est prise. A ne pas confondre avec la MOE, qui execute et repond de l'execution.</p>
+      <p>Assister le maitre d'ouvrage : analyser les devis, comparer, eclairer la decision, controler la qualite. Le decideur reste le client. C'est le cadre d'intervention de Laulogistic : eclairer la decision du maitre d'ouvrage, jamais la remplacer.</p>
+      <p class="machine"><b>En pratique —</b> Ouvre le volet AMOA : comparaison d'offres, ecarts, questions a poser. Ne choisit jamais le fournisseur.</p>
     </article>
     <article class="card" id="sigle-004">
       <h3><abbr title="Maitrise d'ouvrage">MOA</abbr><span>Maitrise d'ouvrage</span></h3>
@@ -184,6 +211,11 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
       <p>Batiment dont les systemes techniques se pilotent automatiquement et echangent leurs donnees : une des briques de la vague Smart Building.</p>
       <p class="machine"><b>En pratique —</b> A relier a la maturite GTB et GTC. Ne pas vendre un niveau Smart Building sans besoin identifie.</p>
     </article>
+    <article class="card" id="sigle-077">
+      <h3><abbr title="Document Technique Unifie">DTU</abbr><span>Document Technique Unifie</span></h3>
+      <p>Regles techniques reconnues pour concevoir et executer certains ouvrages. Une reference technique de son domaine, pas une loi : on regarde son statut, les documents contractuels et les regles applicables au projet avant de s'y appuyer.</p>
+      <p class="machine"><b>En pratique —</b> Detecte la revue technique d'un projet de travaux. La preuve attendue est la distinction explicite entre obligatoire, contractuel et bonne pratique.</p>
+    </article>
     </div>
   </section>
 
@@ -263,6 +295,16 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
       <p>Etude qui etablit le bilan des apports, des besoins et des emissions d'un batiment sur une annee de reference.</p>
       <p class="machine"><b>En pratique —</b> Piece d'etude. Conduit a la simulation de conformite reglementaire si le projet est concerne.</p>
     </article>
+    <article class="card" id="sigle-082">
+      <h3><abbr title="Plateforme OPERAT">OPERAT</abbr><span>Plateforme OPERAT</span></h3>
+      <p>Plateforme nationale de suivi des consommations energetiques du dispositif Eco Energie Tertiaire. C'est la ou la conformite au decret tertiaire se declare et se prouve.</p>
+      <p class="machine"><b>En pratique —</b> Detecte une obligation de reporting energetique tertiaire. La preuve attendue est un suivi declaratif a jour, pas une intention d'economie.</p>
+    </article>
+    <article class="card" id="sigle-083">
+      <h3><abbr title="Eco Energie Tertiaire">EET</abbr><span>Eco Energie Tertiaire</span></h3>
+      <p>Dispositif de reduction des consommations d'energie finale des batiments tertiaires : -40% en 2030, -50% en 2040, -60% en 2050 par rapport a une consommation de reference, avec suivi via OPERAT.</p>
+      <p class="machine"><b>En pratique —</b> Detecte le decret tertiaire dans une mission. La preuve attendue est la trajectoire chiffree du batiment et ses actions, pas la citation des pourcentages.</p>
+    </article>
     </div>
   </section>
 
@@ -320,6 +362,16 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
       <p>Verification reglementaire annuelle ou periodique d'une installation : electricite, gaz, ascenseurs, extincteurs, installations de securite. Les interventions annuelles des veriteurs en ascenseurs en sont un exemple.</p>
       <p class="machine"><b>En pratique —</b> Chaque controle periodique est une echeance de conformite : suivre, tracer, et signaler l'absence de preuve.</p>
     </article>
+    <article class="card" id="sigle-073">
+      <h3><abbr title="Etablissement Recevant des Travailleurs">ERT</abbr><span>Etablissement Recevant des Travailleurs</span></h3>
+      <p>Etablissement ou travaillent des salaries : il releve principalement du Code du travail pour les lieux de travail, contrairement a un ERP. Un meme ensemble immobilier peut mixer les deux statuts selon les locaux et les usages : on verifie toujours le statut reglementaire reel du batiment avant de conclure sur les obligations.</p>
+      <p class="machine"><b>En pratique —</b> Detecte une mission tertiaire bureaux (contexte ERT, pas ERP). La preuve attendue est l'analyse du statut reglementaire reel du batiment, jamais un regime annonce par habitude.</p>
+    </article>
+    <article class="card" id="sigle-078">
+      <h3><abbr title="Immeuble de Grande Hauteur">IGH</abbr><span>Immeuble de Grande Hauteur</span></h3>
+      <p>Regime de securite incendie specifique aux batiments de grande hauteur, distinct du regime ERP. Un batiment peut relever des deux regimes selon ses parties.</p>
+      <p class="machine"><b>En pratique —</b> Detecte un batiment a regime de securite renforce. La preuve attendue est l'identification precise du ou des regimes applicables.</p>
+    </article>
     </div>
   </section>
 
@@ -361,6 +413,31 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
       <h3><abbr title="Propriete privee d'un immeuble en copropriete">PPE</abbr><span>Propriete privee d'un immeuble en copropriete</span></h3>
       <p>Le regime de gestion d'un immeuble divise en lots, avec syndic, assemblee generale et repartition des charges.</p>
       <p class="machine"><b>En pratique —</b> Le livrable attendu est alors un etat des charges et un plan de travaux, pas une fiche equipement.</p>
+    </article>
+    <article class="card" id="sigle-074">
+      <h3><abbr title="Dossier de Consultation des Entreprises">DCE</abbr><span>Dossier de Consultation des Entreprises</span></h3>
+      <p>Le dossier qui permet aux entreprises de repondre a une consultation de travaux : pieces administratives, CCTP, plans, bordereaux, DPGF, planning, contraintes et modalites de reponse.</p>
+      <p class="machine"><b>En pratique —</b> Detecte une mission de consultation de travaux cote donneur d'ordre. La preuve attendue est un DCE complet et comparable, pas une demande envoyee en vrac par mail.</p>
+    </article>
+    <article class="card" id="sigle-075">
+      <h3><abbr title="Cahier des Clauses Techniques Particulieres">CCTP</abbr><span>Cahier des Clauses Techniques Particulieres</span></h3>
+      <p>La piece du DCE qui decrit techniquement ce qui doit etre realise. C'est la que se joue la comparabilite des offres : sans CCTP precis, les entreprises ne repondent pas a la meme question.</p>
+      <p class="machine"><b>En pratique —</b> Detecte la redaction ou la revue d'un dossier de consultation. La preuve attendue est un cahier des charges qui rend les offres comparables ligne a ligne.</p>
+    </article>
+    <article class="card" id="sigle-079">
+      <h3><abbr title="Association Fonciere Urbaine Libre">AFUL</abbr><span>Association Fonciere Urbaine Libre</span></h3>
+      <p>Structure de gouvernance d'un ensemble immobilier prive depuis la loi ELAN (elle remplace l'ASL) : elle gere les parties communes et encaisse les charges de ses membres.</p>
+      <p class="machine"><b>En pratique —</b> Detecte un mandat de gestion sur un ensemble prive governant par AFUL. La preuve attendue est la comprehension du mandant reel et du perimetre de charges.</p>
+    </article>
+    <article class="card" id="sigle-080">
+      <h3><abbr title="Association Syndicale Libre">ASL</abbr><span>Association Syndicale Libre</span></h3>
+      <p>Ancienne structure de gouvernance des ensembles immobiliers prives, progressivement remplacee par l'AFUL depuis la loi ELAN. Beaucoup d'ensembles portent encore ce statut : le verifier change qui decide et qui paie.</p>
+      <p class="machine"><b>En pratique —</b> Detecte un ensemble prive sous ancien statut. La preuve attendue est la verification du statut juridique reel avant d'adresser le bon mandant.</p>
+    </article>
+    <article class="card" id="sigle-081">
+      <h3><abbr title="Syndicat Des Coproprietaires">SDC</abbr><span>Syndicat Des Coproprietaires</span></h3>
+      <p>Personne morale regroupant tous les coproprietaires d'un immeuble. Sur une copropriete, le gestionnaire traite avec le syndic et le conseil syndical, pas avec chaque coproprietaire.</p>
+      <p class="machine"><b>En pratique —</b> Detecte une mission en contexte copropriete. La preuve attendue est l'identification des organes de decision (AG, syndic, conseil syndical) avant toute engagement.</p>
     </article>
     </div>
   </section>
@@ -418,6 +495,11 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
       <h3><abbr title="Facture">Facture</abbr><span>Facture</span></h3>
       <p>Piece comptable et fiscale qui constate une operation et sert de point de controle des charges.</p>
       <p class="machine"><b>En pratique —</b> Classee par la date de la piece, jamais par la date du nom de fichier. Une facture d'electricite porte souvent une date de comptage.</p>
+    </article>
+    <article class="card" id="sigle-076">
+      <h3><abbr title="Decomposition du Prix Global et Forfaitaire">DPGF</abbr><span>Decomposition du Prix Global et Forfaitaire</span></h3>
+      <p>La piece chiffree de l'offre d'une entreprise : elle permet de comparer les offres ligne a ligne, de suivre les prix dans le temps et d'etayer les decisions d'attribution.</p>
+      <p class="machine"><b>En pratique —</b> Detecte l'analyse d'offres ou le suivi de prix. La preuve attendue est une comparaison documentee, pas une attribution au feeling.</p>
     </article>
     </div>
   </section>
@@ -510,7 +592,7 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
 
 <div class="a-retenir">
   <span>À retenir</span>
-  72 sigles, 286 formulations reconnues. Chaque entrée porte sa définition et sa conséquence concrète. C'est le même vocabulaire que celui utilisé pour trier et nommer les pièces d'un dossier.
+  83 sigles, 308 formulations reconnues. Chaque entrée porte sa définition et sa conséquence concrète. C'est le même vocabulaire que celui utilisé pour trier et nommer les pièces d'un dossier.
 </div>
 
 <h2>À quoi sert ce lexique, concrètement</h2>
@@ -538,4 +620,51 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
   <p>Ce lexique décrit un vocabulaire métier. Il ne vaut ni conseil réglementaire, ni certification, ni mise en conformité : il permet de nommer précisément ce que l'on contrôle.</p>
 </footer>
 
-</div></body></html>
+</div>
+<!-- Bannière de consentement — mesure d'audience GA4 -->
+<style>
+#fm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0C1428;color:#F2EDE4;border-top:1px solid rgba(200,168,75,.45);box-shadow:0 -6px 24px rgba(0,0,0,.4);font-family:'DM Sans',sans-serif}
+#fm-consent .fm-consent-inner{max-width:1020px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+#fm-consent p{margin:0;font-size:14px;line-height:1.55;flex:1 1 420px;color:rgba(242,237,228,.9)}
+#fm-consent a{color:#C8A84B;text-decoration:underline}
+#fm-consent .fm-consent-actions{display:flex;gap:10px;flex-shrink:0}
+#fm-consent button{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;cursor:pointer;border-radius:2px}
+#fm-consent-accepter{background:#C8A84B;color:#0C1428;border:1px solid #C8A84B;font-weight:500}
+#fm-consent-accepter:hover{background:#D4B86A;border-color:#D4B86A}
+#fm-consent-refuser{background:transparent;color:#F2EDE4;border:1px solid rgba(200,168,75,.6)}
+#fm-consent-refuser:hover{border-color:#C8A84B}
+@media (max-width:560px){#fm-consent .fm-consent-actions{width:100%}#fm-consent button{flex:1}}
+@media print{#fm-consent{display:none!important}}
+</style>
+<div id="fm-consent" role="region" aria-label="Consentement pour la mesure d'audience" hidden>
+  <div class="fm-consent-inner">
+    <p>Ce site mesure son audience avec Google Analytics&nbsp;4, uniquement après votre accord. Aucune donnée avant votre choix, aucune publicité, aucune revente de données. <a href="confidentialite.html">Politique de confidentialité</a></p>
+    <div class="fm-consent-actions">
+      <button type="button" id="fm-consent-accepter">J'accepte</button>
+      <button type="button" id="fm-consent-refuser">Je refuse</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var CLE = 'fm_consent_v2';
+  var boite = document.getElementById('fm-consent');
+  function enregistrer(valeur) {
+    try { localStorage.setItem(CLE, valeur); } catch (e) {}
+    gtag('consent', 'update', {
+      'analytics_storage': valeur,
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    boite.hidden = true;
+  }
+  window.fmConsentOuvrir = function () { boite.hidden = false; };
+  document.getElementById('fm-consent-accepter').addEventListener('click', function () { enregistrer('granted'); });
+  document.getElementById('fm-consent-refuser').addEventListener('click', function () { enregistrer('denied'); });
+  var deja = null;
+  try { deja = localStorage.getItem(CLE); } catch (e) {}
+  if (!deja) { boite.hidden = false; }
+})();
+</script>
+</body></html>

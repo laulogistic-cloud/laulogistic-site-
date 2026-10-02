@@ -2,6 +2,33 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<!-- Mode Consentement v2 : défauts posés AVANT tout envoi (ordre critique), choix mémorisé localement -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var fmChoix = 'denied';
+  try {
+    var fmDeja = localStorage.getItem('fm_consent_v2');
+    if (fmDeja === 'granted' || fmDeja === 'denied') { fmChoix = fmDeja; }
+  } catch (e) {}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': fmChoix,
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1VK90JVF1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z1VK90JVF1');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230C1428'/%3E%3Crect%20x='24'%20y='24'%20width='16'%20height='16'%20fill='%23C8A84B'%20transform='rotate(45%2032%2032)'/%3E%3C/svg%3E">
 <meta name="description" content="Audit &amp; Conformité FM/HSE par Laulogistic — registre de sécurité, contrôles périodiques, DUERP, contrats de maintenance. Livrables sous 5 jours : tableau de bord de conformité + plan d'action priorisé + restitution.">
@@ -203,6 +230,53 @@ footer a{margin:0 10px}
     }
   ]
 }
+</script>
+
+<!-- Bannière de consentement — mesure d'audience GA4 -->
+<style>
+#fm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0C1428;color:#F2EDE4;border-top:1px solid rgba(200,168,75,.45);box-shadow:0 -6px 24px rgba(0,0,0,.4);font-family:'DM Sans',sans-serif}
+#fm-consent .fm-consent-inner{max-width:1020px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+#fm-consent p{margin:0;font-size:14px;line-height:1.55;flex:1 1 420px;color:rgba(242,237,228,.9)}
+#fm-consent a{color:#C8A84B;text-decoration:underline}
+#fm-consent .fm-consent-actions{display:flex;gap:10px;flex-shrink:0}
+#fm-consent button{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;cursor:pointer;border-radius:2px}
+#fm-consent-accepter{background:#C8A84B;color:#0C1428;border:1px solid #C8A84B;font-weight:500}
+#fm-consent-accepter:hover{background:#D4B86A;border-color:#D4B86A}
+#fm-consent-refuser{background:transparent;color:#F2EDE4;border:1px solid rgba(200,168,75,.6)}
+#fm-consent-refuser:hover{border-color:#C8A84B}
+@media (max-width:560px){#fm-consent .fm-consent-actions{width:100%}#fm-consent button{flex:1}}
+@media print{#fm-consent{display:none!important}}
+</style>
+<div id="fm-consent" role="region" aria-label="Consentement pour la mesure d'audience" hidden>
+  <div class="fm-consent-inner">
+    <p>Ce site mesure son audience avec Google Analytics&nbsp;4, uniquement après votre accord. Aucune donnée avant votre choix, aucune publicité, aucune revente de données. <a href="confidentialite.html">Politique de confidentialité</a></p>
+    <div class="fm-consent-actions">
+      <button type="button" id="fm-consent-accepter">J'accepte</button>
+      <button type="button" id="fm-consent-refuser">Je refuse</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var CLE = 'fm_consent_v2';
+  var boite = document.getElementById('fm-consent');
+  function enregistrer(valeur) {
+    try { localStorage.setItem(CLE, valeur); } catch (e) {}
+    gtag('consent', 'update', {
+      'analytics_storage': valeur,
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    boite.hidden = true;
+  }
+  window.fmConsentOuvrir = function () { boite.hidden = false; };
+  document.getElementById('fm-consent-accepter').addEventListener('click', function () { enregistrer('granted'); });
+  document.getElementById('fm-consent-refuser').addEventListener('click', function () { enregistrer('denied'); });
+  var deja = null;
+  try { deja = localStorage.getItem(CLE); } catch (e) {}
+  if (!deja) { boite.hidden = false; }
+})();
 </script>
 </body>
 </html>

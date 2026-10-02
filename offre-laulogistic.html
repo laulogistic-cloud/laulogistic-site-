@@ -1,5 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr"><head><meta charset="UTF-8">
+<!-- Mode Consentement v2 : défauts posés AVANT tout envoi (ordre critique), choix mémorisé localement -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  var fmChoix = 'denied';
+  try {
+    var fmDeja = localStorage.getItem('fm_consent_v2');
+    if (fmDeja === 'granted' || fmDeja === 'denied') { fmChoix = fmDeja; }
+  } catch (e) {}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': fmChoix,
+    'wait_for_update': 500
+  });
+  gtag('set', 'ads_data_redaction', true);
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1VK90JVF1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Z1VK90JVF1');
+</script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>L'offre en escalier — diagnostic, AMOA Flash, conformité, pilotage — Laulogistic</title>
 <meta name="description" content="Diagnostic gratuit, AMOA Flash, conseil Facility et Property, mise en conformité durable, pilotage récurrent. Chaque niveau suppose que le précédent a été tenu, et chaque audit produit un tableau de bord rempli par ce qui a été constaté chez vous.">
@@ -138,6 +165,16 @@ footer a{color:var(--goldw)}
   </div>
 </div>
 
+<h2>Gestion technique tertiaire : ce que le métier exige</h2>
+<p class="lede">Bureaux mono ou multi-locataires, portefeuilles pilotés sous mandat, historiques parfois incomplets : le vocabulaire est précis et les interlocuteurs nombreux. Cette page parle le métier — le lexique du site reprend chaque terme.</p>
+<ul class="etats">
+  <li><b>Exploitation</b>Préventif, correctif, urgences, contrats, contrôles réglementaires : chaque intervention doit laisser une trace vérifiable, du bon de commande à la clôture.</li>
+  <li><b>Travaux</b>DCE, CCTP, DPGF, DTU : consulter, comparer, suivre l’exécution, lever les réserves et conserver le DOE pour ne pas repartir de zéro après les travaux.</li>
+  <li><b>Réglementaire</b>ERP ou ERT, SSI de catégorie A à E, GTB et obligation BACS, objectifs tertiaires et leur reporting : on vérifie le statut réel du bâtiment avant de conclure.</li>
+  <li><b>Finances</b>OPEX et CAPEX séparés, budget de fonctionnement, indicateurs de prestation (délais, taux de préventif, récurrence) : chaque dépense est rattachée à une décision et à une preuve.</li>
+</ul>
+<p style="margin-top:14px;font-size:14px">La discipline reste la même quel que soit le bâtiment : comprendre, qualifier, prioriser, consulter, faire réaliser, contrôler, documenter, rendre compte. La méthode décrite plus haut s’applique telle quelle.</p>
+
 <h2>Ce que nous faisons, et ce que vous recevez</h2>
 <div class="deux">
   <div class="bloc">
@@ -221,4 +258,51 @@ footer a{color:var(--goldw)}
   <p>Cette page décrit une méthode et une organisation de services. Les durées indiquées sont des ordres de grandeur : elles ne valent pas engagement contractuel, qui passe par un devis signé.</p>
 </footer>
 
-</div></body></html>
+</div>
+<!-- Bannière de consentement — mesure d'audience GA4 -->
+<style>
+#fm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0C1428;color:#F2EDE4;border-top:1px solid rgba(200,168,75,.45);box-shadow:0 -6px 24px rgba(0,0,0,.4);font-family:'DM Sans',sans-serif}
+#fm-consent .fm-consent-inner{max-width:1020px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+#fm-consent p{margin:0;font-size:14px;line-height:1.55;flex:1 1 420px;color:rgba(242,237,228,.9)}
+#fm-consent a{color:#C8A84B;text-decoration:underline}
+#fm-consent .fm-consent-actions{display:flex;gap:10px;flex-shrink:0}
+#fm-consent button{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;cursor:pointer;border-radius:2px}
+#fm-consent-accepter{background:#C8A84B;color:#0C1428;border:1px solid #C8A84B;font-weight:500}
+#fm-consent-accepter:hover{background:#D4B86A;border-color:#D4B86A}
+#fm-consent-refuser{background:transparent;color:#F2EDE4;border:1px solid rgba(200,168,75,.6)}
+#fm-consent-refuser:hover{border-color:#C8A84B}
+@media (max-width:560px){#fm-consent .fm-consent-actions{width:100%}#fm-consent button{flex:1}}
+@media print{#fm-consent{display:none!important}}
+</style>
+<div id="fm-consent" role="region" aria-label="Consentement pour la mesure d'audience" hidden>
+  <div class="fm-consent-inner">
+    <p>Ce site mesure son audience avec Google Analytics&nbsp;4, uniquement après votre accord. Aucune donnée avant votre choix, aucune publicité, aucune revente de données. <a href="confidentialite.html">Politique de confidentialité</a></p>
+    <div class="fm-consent-actions">
+      <button type="button" id="fm-consent-accepter">J'accepte</button>
+      <button type="button" id="fm-consent-refuser">Je refuse</button>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var CLE = 'fm_consent_v2';
+  var boite = document.getElementById('fm-consent');
+  function enregistrer(valeur) {
+    try { localStorage.setItem(CLE, valeur); } catch (e) {}
+    gtag('consent', 'update', {
+      'analytics_storage': valeur,
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied'
+    });
+    boite.hidden = true;
+  }
+  window.fmConsentOuvrir = function () { boite.hidden = false; };
+  document.getElementById('fm-consent-accepter').addEventListener('click', function () { enregistrer('granted'); });
+  document.getElementById('fm-consent-refuser').addEventListener('click', function () { enregistrer('denied'); });
+  var deja = null;
+  try { deja = localStorage.getItem(CLE); } catch (e) {}
+  if (!deja) { boite.hidden = false; }
+})();
+</script>
+</body></html>
