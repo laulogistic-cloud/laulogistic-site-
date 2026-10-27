@@ -1,47 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr"><head>
-<meta charset="UTF-8">
-<!-- Mode Consentement v2 : défauts posés AVANT tout envoi (ordre critique), choix mémorisé localement -->
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  var fmChoix = 'denied';
-  try {
-    var fmDeja = localStorage.getItem('fm_consent_v2');
-    if (fmDeja === 'granted' || fmDeja === 'denied') { fmChoix = fmDeja; }
-  } catch (e) {}
-  gtag('consent', 'default', {
-    'ad_storage': 'denied',
-    'ad_user_data': 'denied',
-    'ad_personalization': 'denied',
-    'analytics_storage': fmChoix,
-    'wait_for_update': 500
-  });
-  gtag('set', 'ads_data_redaction', true);
-</script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Z1VK90JVF1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Z1VK90JVF1');
-</script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Politique de confidentialité — Laulogistic</title>
-<meta name="description" content="Quelles données Laulogistic collecte, pourquoi, combien de temps, et comment exercer vos droits. Mesure d'audience activée seulement après votre accord.">
+<meta name="description" content="Quelles données Laulogistic collecte, pourquoi, combien de temps, et comment exercer vos droits. Aucun cookie de suivi sur ce site.">
 <meta property="og:image" content="https://www.laulogistic.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Laulogistic — Pilote d'environnements opérationnels complexes">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.laulogistic.com/og-image.png">
-<link rel="canonical" href="https://www.laulogistic.com/confidentialite.html">
+<link rel="canonical" href="https://www.laulogistic.com/event.html">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20fill='%230C1428'/%3E%3Crect%20x='24'%20y='24'%20width='16'%20height='16'%20fill='%23C8A84B'%20transform='rotate(45%2032%2032)'/%3E%3C/svg%3E">
 <meta property="og:title" content="Politique de confidentialité — Laulogistic">
 <meta property="og:description" content="Quelles données Laulogistic collecte, pourquoi, combien de temps, et comment exercer vos droits.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://www.laulogistic.com/confidentialite.html">
+<meta property="og:url" content="https://www.laulogistic.com/event.html">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Laulogistic">
 <meta name="robots" content="index, follow">
@@ -90,23 +63,91 @@ th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold
   .noprint{display:none}
   a{color:#0C1428}
 }
+
+/* ─── PERF-LAYER v1 (emil-skills) ─── */
+:root{
+  /* Courbes fortes (review-animations/STANDARDS) — les easings natifs sont trop faibles */
+  --ease-out:    cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  /* Échelle de durées : UI < 300ms, feedback de pression 100-160ms */
+  --dur-press: 160ms;
+  --dur-fast:  180ms;
+  --dur-base:  220ms;
+  --dur-slow:  250ms;
+}
+
+/* ── mobile-native : baseline tactile ── */
+html{
+  -webkit-tap-highlight-color: transparent;  /* plus de flash gris au tap ; le :active prend le relais */
+  -webkit-text-size-adjust: 100%;            /* pas d'inflation de police en paysage */
+  text-size-adjust: 100%;
+}
+button, [role="button"], .btn, .btn-primary, .btn-ghost, .btn-submit, .nb, .nb-cta, .ch{
+  touch-action: manipulation;   /* supprime le délai de 300ms du double-tap zoom */
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;  /* pas de menu copier/partager au long-press */
+}
+/* En dessous de 16px, iOS zoome la page au focus et ne dézoome pas (mobile-native §4) */
+@media (pointer: coarse){
+  .field input, .field select, .field textarea, input, select, textarea{ font-size: 16px; }
+}
+/* Encochure / Dynamic Island : la barre de navigation ne passe plus sous le bord (mobile-native §7).
+   Le bandeau de consentement, fixé en bas, est traité sur place dans son propre bloc de style. */
+.nav{ padding-left: max(var(--pad, 1.2rem), env(safe-area-inset-left, 0px)); padding-right: max(var(--pad, 1.2rem), env(safe-area-inset-right, 0px)); }
+
+/* ── feedback de pression : réponse au doigt, pas au relâchement ── */
+.btn, .btn-primary, .btn-ghost, .btn-submit, .nb, .nb-cta, .ch, .pn a, button, [role="button"]{
+  transition: transform var(--dur-press) var(--ease-out),
+              background-color var(--dur-fast) ease,
+              border-color var(--dur-fast) ease,
+              color var(--dur-fast) ease;
+}
+.btn:active, .btn-primary:active, .btn-ghost:active, .btn-submit:active, .nb:active,
+.nb-cta:active, button:active, [role="button"]:active, .ch:active, .pn a:active{
+  transform: scale(0.97);
+}
+
+/* ── Aucune promotion GPU déclarée dans ces pages (pas de `will-change`) : aucun décalage
+   de 1px n'a été observé, et une couche promue coûte de la mémoire GPU alors que le navigateur
+   promeut déjà transform/opacity. À ajouter sur l'élément animé seulement si un décalage apparaît. ── */
+
+/* ── mouvement réduit : on garde la couleur (compréhension), on retire le déplacement ── */
+@media (prefers-reduced-motion: reduce){
+  *, *::before, *::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+  html{ scroll-behavior: auto; }
+  .tome, .train-card, .search-card, .ev-card, .pack, .prob-card, .step, .btn, .btn-primary,
+  .btn-ghost, .btn-submit, .nb, .nb-cta, button, [role="button"], .ch, .pn a{
+    transition-duration: 120ms;
+  }
+  .tome:hover, .train-card:hover, .search-card:hover, .ev-card:hover, .pack:hover,
+  .prob-card:hover, .step:hover, .btn:hover, .btn-primary:hover, .btn-ghost:hover,
+  .btn-submit:hover, .nb:hover, .nb-cta:hover, button:hover, .pn a:hover,
+  .tome:active, .train-card:active, .btn:active, .btn-primary:active, .btn-ghost:active,
+  .btn-submit:active, .nb:active, button:active, .ch:active{
+    transform: none;
+  }
+}
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "Politique de confidentialité",
-  "url": "https://www.laulogistic.com/confidentialite.html",
+  "url": "https://www.laulogistic.com/event.html",
   "inLanguage": "fr-FR",
   "isPartOf": { "@id": "https://www.laulogistic.com/#site" },
   "publisher": { "@id": "https://www.laulogistic.com/#organisation" }
 }
 </script>
 </head><body><div class="wrap">
-<div class="top"><span><b>LAULOGISTIC</b> — Confidentialité</span><span><a href="./index.html">Retour au site</a></span></div>
+<div class="top"><span><b>LAULOGISTIC</b> — Confidentialité</span><span><a href="./event.html">Retour à l'événement</a></span></div>
 <span class="eyebrow">Données personnelles</span>
 <h1>Politique de confidentialité</h1>
-<p class="promesse">Ce site collecte le minimum : ce que vous écrivez dans les deux formulaires, et — après votre seul accord — une mesure d'audience via Google Analytics 4. Pas de publicité, pas de revente de données.</p>
+<p class="promesse">Ce site collecte le minimum : ce que vous écrivez dans les deux formulaires, et rien d'autre. Pas de cookie de mesure d'audience, pas de publicité, pas de revente de données.</p>
 
 <h2>Qui est responsable</h2>
 <p><strong>Laulogistic</strong> — Laurent Moïse. Contact pour toute question ou demande liée à vos données : <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a>.</p>
@@ -150,63 +191,13 @@ th{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold
 <p>Si la réponse ne vous satisfait pas, vous pouvez introduire une réclamation auprès de la <strong>CNIL</strong> : <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">cnil.fr — plaintes</a>.</p>
 
 <h2>Cookies et mesure d'audience</h2>
-<p>À votre arrivée, une bannière vous demande si vous acceptez la mesure d'audience. Tant que vous n'avez pas choisi, <strong>aucun cookie de mesure n'est déposé</strong> : la mesure d'audience (Google Analytics 4) ne fonctionne qu'après un clic sur « J'accepte ».</p>
-<p>Si vous acceptez, Google Analytics 4 dépose des cookies de mesure (<em>_ga</em>, <em>_ga_*</em>, 13 mois au maximum) pour compter les visites et les pages consultées, sans profilage et sans publicité. Ces données sont traitées par Google Ireland Ltd, qui peut les transférer hors de l'Union européenne dans le cadre de ses clauses contractuelles types.</p>
-<p>Si vous refusez, aucune mesure n'est réalisée. Votre choix est mémorisé dans votre navigateur (stockage local, clé <em>fm_consent_v2</em>) pour ne pas vous reposer la question à chaque page. Vous pouvez le modifier à tout moment : <a href="#" onclick="if (window.fmConsentOuvrir) { fmConsentOuvrir(); } return false;">modifier mon choix</a>.</p>
-<p>Les polices de caractères restent chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google au moment de l'affichage de la page.</p>
+<p>Ce site ne dépose <strong>aucun cookie</strong> et n'utilise aucun outil de suivi, de profilage ou de publicité. Seules les polices de caractères sont chargées depuis Google Fonts, ce qui transmet votre adresse IP à Google au moment de l'affichage de la page.</p>
 
-<div class="a-retenir"><span>À retenir</span>Un seul usage : vous répondre. Une seule adresse pour tout demander ou tout supprimer : contact@laulogistic.com. Aucune publicité, aucun revendeur, et une mesure d'audience qui ne démarre qu'avec votre accord.</div>
+<div class="a-retenir"><span>À retenir</span>Un seul usage : vous répondre. Une seule adresse pour tout demander ou tout supprimer : contact@laulogistic.com. Aucun cookie, aucun revendeur, aucune publicité.</div>
 
-<div class="cta noprint"><h3>Une question sur vos données ?</h3><p>Écrivez directement à <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a> : la demande est traitée par la même personne qui répond aux missions, sans formulaire intermédiaire.</p><a class="btn" href="./index.html">Retour au site</a></div>
+<div class="cta noprint"><h3>Une question sur vos données ?</h3><p>Écrivez directement à <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a> : la demande est traitée par la même personne qui répond aux missions, sans formulaire intermédiaire.</p><a class="btn" href="./event.html">Retour à l'événement</a></div>
 
-<p class="maj">Dernière mise à jour : 2 octobre 2026.</p>
+<p class="maj">Dernière mise à jour : 24 septembre 2026.</p>
 
-<div class="foot"><span>Laulogistic · <a href="https://www.laulogistic.com">www.laulogistic.com</a> · <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a></span><span><a href="./index.html">Accueil</a> · <a href="./fiches-outils.html">Fiches outils</a> · <a href="./mentions-legales.html">Mentions légales</a> · <a href="./lexique.html">Lexique</a></span></div>
-</div>
-<!-- Bannière de consentement — mesure d'audience GA4 -->
-<style>
-#fm-consent{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0C1428;color:#F2EDE4;border-top:1px solid rgba(200,168,75,.45);box-shadow:0 -6px 24px rgba(0,0,0,.4);font-family:'DM Sans',sans-serif}
-#fm-consent .fm-consent-inner{max-width:1020px;margin:0 auto;padding:16px 24px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
-#fm-consent p{margin:0;font-size:14px;line-height:1.55;flex:1 1 420px;color:rgba(242,237,228,.9)}
-#fm-consent a{color:#C8A84B;text-decoration:underline}
-#fm-consent .fm-consent-actions{display:flex;gap:10px;flex-shrink:0}
-#fm-consent button{font-family:'DM Sans',sans-serif;font-size:13px;letter-spacing:.08em;text-transform:uppercase;padding:11px 22px;cursor:pointer;border-radius:2px}
-#fm-consent-accepter{background:#C8A84B;color:#0C1428;border:1px solid #C8A84B;font-weight:500}
-#fm-consent-accepter:hover{background:#D4B86A;border-color:#D4B86A}
-#fm-consent-refuser{background:transparent;color:#F2EDE4;border:1px solid rgba(200,168,75,.6)}
-#fm-consent-refuser:hover{border-color:#C8A84B}
-@media (max-width:560px){#fm-consent .fm-consent-actions{width:100%}#fm-consent button{flex:1}}
-@media print{#fm-consent{display:none!important}}
-</style>
-<div id="fm-consent" role="region" aria-label="Consentement pour la mesure d'audience" hidden>
-  <div class="fm-consent-inner">
-    <p>Ce site mesure son audience avec Google Analytics&nbsp;4, uniquement après votre accord. Aucune donnée avant votre choix, aucune publicité, aucune revente de données. <a href="confidentialite.html">Politique de confidentialité</a></p>
-    <div class="fm-consent-actions">
-      <button type="button" id="fm-consent-accepter">J'accepte</button>
-      <button type="button" id="fm-consent-refuser">Je refuse</button>
-    </div>
-  </div>
-</div>
-<script>
-(function () {
-  var CLE = 'fm_consent_v2';
-  var boite = document.getElementById('fm-consent');
-  function enregistrer(valeur) {
-    try { localStorage.setItem(CLE, valeur); } catch (e) {}
-    gtag('consent', 'update', {
-      'analytics_storage': valeur,
-      'ad_storage': 'denied',
-      'ad_user_data': 'denied',
-      'ad_personalization': 'denied'
-    });
-    boite.hidden = true;
-  }
-  window.fmConsentOuvrir = function () { boite.hidden = false; };
-  document.getElementById('fm-consent-accepter').addEventListener('click', function () { enregistrer('granted'); });
-  document.getElementById('fm-consent-refuser').addEventListener('click', function () { enregistrer('denied'); });
-  var deja = null;
-  try { deja = localStorage.getItem(CLE); } catch (e) {}
-  if (!deja) { boite.hidden = false; }
-})();
-</script>
-</body></html>
+<div class="foot"><span>Laulogistic · <a href="https://www.laulogistic.com">www.laulogistic.com</a> · <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a></span><span><a href="./event.html">Retour à l'événement</a> · <a href="https://www.laulogistic.com/mentions-legales.html">Mentions légales</a></span></div>
+</div></body></html>
