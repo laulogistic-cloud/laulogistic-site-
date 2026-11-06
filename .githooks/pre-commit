@@ -1,0 +1,10 @@
+#!/bin/sh
+# Hook versionné — nettoyage des métadonnées macOS avant chaque commit.
+# Activation unique sur le poste : git config core.hooksPath .githooks
+# (sans cela, ce fichier est ignoré : git ne lit que .git/hooks par défaut.)
+
+racine=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
+[ -f "$racine/scripts/nettoyer-metadonnees-macos.sh" ] || exit 0
+
+sh "$racine/scripts/nettoyer-metadonnees-macos.sh"
+exit 0

@@ -21,11 +21,8 @@
 <meta property="og:site_name" content="Laulogistic">
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#0C1428">
-<link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans-1200.woff2">
 <link rel="stylesheet" href="fonts/fonts.css">
-<style>
-:root{
---navy:#0C1428;--gold:#C8A84B;--goldw:#D4B86A;--text:rgba(255,255,255,.84);
+<style>:root{--navy:#050B17;--gold:#B9A06C;--goldw:#D9BF8C;--text:rgba(255,255,255,.84);
 --dim:rgba(255,255,255,.55);--line:rgba(200,168,75,.22);
 --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
 --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -42,6 +39,10 @@ text-size-adjust: 100%;
 }
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;padding:28px 20px 60px}
 .wrap{max-width: 920px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:26px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.top b{color:#fff;font-weight:500}
+.top a{color:inherit;text-decoration:none}
+.top a:hover{color:var(--gold)}
 h1{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4.4vw,44px);font-weight:700;color:#fff;line-height:1.12;margin:10px 0 20px}
 h2{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff;margin:30px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--line)}
 p{margin:0 0 12px;font-size:15px}
@@ -64,6 +65,16 @@ Table{width:100%;border-collapse:collapse;margin:12px 0 4px;font-size:14px}
 tr,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
 tr:first-child td:first-child{background:var(--gold);font-weight:600;color:var(--navy);font-size:10px;letter-spacing:.16em;text-transform:uppercase}
 footer{margin-top:26px}
+/* le tableau à trois colonnes déborde de 71 px sur un écran de 320 px :
+   sur petit écran, chaque ligne devient un bloc lisible sans défilement latéral */
+@media (max-width: 640px){
+  table{display:block;width:100%}
+  tbody{display:block}
+  tr{display:block;border:1px solid var(--line);border-radius:3px;padding:12px 14px;margin:0 0 12px}
+  tr:first-child{display:none}
+  th,td{display:block;width:auto;border:none;padding:2px 0;text-align:left}
+  td:first-child{color:#fff;font-weight:500}
+}
 @media (prefers-reduced-motion: reduce){
 *{animation-duration:.01ms !important;animation-iteration-count:1 !important}
 html{scroll-behavior:auto}
@@ -85,7 +96,7 @@ html{scroll-behavior:auto}
 <body>
 <div class="wrap">
 <header>
-  <div class="top"><span><b>LAULOGISTIC</b> — Confidentialité</span><span><a href="./event.html">Retour à l'événement</a></span></div>
+  <div class="top"><span><b>LAULOGISTIC</b> — Confidentialité</span><span><a href="./">Retour à l'événement</a></span></div>
   <span class="eyebrow" style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:14px">Données personnelles</span>
   <h1>Politique de confidentialité</h1>
   <p class="lead">Ce site collecte le minimum : ce que vous écrivez dans les deux formulaires, et rien d'autre. Pas de cookie de mesure d'audience, pas de publicité, pas de revente de données.</p>
@@ -106,6 +117,11 @@ html{scroll-behavior:auto}
 <td>Préparer la réponse événementielle et vous répondre sous 24 h ouvrées</td>
 </tr>
 <tr>
+<td>Demande professionnelle<br>(page Professionnels)</td>
+<td>Établissement, type d'établissement, nom, téléphone, e-mail, ville, type de demande, échéance, description libre</td>
+<td>Préparer le diagnostic ou le devis et vous rappeler</td>
+</tr>
+<tr>
 <td>Demande des fiches PDF<br>(bibliothèque)</td>
 <td>Adresse e-mail</td>
 <td>Vous envoyer les 11 fiches outils</td>
@@ -124,7 +140,8 @@ html{scroll-behavior:auto}
 
 <section>
 <h2>Qui voit ces données</h2>
-<p>Elles sont transmises par e-mail via <strong>Formspree</strong> (formspree.io), qui les achemine techniquement vers la boîte de réception de Laulogistic. Formspree agit comme sous-traitant ; ses serveurs sont hébergés aux États-Unis, et le transfert repose sur les clauses contractuelles types de la Commission européenne.</p>
+<p>Le site lui-même est hébergé par <strong>GitHub, Inc.</strong> (GitHub Pages, États-Unis), qui en assure la diffusion technique et peut journaliser les requêtes de connexion pour sa propre sécurité.</p>
+<p>Les formulaires sont transmis par e-mail via <strong>Formspree</strong> (formspree.io), qui les achemine techniquement vers la boîte de réception de Laulogistic. Formspree agit comme sous-traitant ; ses serveurs sont hébergés aux États-Unis, et le transfert repose sur les clauses contractuelles types de la Commission européenne.</p>
 <p><strong>Vos données ne sont ni vendues, ni louées, ni utilisées à des fins publicitaires.</strong> Elles ne sont communiquées à aucun autre tiers.</p>
 </section>
 
@@ -157,14 +174,14 @@ html{scroll-behavior:auto}
 <div class="cta">
 <h3>Une question sur vos données ?</h3>
 <p>Écrivez directement à <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a> : la demande est traitée par la même personne qui répond aux missions, sans formulaire intermédiaire.</p>
-<a class="btn" href="./event.html">Retour à l'événement</a>
+<a class="btn" href="./">Retour à l'événement</a>
 </div>
 
 <footer>
-<p class="maj" style="font-size:12px;color:var(--dim);margin-top:6px">Dernière mise à jour : 27 octobre 2026.</p>
+<p class="maj" style="font-size:12px;color:var(--dim);margin-top:6px">Dernière mise à jour : 6 novembre 2026.</p>
 <div class="foot">
 <span>Laulogistic · <a href="https://www.laulogistic.com">www.laulogistic.com</a> · <a href="mailto:contact@laulogistic.com">contact@laulogistic.com</a></span>
-<span><a href="./event.html">Retour à l'événement</a> · <a href="./mentions-legales.html">Mentions légales</a></span>
+<span><a href="./">Retour à l'événement</a> · <a href="./conditions-generales.html">Conditions générales</a> · <a href="./mentions-legales.html">Mentions légales</a></span>
 </div>
 </footer>
 </div>

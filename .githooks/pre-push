@@ -1,0 +1,11 @@
+#!/bin/sh
+# Hook versionné — nettoyage des métadonnées macOS avant chaque push.
+# C'est pendant un push (relecture du pack) que « non-monotonic index »
+# apparaît le plus souvent ; nettoyer juste avant évite ce plantage.
+# Activation unique sur le poste : git config core.hooksPath .githooks
+
+racine=$(git rev-parse --show-toplevel 2>/dev/null || pwd)
+[ -f "$racine/scripts/nettoyer-metadonnees-macos.sh" ] || exit 0
+
+sh "$racine/scripts/nettoyer-metadonnees-macos.sh"
+exit 0
