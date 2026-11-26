@@ -19,9 +19,9 @@
 <link rel="preload" as="font" type="font/woff2" href="fonts/dm-sans-400-n.woff2" crossorigin>
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
-:root{--navy:#050B17;--gold:#B9A06C;--goldw:#D9BF8C;--text:rgba(255,255,255,.84);--dim:rgba(255,255,255,.55);--line:rgba(200,168,75,.22)}
+:root{--navy:#050B17;--gold:#B9A06C;--goldw:#D9BF8C;--text:rgba(255,255,255,.84);--dim:rgba(255,255,255,.55);--line:rgba(200,168,75,.22);--ease-out:cubic-bezier(0.32,0.72,0,1);--ease-in-out:cubic-bezier(0.65,0,0.35,1);--dur-press:140ms;--dur-base:160ms}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-tap-highlight-color:transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+html{-webkit-tap-highlight-color: transparent;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:'DM Sans',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;padding:28px 20px 60px}
 .wrap{max-width:900px;margin:0 auto}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:26px;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
@@ -49,6 +49,16 @@ strong{color:#fff;font-weight:500}
   h2{font-size:20px;margin-top:24px}
   p, li{font-size:14.5px}
   .top{font-size:10px;letter-spacing:.14em}
+}
+button, [role="button"], .btn, .btn-primary, .btn-ghost, .btn-submit, .nb, .nb-cta, .ch{
+  touch-action: manipulation;
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;
+}
+@media (prefers-reduced-motion: reduce){
+  .btn:active, .btn-primary:active, .btn-ghost:active, .btn-submit:active, .nb:active,
+  .nb-cta:active, button:active, .ch:active, .pn a:active,
+  .cta .btn:active{ transform: none; }
 }
 </style>
 <script type="application/ld+json">
